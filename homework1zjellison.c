@@ -1,17 +1,60 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define STACK_SIZE 10
+#define MAX_SIZE 10
 
 //*****Function Declerations*****
 void stackprint();
 void queueprint();
 void listprint();
+//STACK FUNCTIONS
+static void push();
+static void pop();
+//QUEUE FUNCTIONS
+static void enqueue();
+static void dequeue();
 
+//**********  IMPLEMENTING THE STACK  **********
+//Reference: https://stackoverflow.com/questions/71717509/im-trying-to-create-a-stack-in-c-using-structures-but-my-push-function-doesnt
+
+typedef struct stack
+{
+    int top;
+    int items[MAX_SIZE];
+}
+STACK;
+
+static void push(STACK* st, int newitem){
+    st->items[st->top++] = newitem;
+}
+
+static void pop(STACK* st){
+    int out = st->items[st->top - 1];
+    printf("%d ", out);
+    st->top -= 1;
+}
+
+//**********  IMPLEMENTING THE QUEUE **********
+
+typedef struct queue
+{
+    int rear;
+    int itemsq[MAX_SIZE];
+}
+QUEUE;
+
+static void enqueue(QUEUE* q, int newitemq){
+    q->itemsq[q->rear--] = newitemq;
+}
+
+static void dequeue(QUEUE* q){
+    int qout = q->itemsq[q->rear];
+    printf("%d ", qout);
+    q->rear -= 1;
+}
 
 int main(int argc, char **argv){
 //*****Reference for reading file input https://stackoverflow.com/questions/20378430/reading-numbers-from-a-text-file-into-an-array-in-c
-
 
 //Read Data From File to an Array for Easy access
     FILE *fp = fopen(argv[1], "r");
@@ -29,8 +72,11 @@ int main(int argc, char **argv){
 
 
 //Functions to print the 3 data types
+    printf("QUEUE CONTENTS:\n");
+    queueprint(&arr);
+    printf("STACK CONTENTS:\n");
     stackprint(&arr);
-    //queueprint(&arr);
+    printf("LIST CONTENTS\n");
     //listprint(&arr);
 
     return 0;
@@ -42,10 +88,16 @@ int main(int argc, char **argv){
 //Prints Last to First
 void stackprint(int SinpArray[]){
 //Move Inputs from array to Data Structure
+    STACK st;
+    st.top = 0;
+
+    for(int k = 0; k < 10; k++){
+        push(&st, SinpArray[k]);
+    }
 
 //Print Contents
     for(int i = 0; i < 10; i++){
-        printf("%d ", SinpArray[i]);
+        pop(&st);
     }
     printf("\n");
 
@@ -55,10 +107,17 @@ void stackprint(int SinpArray[]){
 //Prints First to Last
 void queueprint(int QinpArray[]){
 //Move Inputs from array to Data Structure
+    QUEUE q;
+    q.rear = MAX_SIZE - 1;
+
+    for(int k = 0; k < 10; k++){
+        enqueue(&q, QinpArray[k]);
+    }
 
 //Print Contents
-    for(int i = 10; i > 0; i--){
-        printf("%d ", QinpArray[i-1]);
+    q.rear = MAX_SIZE - 1;
+    for(int i = 0; i < 10; i++){
+        dequeue(&q);
     }
     printf("\n");
 }
@@ -73,24 +132,4 @@ void listprint(int LinpArray[]){
         printf("%d ", LinpArray[i]);
     }
     printf("\n");
-}
-
-
-//********** IMPLEMENTING THE STACK **********
-//Reference: https://stackoverflow.com/questions/71717509/im-trying-to-create-a-stack-in-c-using-structures-but-my-push-function-doesnt
-
-typedef struct stack
-{
-    int top;
-    int items[STACK_SIZE];
-}
-STACK;
-
-static void push(STACK* st, int newitem){
-    st->items[st->top++] = newitem;
-}
-
-static void pop(STACK* st){
-    int out = st->items[st->top];
-    printf("%d ", out);
 }
