@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_SIZE 10
+#define MAX_SIZE 10         //Number of values being sorted
 
 //*****Function Declerations*****
 void stackprint();
