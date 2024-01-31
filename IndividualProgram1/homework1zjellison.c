@@ -8,11 +8,11 @@ void stackprint();
 void queueprint();
 void listprint();
 //STACK FUNCTIONS
-static void push();
-static void pop();
+void push();
+void pop();
 //QUEUE FUNCTIONS
-static void enqueue();
-static void dequeue();
+void enqueue();
+void dequeue();
 //LINKED LIST FUNCTIONS
 void pushLL();
 void sortedInsert();
@@ -22,18 +22,17 @@ void printlist();
 //**********  IMPLEMENTING THE STACK  **********
 //Reference: https://stackoverflow.com/questions/71717509/im-trying-to-create-a-stack-in-c-using-structures-but-my-push-function-doesnt
 
-typedef struct stack
+struct stack
 {
     int top;
     int items[MAX_SIZE];
-}
-STACK;
+};
 
-static void push(STACK* st, int newitem){
+void push(struct stack* st, int newitem){
     st->items[st->top++] = newitem;
 }
 
-static void pop(STACK* st){
+void pop(struct stack* st){
     int out = st->items[st->top - 1];
     printf("%d ", out);
     st->top -= 1;
@@ -41,18 +40,17 @@ static void pop(STACK* st){
 
 //**********  IMPLEMENTING THE QUEUE **********
 
-typedef struct queue
+struct queue
 {
     int rear;
     int itemsq[MAX_SIZE];
-}
-QUEUE;
+};
 
-static void enqueue(QUEUE* q, int newitemq){
+void enqueue(struct queue* q, int newitemq){
     q->itemsq[q->rear--] = newitemq;
 }
 
-static void dequeue(QUEUE* q){
+void dequeue(struct queue* q){
     int qout = q->itemsq[q->rear];
     printf("%d ", qout);
     q->rear -= 1;
@@ -149,7 +147,7 @@ int main(int argc, char **argv){
 //Prints Last to First
 void stackprint(int SinpArray[]){
 //Move Inputs from array to Data Structure
-    STACK st;
+    struct stack st;
     st.top = 0;
 
     for(int k = 0; k < 10; k++){
@@ -168,7 +166,7 @@ void stackprint(int SinpArray[]){
 //Prints First to Last
 void queueprint(int QinpArray[]){
 //Move Inputs from array to Data Structure
-    QUEUE q;
+    struct queue q;
     q.rear = MAX_SIZE - 1;
 
     for(int k = 0; k < 10; k++){
