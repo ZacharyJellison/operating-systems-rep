@@ -1,4 +1,0 @@
-Files for Individual Program 1 are:
-  homework1zjellison.c
-  Makefile
-  file1.txt
