@@ -120,10 +120,9 @@ int main(int argc, char **argv){
     FILE *fp = fopen(argv[1], "r");
 
 //Turn file inputs into an Array of length 10
-    const unsigned MAX_LENGTH = 10;
-    int arr[MAX_LENGTH];
+    int arr[MAX_SIZE];
 
-    for(int loop = 0; loop < MAX_LENGTH; loop++){
+    for(int loop = 0; loop < MAX_SIZE; loop++){
         fscanf(fp, "%d", &arr[loop]);
     }
 
