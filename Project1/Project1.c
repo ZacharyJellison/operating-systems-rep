@@ -13,6 +13,7 @@ void execute_test(char *test_program, int child_num) {
     char *tests[] = {test_program, child_str, NULL};
     printf("Started child %d with pid %d\n", child_num, getpid());
     execv(tests[0], tests);
+//Error Case ----- Should never happen
     perror("execv");
     exit(1);
 }
@@ -20,10 +21,10 @@ void execute_test(char *test_program, int child_num) {
 
 int main(int argc, char **argv){
 //Setup
-    int status;
+    int children;
 
     pid_t parent = getpid();
-    int children;
+
     children = atoi(argv[1]);
 
 //Less than 25 Children
@@ -39,9 +40,8 @@ int main(int argc, char **argv){
     for (int i = 0; i < children; i++) {
         pid_t pid = fork();
         
-        // Child process
+        // Child Process Selection and Execution
         if (pid == 0) {
-            // Run the test program based on the child process number
             switch(i % 5) {
                 case 0:
                     execute_test("test1", i+1);
@@ -59,6 +59,7 @@ int main(int argc, char **argv){
                     execute_test("test5", i+1);
                     break;
                 default:
+                //Should Never Happen
                     printf("Invalid test program.\n");
                     exit(1);
             }
