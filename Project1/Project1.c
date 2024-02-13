@@ -71,7 +71,7 @@ int main(int argc, char **argv){
     for (int k = 0; k < children; ++k) {
         int status;
         pid_t finished_pid = wait(&status);
-        printf("Child %d (pid: %d) finished\n", k + 1, finished_pid);
+        printf("Child %d (pid: %d) finished\n", abs(parent - finished_pid), finished_pid);
     }
 
     return 0;
