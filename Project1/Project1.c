@@ -1,53 +1,76 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <math.h>
+#include <string.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <math.h>
+
+
+void execute_test(char *test_program, int child_num) {
+    char child_str[10];
+    snprintf(child_str, sizeof(child_str), "%d", child_num);
+    char *tests[] = {test_program, child_str, NULL};
+    printf("Started child %d with pid %d\n", child_num, getpid());
+    execv(tests[0], tests);
+    perror("execv");
+    exit(1);
+}
 
 
 int main(int argc, char **argv){
-
 //Setup
-    pid_t pid;
+    int status;
+
     pid_t parent = getpid();
-    int childs;
-    childs = atoi(argv[1]);
+    int children;
+    children = atoi(argv[1]);
 
 //Less than 25 Children
-    if(childs > 25){
+    if(children > 25){
         printf("Input out of Range.\n");
         return 0;
     }
 
     printf("Parent pid is %d\n", parent);
 
-//Create Children: https://stackoverflow.com/questions/15328285/how-to-fork-an-exact-number-of-children
-    for(int i = 0; i < childs; ++i){
-        if(fork() == 0){
-    //Print Start
-            if(getpid() != parent){
-                int childNumStart = abs(parent - getpid());
-                printf("Started child %d with pid %d\n", childNumStart, getpid());
+
+// Loop to create child processes
+    for (int i = 0; i < children; i++) {
+        pid_t pid = fork();
+        
+        // Child process
+        if (pid == 0) {
+            // Run the test program based on the child process number
+            switch(i % 5) {
+                case 0:
+                    execute_test("test1", i+1);
+                    break;
+                case 1:
+                    execute_test("test2", i+1);
+                    break;
+                case 2:
+                    execute_test("test3", i+1);
+                    break;
+                case 3:
+                    execute_test("test4", i+1);
+                    break;
+                case 4:
+                    execute_test("test5", i+1);
+                    break;
+                default:
+                    printf("Invalid test program.\n");
+                    exit(1);
             }
-
-    //Start a Process
-            execv("test1", argv);
-
-
-    //Print Finish
-            if(getpid() != parent){
-                int childNumFinish = abs(parent - getpid());
-                printf("Child %d (PID %d) finsished\n", childNumFinish, getpid());
-            }
-
-            exit(0);        //End Process
         }
     }
 
-    int status;
-    for(int k = 0; k < childs; ++k){
-        wait(&status);
+
+//Wait for Children
+    for (int k = 0; k < children; ++k) {
+        int status;
+        pid_t finished_pid = wait(&status);
+        printf("Child %d (pid: %d) finished\n", k + 1, finished_pid);
     }
 
     return 0;
