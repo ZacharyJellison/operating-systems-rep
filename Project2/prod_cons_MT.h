@@ -1,20 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <pthread.h>
+#include <time.h>
 
-typedef struct{
-    int* data;
-    int front;
-    int rear;
+typedef struct CircularBuffer{
+    int *buffer;
+    int in;
+    int out;
     int count;
     int size;
-}BoundedBuffer;
+    pthread_mutex_t lock;
+    pthread_cond_t not_full;
+    pthread_cond_t not_empty;
+}CircularBuffer;
 
-void producer();    //Enqueue
-void consumer();    //Dequeue
+void init_buffer(CircularBuffer *buff, int size);
 
-bool isFull();
-bool isEmpty();
+void addVal(CircularBuffer *buff, int item);
+int delVal(CircularBuffer *buff);
 
-BoundedBuffer* createBuffer();
-void destroyBuffer();
+void *producer(void *args);
+void *consumer(void *args);
