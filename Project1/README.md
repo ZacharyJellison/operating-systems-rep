@@ -6,8 +6,9 @@ Contents:
 Directions:
     1. Download all files in the Project1 folder
     2. cd into the folder in the terminal (Probably Downloads)
-    3. Run make in the command line
-    4. Run the project with the ./ command and a number input
+    3. If neccessary delete the .txt on the make file
+    4. Run make in the command line
+    5. Run the project with the ./ command and a number input
 
 Input:
     cd Downloads
