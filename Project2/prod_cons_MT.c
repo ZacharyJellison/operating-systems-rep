@@ -1,7 +1,9 @@
 #include "prod_cons_MT.h"
 
-void init_buffer(CircularBuffer *buff, int size) {
+void init_buffer(CircularBuffer *buff, int size, int producers, int consumers) {
     buff->buffer = (int *)malloc(sizeof(int) * size);
+    buff->PROD = (int *)malloc(sizeof(int) * producers);
+    buff->CONS = (int *)malloc(sizeof(int) * consumers);
     buff->in = 0;
     buff->out = 0;
     buff->count = 0;
@@ -9,6 +11,14 @@ void init_buffer(CircularBuffer *buff, int size) {
     pthread_mutex_init(&buff->lock, NULL);
     pthread_cond_init(&buff->not_full, NULL);
     pthread_cond_init(&buff->not_empty, NULL);
+
+    for (int i = 0; i < producers; i++){
+        buff->PROD[i] = i;
+    }
+
+    for (int q = 0; q < consumers; q++){
+        buff->CONS[q] = q; 
+    }
 }
 
 void addVal(CircularBuffer *buff, int item) {
@@ -64,6 +74,7 @@ void *producer(void *args){
         item = rand() % 11;
         addVal(buff, item);
         printf("P%d: Writing %d to position %d\n", 0, item,  buff->in);
+        usleep(1000);
     }
 
     //Exit
@@ -83,6 +94,7 @@ void *consumer(void *args){
     for (int i = 0; i < numVals; i++) {
         int item = delVal(buff);
         printf("C%d: Reading %d from position %d\n", 0, item, buff->out);
+        usleep(1000);
     }
 
     //Exit

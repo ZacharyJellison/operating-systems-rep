@@ -12,7 +12,7 @@ int main(int argc, char **argv){
     int num_consumers = atoi(argv[3]);
 
     CircularBuffer buff;
-    init_buffer(&buff, size);
+    init_buffer(&buff, size, num_producers, num_consumers);
     pthread_t producer_thread[num_producers], consumer_thread[num_consumers];
 
     //New Producer Created
