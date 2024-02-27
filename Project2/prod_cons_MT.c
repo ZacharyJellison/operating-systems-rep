@@ -1,7 +1,7 @@
 #include "prod_cons_MT.h"
 
 //Global Variable for Producers
-bool producers_finished = false;
+
 
 void init_buffer(CircularBuffer *buff, int size) {
     buff->buffer = (int *)malloc(sizeof(int) * size);
@@ -59,6 +59,8 @@ void *producer(void *args){
     ThreadArgs *prod_args = (ThreadArgs *)args;
     int producer_id = prod_args->producer_id;
     CircularBuffer *buff = prod_args->buff;
+    extern int consumers_finished;
+    extern int total_consumers;
 
     //Random Number Gen
     srand(time(0) + 4); //Make it slightly different from Consumer
@@ -67,6 +69,10 @@ void *producer(void *args){
     printf("P%d: producing %d values\n", producer_id, numVals);
 
     for (int i = 0; i < numVals; i++) {
+        if((consumers_finished == total_consumers) && (buff->count == buff->size - 1)){
+            printf("P%d: Exiting\n", producer_id);
+            pthread_exit(NULL);
+        }
         item = rand() % 11;
         addVal(buff, item);
         printf("P%d: Writing %d to position %d\n", producer_id, item,  buff->in);
@@ -82,6 +88,8 @@ void *consumer(void *args){
     ThreadArgs *cons_args = (ThreadArgs *)args;
     int consumer_id = cons_args->consumer_id;
     CircularBuffer *buff = cons_args->buff;
+    extern int producers_finished;
+    extern int consumers_finished;
 
     //Random Number Gen
     srand(time(0));
@@ -89,19 +97,21 @@ void *consumer(void *args){
     int numVals = (rand() % 10) + 1;
     printf("C%d: Consuming %d values\n", consumer_id, numVals);
         for (int i = 0; i < numVals; i++) {
+            if ((producers_finished == 1) && (buff->count == 0)){
+                //Exit
+                printf("C%d: Exiting\n", consumer_id);
+                consumers_finished = consumers_finished + 1;
+                pthread_exit(NULL);
+            }
+
             int item = delVal(buff);
             printf("C%d: Reading %d from position %d\n", consumer_id, item, buff->out);
-            usleep(1000);
+            usleep(2000);
         }
 
-    if (producers_finished == true){
-        //Exit
-        printf("C%d: Exiting\n", consumer_id);
-        pthread_exit(NULL);
-    
-    }
 
     //Exit
     printf("C%d: Exiting\n", consumer_id);
+    consumers_finished = consumers_finished + 1;
     pthread_exit(NULL);
 }

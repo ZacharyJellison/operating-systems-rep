@@ -2,8 +2,9 @@
 
 
 //Global Variables
-extern bool producers_finished;
-
+int producers_finished;
+int consumers_finished;
+int total_consumers;
 
 int main(int argc, char **argv){
 
@@ -11,6 +12,9 @@ int main(int argc, char **argv){
     int size = atoi(argv[1]);
     int num_producers = atoi(argv[2]);
     int num_consumers = atoi(argv[3]);
+    producers_finished = 0;
+    consumers_finished = 0;
+    total_consumers = num_consumers;
 
     CircularBuffer buff;
     init_buffer(&buff, size);
@@ -39,7 +43,7 @@ int main(int argc, char **argv){
         printf("MAIN: producer %d joined\n", 0);
     }
 
-    producers_finished = true;
+    producers_finished = 1;
 
     for (int n = 0; n < num_consumers; n++){
 	    pthread_join(consumer_thread[n], NULL);
