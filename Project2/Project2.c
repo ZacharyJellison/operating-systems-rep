@@ -2,6 +2,7 @@
 
 
 //Global Variables
+extern bool producers_finished;
 
 
 int main(int argc, char **argv){
@@ -33,11 +34,17 @@ int main(int argc, char **argv){
     }
 
     //Wait for threads
-    for (int m = 0; m < num_producers; m++) 
+    for (int m = 0; m < num_producers; m++){
 	    pthread_join(producer_thread[m], NULL);
+        printf("MAIN: producer %d joined\n", 0);
+    }
 
-    for (int n = 0; n < num_consumers; n++) 
+    producers_finished = true;
+
+    for (int n = 0; n < num_consumers; n++){
 	    pthread_join(consumer_thread[n], NULL);
+        printf("MAIN: consumer %d joined\n", 0);
+    }
 
     //Finish
     printf("Main: program completed\n");

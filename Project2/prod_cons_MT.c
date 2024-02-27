@@ -1,5 +1,8 @@
 #include "prod_cons_MT.h"
 
+//Global Variable for Producers
+bool producers_finished = false;
+
 void init_buffer(CircularBuffer *buff, int size) {
     buff->buffer = (int *)malloc(sizeof(int) * size);
     buff->in = 0;
@@ -58,7 +61,7 @@ void *producer(void *args){
     CircularBuffer *buff = prod_args->buff;
 
     //Random Number Gen
-    srand(time(0));
+    srand(time(0) + 4); //Make it slightly different from Consumer
 
     int numVals = (rand() % 10) + 1;
     printf("P%d: producing %d values\n", producer_id, numVals);
@@ -85,11 +88,17 @@ void *consumer(void *args){
 
     int numVals = (rand() % 10) + 1;
     printf("C%d: Consuming %d values\n", consumer_id, numVals);
+        for (int i = 0; i < numVals; i++) {
+            int item = delVal(buff);
+            printf("C%d: Reading %d from position %d\n", consumer_id, item, buff->out);
+            usleep(1000);
+        }
 
-    for (int i = 0; i < numVals; i++) {
-        int item = delVal(buff);
-        printf("C%d: Reading %d from position %d\n", consumer_id, item, buff->out);
-        usleep(1000);
+    if (producers_finished == true){
+        //Exit
+        printf("C%d: Exiting\n", consumer_id);
+        pthread_exit(NULL);
+    
     }
 
     //Exit
