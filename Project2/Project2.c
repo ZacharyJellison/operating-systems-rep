@@ -40,14 +40,14 @@ int main(int argc, char **argv){
     //Wait for threads
     for (int m = 0; m < num_producers; m++){
 	    pthread_join(producer_thread[m], NULL);
-        printf("Main: producer %d joined\n", m);
+        printf("Main: producer %d joined\n", 0);
     }
 
     producers_finished = 1;
 
     for (int n = 0; n < num_consumers; n++){
 	    pthread_join(consumer_thread[n], NULL);
-        printf("Main: consumer %d joined\n", n);
+        printf("Main: consumer %d joined\n", 0);
     }
 
     //Finish

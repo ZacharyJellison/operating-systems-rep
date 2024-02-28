@@ -110,6 +110,5 @@ void *consumer(void *args){
 
     //Exit
     printf("C%d: Exiting\n", consumer_id);
-    consumers_finished = consumers_finished + 1;
     pthread_exit(NULL);
 }
