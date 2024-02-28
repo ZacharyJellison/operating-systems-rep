@@ -1,6 +1,5 @@
 #include "prod_cons_MT.h"
 
-//Global Variable for Producers
 
 
 void init_buffer(CircularBuffer *buff, int size) {
@@ -63,20 +62,19 @@ void *producer(void *args){
     extern int total_consumers;
 
     //Random Number Gen
-    srand(time(0) + 4); //Make it slightly different from Consumer
+    srand(time(0) * producer_id); //Makes custom for each id
 
     int numVals = (rand() % 10) + 1;
     printf("P%d: producing %d values\n", producer_id, numVals);
 
     for (int i = 0; i < numVals; i++) {
-        if((consumers_finished == total_consumers) && (buff->count == buff->size - 1)){
+        if((consumers_finished >= total_consumers) && (buff->count == buff->size)){
             printf("P%d: Exiting\n", producer_id);
             pthread_exit(NULL);
         }
         item = rand() % 11;
         addVal(buff, item);
         printf("P%d: Writing %d to position %d\n", producer_id, item,  buff->in);
-        usleep(1000);
     }
 
     //Exit
@@ -92,11 +90,12 @@ void *consumer(void *args){
     extern int consumers_finished;
 
     //Random Number Gen
-    srand(time(0));
+    srand(time(0) * consumer_id);
 
     int numVals = (rand() % 10) + 1;
     printf("C%d: Consuming %d values\n", consumer_id, numVals);
         for (int i = 0; i < numVals; i++) {
+            usleep(500);
             if ((producers_finished == 1) && (buff->count == 0)){
                 //Exit
                 printf("C%d: Exiting\n", consumer_id);
@@ -106,7 +105,6 @@ void *consumer(void *args){
 
             int item = delVal(buff);
             printf("C%d: Reading %d from position %d\n", consumer_id, item, buff->out);
-            usleep(2000);
         }
 
 
