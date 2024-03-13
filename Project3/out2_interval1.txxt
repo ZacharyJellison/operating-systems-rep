@@ -1,0 +1,5047 @@
+***** FCFS Scheduling *****
+t = 0
+CPU: Loading process 0 (CPU burst = 48)
+Ready queue: 0
+
+t = 1
+CPU: Running process 0 (remaining CPU burst = 47)
+Ready queue: empty
+
+t = 2
+CPU: Running process 0 (remaining CPU burst = 46)
+Ready queue: empty
+
+t = 3
+CPU: Running process 0 (remaining CPU burst = 45)
+Ready queue: empty
+
+t = 4
+CPU: Running process 0 (remaining CPU burst = 44)
+Ready queue: empty
+
+t = 5
+CPU: Running process 0 (remaining CPU burst = 43)
+Ready queue: 1
+
+t = 6
+CPU: Running process 0 (remaining CPU burst = 42)
+Ready queue: 1
+
+t = 7
+CPU: Running process 0 (remaining CPU burst = 41)
+Ready queue: 1
+
+t = 8
+CPU: Running process 0 (remaining CPU burst = 40)
+Ready queue: 1
+
+t = 9
+CPU: Running process 0 (remaining CPU burst = 39)
+Ready queue: 1
+
+t = 10
+CPU: Running process 0 (remaining CPU burst = 38)
+Ready queue: 1-2
+
+t = 11
+CPU: Running process 0 (remaining CPU burst = 37)
+Ready queue: 1-2
+
+t = 12
+CPU: Running process 0 (remaining CPU burst = 36)
+Ready queue: 1-2
+
+t = 13
+CPU: Running process 0 (remaining CPU burst = 35)
+Ready queue: 1-2
+
+t = 14
+CPU: Running process 0 (remaining CPU burst = 34)
+Ready queue: 1-2
+
+t = 15
+CPU: Running process 0 (remaining CPU burst = 33)
+Ready queue: 1-2-3
+
+t = 16
+CPU: Running process 0 (remaining CPU burst = 32)
+Ready queue: 1-2-3
+
+t = 17
+CPU: Running process 0 (remaining CPU burst = 31)
+Ready queue: 1-2-3
+
+t = 18
+CPU: Running process 0 (remaining CPU burst = 30)
+Ready queue: 1-2-3
+
+t = 19
+CPU: Running process 0 (remaining CPU burst = 29)
+Ready queue: 1-2-3
+
+t = 20
+CPU: Running process 0 (remaining CPU burst = 28)
+Ready queue: 1-2-3-4
+
+t = 21
+CPU: Running process 0 (remaining CPU burst = 27)
+Ready queue: 1-2-3-4
+
+t = 22
+CPU: Running process 0 (remaining CPU burst = 26)
+Ready queue: 1-2-3-4
+
+t = 23
+CPU: Running process 0 (remaining CPU burst = 25)
+Ready queue: 1-2-3-4
+
+t = 24
+CPU: Running process 0 (remaining CPU burst = 24)
+Ready queue: 1-2-3-4
+
+t = 25
+CPU: Running process 0 (remaining CPU burst = 23)
+Ready queue: 1-2-3-4-5
+
+t = 26
+CPU: Running process 0 (remaining CPU burst = 22)
+Ready queue: 1-2-3-4-5
+
+t = 27
+CPU: Running process 0 (remaining CPU burst = 21)
+Ready queue: 1-2-3-4-5
+
+t = 28
+CPU: Running process 0 (remaining CPU burst = 20)
+Ready queue: 1-2-3-4-5
+
+t = 29
+CPU: Running process 0 (remaining CPU burst = 19)
+Ready queue: 1-2-3-4-5
+
+t = 30
+CPU: Running process 0 (remaining CPU burst = 18)
+Ready queue: 1-2-3-4-5-6
+
+t = 31
+CPU: Running process 0 (remaining CPU burst = 17)
+Ready queue: 1-2-3-4-5-6
+
+t = 32
+CPU: Running process 0 (remaining CPU burst = 16)
+Ready queue: 1-2-3-4-5-6
+
+t = 33
+CPU: Running process 0 (remaining CPU burst = 15)
+Ready queue: 1-2-3-4-5-6
+
+t = 34
+CPU: Running process 0 (remaining CPU burst = 14)
+Ready queue: 1-2-3-4-5-6
+
+t = 35
+CPU: Running process 0 (remaining CPU burst = 13)
+Ready queue: 1-2-3-4-5-6-7
+
+t = 36
+CPU: Running process 0 (remaining CPU burst = 12)
+Ready queue: 1-2-3-4-5-6-7
+
+t = 37
+CPU: Running process 0 (remaining CPU burst = 11)
+Ready queue: 1-2-3-4-5-6-7
+
+t = 38
+CPU: Running process 0 (remaining CPU burst = 10)
+Ready queue: 1-2-3-4-5-6-7
+
+t = 39
+CPU: Running process 0 (remaining CPU burst = 9)
+Ready queue: 1-2-3-4-5-6-7
+
+t = 40
+CPU: Running process 0 (remaining CPU burst = 8)
+Ready queue: 1-2-3-4-5-6-7-8
+
+t = 41
+CPU: Running process 0 (remaining CPU burst = 7)
+Ready queue: 1-2-3-4-5-6-7-8
+
+t = 42
+CPU: Running process 0 (remaining CPU burst = 6)
+Ready queue: 1-2-3-4-5-6-7-8
+
+t = 43
+CPU: Running process 0 (remaining CPU burst = 5)
+Ready queue: 1-2-3-4-5-6-7-8
+
+t = 44
+CPU: Running process 0 (remaining CPU burst = 4)
+Ready queue: 1-2-3-4-5-6-7-8
+
+t = 45
+CPU: Running process 0 (remaining CPU burst = 3)
+Ready queue: 1-2-3-4-5-6-7-8-9
+
+t = 46
+CPU: Running process 0 (remaining CPU burst = 2)
+Ready queue: 1-2-3-4-5-6-7-8-9
+
+t = 47
+CPU: Running process 0 (remaining CPU burst = 1)
+Ready queue: 1-2-3-4-5-6-7-8-9
+
+t = 48
+CPU: Finishing process 0; loading process 1 (CPU burst = 10)
+Ready queue: 1-2-3-4-5-6-7-8-9
+
+t = 49
+CPU: Running process 1 (remaining CPU burst = 9)
+Ready queue: 2-3-4-5-6-7-8-9
+
+t = 50
+CPU: Running process 1 (remaining CPU burst = 8)
+Ready queue: 2-3-4-5-6-7-8-9
+
+t = 51
+CPU: Running process 1 (remaining CPU burst = 7)
+Ready queue: 2-3-4-5-6-7-8-9
+
+t = 52
+CPU: Running process 1 (remaining CPU burst = 6)
+Ready queue: 2-3-4-5-6-7-8-9
+
+t = 53
+CPU: Running process 1 (remaining CPU burst = 5)
+Ready queue: 2-3-4-5-6-7-8-9
+
+t = 54
+CPU: Running process 1 (remaining CPU burst = 4)
+Ready queue: 2-3-4-5-6-7-8-9
+
+t = 55
+CPU: Running process 1 (remaining CPU burst = 3)
+Ready queue: 2-3-4-5-6-7-8-9
+
+t = 56
+CPU: Running process 1 (remaining CPU burst = 2)
+Ready queue: 2-3-4-5-6-7-8-9
+
+t = 57
+CPU: Running process 1 (remaining CPU burst = 1)
+Ready queue: 2-3-4-5-6-7-8-9
+
+t = 58
+CPU: Finishing process 1; loading process 2 (CPU burst = 57)
+Ready queue: 2-3-4-5-6-7-8-9
+
+t = 59
+CPU: Running process 2 (remaining CPU burst = 56)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 60
+CPU: Running process 2 (remaining CPU burst = 55)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 61
+CPU: Running process 2 (remaining CPU burst = 54)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 62
+CPU: Running process 2 (remaining CPU burst = 53)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 63
+CPU: Running process 2 (remaining CPU burst = 52)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 64
+CPU: Running process 2 (remaining CPU burst = 51)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 65
+CPU: Running process 2 (remaining CPU burst = 50)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 66
+CPU: Running process 2 (remaining CPU burst = 49)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 67
+CPU: Running process 2 (remaining CPU burst = 48)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 68
+CPU: Running process 2 (remaining CPU burst = 47)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 69
+CPU: Running process 2 (remaining CPU burst = 46)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 70
+CPU: Running process 2 (remaining CPU burst = 45)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 71
+CPU: Running process 2 (remaining CPU burst = 44)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 72
+CPU: Running process 2 (remaining CPU burst = 43)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 73
+CPU: Running process 2 (remaining CPU burst = 42)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 74
+CPU: Running process 2 (remaining CPU burst = 41)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 75
+CPU: Running process 2 (remaining CPU burst = 40)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 76
+CPU: Running process 2 (remaining CPU burst = 39)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 77
+CPU: Running process 2 (remaining CPU burst = 38)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 78
+CPU: Running process 2 (remaining CPU burst = 37)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 79
+CPU: Running process 2 (remaining CPU burst = 36)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 80
+CPU: Running process 2 (remaining CPU burst = 35)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 81
+CPU: Running process 2 (remaining CPU burst = 34)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 82
+CPU: Running process 2 (remaining CPU burst = 33)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 83
+CPU: Running process 2 (remaining CPU burst = 32)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 84
+CPU: Running process 2 (remaining CPU burst = 31)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 85
+CPU: Running process 2 (remaining CPU burst = 30)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 86
+CPU: Running process 2 (remaining CPU burst = 29)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 87
+CPU: Running process 2 (remaining CPU burst = 28)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 88
+CPU: Running process 2 (remaining CPU burst = 27)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 89
+CPU: Running process 2 (remaining CPU burst = 26)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 90
+CPU: Running process 2 (remaining CPU burst = 25)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 91
+CPU: Running process 2 (remaining CPU burst = 24)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 92
+CPU: Running process 2 (remaining CPU burst = 23)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 93
+CPU: Running process 2 (remaining CPU burst = 22)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 94
+CPU: Running process 2 (remaining CPU burst = 21)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 95
+CPU: Running process 2 (remaining CPU burst = 20)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 96
+CPU: Running process 2 (remaining CPU burst = 19)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 97
+CPU: Running process 2 (remaining CPU burst = 18)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 98
+CPU: Running process 2 (remaining CPU burst = 17)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 99
+CPU: Running process 2 (remaining CPU burst = 16)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 100
+CPU: Running process 2 (remaining CPU burst = 15)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 101
+CPU: Running process 2 (remaining CPU burst = 14)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 102
+CPU: Running process 2 (remaining CPU burst = 13)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 103
+CPU: Running process 2 (remaining CPU burst = 12)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 104
+CPU: Running process 2 (remaining CPU burst = 11)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 105
+CPU: Running process 2 (remaining CPU burst = 10)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 106
+CPU: Running process 2 (remaining CPU burst = 9)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 107
+CPU: Running process 2 (remaining CPU burst = 8)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 108
+CPU: Running process 2 (remaining CPU burst = 7)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 109
+CPU: Running process 2 (remaining CPU burst = 6)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 110
+CPU: Running process 2 (remaining CPU burst = 5)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 111
+CPU: Running process 2 (remaining CPU burst = 4)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 112
+CPU: Running process 2 (remaining CPU burst = 3)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 113
+CPU: Running process 2 (remaining CPU burst = 2)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 114
+CPU: Running process 2 (remaining CPU burst = 1)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 115
+CPU: Finishing process 2; loading process 3 (CPU burst = 30)
+Ready queue: 3-4-5-6-7-8-9
+
+t = 116
+CPU: Running process 3 (remaining CPU burst = 29)
+Ready queue: 4-5-6-7-8-9
+
+t = 117
+CPU: Running process 3 (remaining CPU burst = 28)
+Ready queue: 4-5-6-7-8-9
+
+t = 118
+CPU: Running process 3 (remaining CPU burst = 27)
+Ready queue: 4-5-6-7-8-9
+
+t = 119
+CPU: Running process 3 (remaining CPU burst = 26)
+Ready queue: 4-5-6-7-8-9
+
+t = 120
+CPU: Running process 3 (remaining CPU burst = 25)
+Ready queue: 4-5-6-7-8-9
+
+t = 121
+CPU: Running process 3 (remaining CPU burst = 24)
+Ready queue: 4-5-6-7-8-9
+
+t = 122
+CPU: Running process 3 (remaining CPU burst = 23)
+Ready queue: 4-5-6-7-8-9
+
+t = 123
+CPU: Running process 3 (remaining CPU burst = 22)
+Ready queue: 4-5-6-7-8-9
+
+t = 124
+CPU: Running process 3 (remaining CPU burst = 21)
+Ready queue: 4-5-6-7-8-9
+
+t = 125
+CPU: Running process 3 (remaining CPU burst = 20)
+Ready queue: 4-5-6-7-8-9
+
+t = 126
+CPU: Running process 3 (remaining CPU burst = 19)
+Ready queue: 4-5-6-7-8-9
+
+t = 127
+CPU: Running process 3 (remaining CPU burst = 18)
+Ready queue: 4-5-6-7-8-9
+
+t = 128
+CPU: Running process 3 (remaining CPU burst = 17)
+Ready queue: 4-5-6-7-8-9
+
+t = 129
+CPU: Running process 3 (remaining CPU burst = 16)
+Ready queue: 4-5-6-7-8-9
+
+t = 130
+CPU: Running process 3 (remaining CPU burst = 15)
+Ready queue: 4-5-6-7-8-9
+
+t = 131
+CPU: Running process 3 (remaining CPU burst = 14)
+Ready queue: 4-5-6-7-8-9
+
+t = 132
+CPU: Running process 3 (remaining CPU burst = 13)
+Ready queue: 4-5-6-7-8-9
+
+t = 133
+CPU: Running process 3 (remaining CPU burst = 12)
+Ready queue: 4-5-6-7-8-9
+
+t = 134
+CPU: Running process 3 (remaining CPU burst = 11)
+Ready queue: 4-5-6-7-8-9
+
+t = 135
+CPU: Running process 3 (remaining CPU burst = 10)
+Ready queue: 4-5-6-7-8-9
+
+t = 136
+CPU: Running process 3 (remaining CPU burst = 9)
+Ready queue: 4-5-6-7-8-9
+
+t = 137
+CPU: Running process 3 (remaining CPU burst = 8)
+Ready queue: 4-5-6-7-8-9
+
+t = 138
+CPU: Running process 3 (remaining CPU burst = 7)
+Ready queue: 4-5-6-7-8-9
+
+t = 139
+CPU: Running process 3 (remaining CPU burst = 6)
+Ready queue: 4-5-6-7-8-9
+
+t = 140
+CPU: Running process 3 (remaining CPU burst = 5)
+Ready queue: 4-5-6-7-8-9
+
+t = 141
+CPU: Running process 3 (remaining CPU burst = 4)
+Ready queue: 4-5-6-7-8-9
+
+t = 142
+CPU: Running process 3 (remaining CPU burst = 3)
+Ready queue: 4-5-6-7-8-9
+
+t = 143
+CPU: Running process 3 (remaining CPU burst = 2)
+Ready queue: 4-5-6-7-8-9
+
+t = 144
+CPU: Running process 3 (remaining CPU burst = 1)
+Ready queue: 4-5-6-7-8-9
+
+t = 145
+CPU: Finishing process 3; loading process 4 (CPU burst = 11)
+Ready queue: 4-5-6-7-8-9
+
+t = 146
+CPU: Running process 4 (remaining CPU burst = 10)
+Ready queue: 5-6-7-8-9
+
+t = 147
+CPU: Running process 4 (remaining CPU burst = 9)
+Ready queue: 5-6-7-8-9
+
+t = 148
+CPU: Running process 4 (remaining CPU burst = 8)
+Ready queue: 5-6-7-8-9
+
+t = 149
+CPU: Running process 4 (remaining CPU burst = 7)
+Ready queue: 5-6-7-8-9
+
+t = 150
+CPU: Running process 4 (remaining CPU burst = 6)
+Ready queue: 5-6-7-8-9
+
+t = 151
+CPU: Running process 4 (remaining CPU burst = 5)
+Ready queue: 5-6-7-8-9
+
+t = 152
+CPU: Running process 4 (remaining CPU burst = 4)
+Ready queue: 5-6-7-8-9
+
+t = 153
+CPU: Running process 4 (remaining CPU burst = 3)
+Ready queue: 5-6-7-8-9
+
+t = 154
+CPU: Running process 4 (remaining CPU burst = 2)
+Ready queue: 5-6-7-8-9
+
+t = 155
+CPU: Running process 4 (remaining CPU burst = 1)
+Ready queue: 5-6-7-8-9
+
+t = 156
+CPU: Finishing process 4; loading process 5 (CPU burst = 33)
+Ready queue: 5-6-7-8-9
+
+t = 157
+CPU: Running process 5 (remaining CPU burst = 32)
+Ready queue: 6-7-8-9
+
+t = 158
+CPU: Running process 5 (remaining CPU burst = 31)
+Ready queue: 6-7-8-9
+
+t = 159
+CPU: Running process 5 (remaining CPU burst = 30)
+Ready queue: 6-7-8-9
+
+t = 160
+CPU: Running process 5 (remaining CPU burst = 29)
+Ready queue: 6-7-8-9
+
+t = 161
+CPU: Running process 5 (remaining CPU burst = 28)
+Ready queue: 6-7-8-9
+
+t = 162
+CPU: Running process 5 (remaining CPU burst = 27)
+Ready queue: 6-7-8-9
+
+t = 163
+CPU: Running process 5 (remaining CPU burst = 26)
+Ready queue: 6-7-8-9
+
+t = 164
+CPU: Running process 5 (remaining CPU burst = 25)
+Ready queue: 6-7-8-9
+
+t = 165
+CPU: Running process 5 (remaining CPU burst = 24)
+Ready queue: 6-7-8-9
+
+t = 166
+CPU: Running process 5 (remaining CPU burst = 23)
+Ready queue: 6-7-8-9
+
+t = 167
+CPU: Running process 5 (remaining CPU burst = 22)
+Ready queue: 6-7-8-9
+
+t = 168
+CPU: Running process 5 (remaining CPU burst = 21)
+Ready queue: 6-7-8-9
+
+t = 169
+CPU: Running process 5 (remaining CPU burst = 20)
+Ready queue: 6-7-8-9
+
+t = 170
+CPU: Running process 5 (remaining CPU burst = 19)
+Ready queue: 6-7-8-9
+
+t = 171
+CPU: Running process 5 (remaining CPU burst = 18)
+Ready queue: 6-7-8-9
+
+t = 172
+CPU: Running process 5 (remaining CPU burst = 17)
+Ready queue: 6-7-8-9
+
+t = 173
+CPU: Running process 5 (remaining CPU burst = 16)
+Ready queue: 6-7-8-9
+
+t = 174
+CPU: Running process 5 (remaining CPU burst = 15)
+Ready queue: 6-7-8-9
+
+t = 175
+CPU: Running process 5 (remaining CPU burst = 14)
+Ready queue: 6-7-8-9
+
+t = 176
+CPU: Running process 5 (remaining CPU burst = 13)
+Ready queue: 6-7-8-9
+
+t = 177
+CPU: Running process 5 (remaining CPU burst = 12)
+Ready queue: 6-7-8-9
+
+t = 178
+CPU: Running process 5 (remaining CPU burst = 11)
+Ready queue: 6-7-8-9
+
+t = 179
+CPU: Running process 5 (remaining CPU burst = 10)
+Ready queue: 6-7-8-9
+
+t = 180
+CPU: Running process 5 (remaining CPU burst = 9)
+Ready queue: 6-7-8-9
+
+t = 181
+CPU: Running process 5 (remaining CPU burst = 8)
+Ready queue: 6-7-8-9
+
+t = 182
+CPU: Running process 5 (remaining CPU burst = 7)
+Ready queue: 6-7-8-9
+
+t = 183
+CPU: Running process 5 (remaining CPU burst = 6)
+Ready queue: 6-7-8-9
+
+t = 184
+CPU: Running process 5 (remaining CPU burst = 5)
+Ready queue: 6-7-8-9
+
+t = 185
+CPU: Running process 5 (remaining CPU burst = 4)
+Ready queue: 6-7-8-9
+
+t = 186
+CPU: Running process 5 (remaining CPU burst = 3)
+Ready queue: 6-7-8-9
+
+t = 187
+CPU: Running process 5 (remaining CPU burst = 2)
+Ready queue: 6-7-8-9
+
+t = 188
+CPU: Running process 5 (remaining CPU burst = 1)
+Ready queue: 6-7-8-9
+
+t = 189
+CPU: Finishing process 5; loading process 6 (CPU burst = 50)
+Ready queue: 6-7-8-9
+
+t = 190
+CPU: Running process 6 (remaining CPU burst = 49)
+Ready queue: 7-8-9
+
+t = 191
+CPU: Running process 6 (remaining CPU burst = 48)
+Ready queue: 7-8-9
+
+t = 192
+CPU: Running process 6 (remaining CPU burst = 47)
+Ready queue: 7-8-9
+
+t = 193
+CPU: Running process 6 (remaining CPU burst = 46)
+Ready queue: 7-8-9
+
+t = 194
+CPU: Running process 6 (remaining CPU burst = 45)
+Ready queue: 7-8-9
+
+t = 195
+CPU: Running process 6 (remaining CPU burst = 44)
+Ready queue: 7-8-9
+
+t = 196
+CPU: Running process 6 (remaining CPU burst = 43)
+Ready queue: 7-8-9
+
+t = 197
+CPU: Running process 6 (remaining CPU burst = 42)
+Ready queue: 7-8-9
+
+t = 198
+CPU: Running process 6 (remaining CPU burst = 41)
+Ready queue: 7-8-9
+
+t = 199
+CPU: Running process 6 (remaining CPU burst = 40)
+Ready queue: 7-8-9
+
+t = 200
+CPU: Running process 6 (remaining CPU burst = 39)
+Ready queue: 7-8-9
+
+t = 201
+CPU: Running process 6 (remaining CPU burst = 38)
+Ready queue: 7-8-9
+
+t = 202
+CPU: Running process 6 (remaining CPU burst = 37)
+Ready queue: 7-8-9
+
+t = 203
+CPU: Running process 6 (remaining CPU burst = 36)
+Ready queue: 7-8-9
+
+t = 204
+CPU: Running process 6 (remaining CPU burst = 35)
+Ready queue: 7-8-9
+
+t = 205
+CPU: Running process 6 (remaining CPU burst = 34)
+Ready queue: 7-8-9
+
+t = 206
+CPU: Running process 6 (remaining CPU burst = 33)
+Ready queue: 7-8-9
+
+t = 207
+CPU: Running process 6 (remaining CPU burst = 32)
+Ready queue: 7-8-9
+
+t = 208
+CPU: Running process 6 (remaining CPU burst = 31)
+Ready queue: 7-8-9
+
+t = 209
+CPU: Running process 6 (remaining CPU burst = 30)
+Ready queue: 7-8-9
+
+t = 210
+CPU: Running process 6 (remaining CPU burst = 29)
+Ready queue: 7-8-9
+
+t = 211
+CPU: Running process 6 (remaining CPU burst = 28)
+Ready queue: 7-8-9
+
+t = 212
+CPU: Running process 6 (remaining CPU burst = 27)
+Ready queue: 7-8-9
+
+t = 213
+CPU: Running process 6 (remaining CPU burst = 26)
+Ready queue: 7-8-9
+
+t = 214
+CPU: Running process 6 (remaining CPU burst = 25)
+Ready queue: 7-8-9
+
+t = 215
+CPU: Running process 6 (remaining CPU burst = 24)
+Ready queue: 7-8-9
+
+t = 216
+CPU: Running process 6 (remaining CPU burst = 23)
+Ready queue: 7-8-9
+
+t = 217
+CPU: Running process 6 (remaining CPU burst = 22)
+Ready queue: 7-8-9
+
+t = 218
+CPU: Running process 6 (remaining CPU burst = 21)
+Ready queue: 7-8-9
+
+t = 219
+CPU: Running process 6 (remaining CPU burst = 20)
+Ready queue: 7-8-9
+
+t = 220
+CPU: Running process 6 (remaining CPU burst = 19)
+Ready queue: 7-8-9
+
+t = 221
+CPU: Running process 6 (remaining CPU burst = 18)
+Ready queue: 7-8-9
+
+t = 222
+CPU: Running process 6 (remaining CPU burst = 17)
+Ready queue: 7-8-9
+
+t = 223
+CPU: Running process 6 (remaining CPU burst = 16)
+Ready queue: 7-8-9
+
+t = 224
+CPU: Running process 6 (remaining CPU burst = 15)
+Ready queue: 7-8-9
+
+t = 225
+CPU: Running process 6 (remaining CPU burst = 14)
+Ready queue: 7-8-9
+
+t = 226
+CPU: Running process 6 (remaining CPU burst = 13)
+Ready queue: 7-8-9
+
+t = 227
+CPU: Running process 6 (remaining CPU burst = 12)
+Ready queue: 7-8-9
+
+t = 228
+CPU: Running process 6 (remaining CPU burst = 11)
+Ready queue: 7-8-9
+
+t = 229
+CPU: Running process 6 (remaining CPU burst = 10)
+Ready queue: 7-8-9
+
+t = 230
+CPU: Running process 6 (remaining CPU burst = 9)
+Ready queue: 7-8-9
+
+t = 231
+CPU: Running process 6 (remaining CPU burst = 8)
+Ready queue: 7-8-9
+
+t = 232
+CPU: Running process 6 (remaining CPU burst = 7)
+Ready queue: 7-8-9
+
+t = 233
+CPU: Running process 6 (remaining CPU burst = 6)
+Ready queue: 7-8-9
+
+t = 234
+CPU: Running process 6 (remaining CPU burst = 5)
+Ready queue: 7-8-9
+
+t = 235
+CPU: Running process 6 (remaining CPU burst = 4)
+Ready queue: 7-8-9
+
+t = 236
+CPU: Running process 6 (remaining CPU burst = 3)
+Ready queue: 7-8-9
+
+t = 237
+CPU: Running process 6 (remaining CPU burst = 2)
+Ready queue: 7-8-9
+
+t = 238
+CPU: Running process 6 (remaining CPU burst = 1)
+Ready queue: 7-8-9
+
+t = 239
+CPU: Finishing process 6; loading process 7 (CPU burst = 2)
+Ready queue: 7-8-9
+
+t = 240
+CPU: Running process 7 (remaining CPU burst = 1)
+Ready queue: 8-9
+
+t = 241
+CPU: Finishing process 7; loading process 8 (CPU burst = 2)
+Ready queue: 8-9
+
+t = 242
+CPU: Running process 8 (remaining CPU burst = 1)
+Ready queue: 9
+
+t = 243
+CPU: Finishing process 8; loading process 9 (CPU burst = 2)
+Ready queue: 9
+
+t = 244
+CPU: Running process 9 (remaining CPU burst = 1)
+Ready queue: empty
+
+t = 245
+CPU: Finishing process 9
+Ready queue: empty
+
+*********************************************************
+FCFS Summary (WT = wait time, TT = turnaround time):
+
+PID     WT     TT
+ 0       0     48
+ 1      43     53
+ 2      48    105
+ 3     100    130
+ 4     125    136
+ 5     131    164
+ 6     159    209
+ 7     204    206
+ 8     201    203
+ 9     198    200
+AVG 120.90 145.40
+
+Process sequence: 0-1-2-3-4-5-6-7-8-9
+Context switches: 10
+
+
+***** SJF Scheduling *****
+t = 0
+CPU: Loading process 0 (CPU burst = 48)
+Ready queue: 0
+
+t = 1
+CPU: Running process 0 (remaining CPU burst = 47)
+Ready queue: empty
+
+t = 2
+CPU: Running process 0 (remaining CPU burst = 46)
+Ready queue: empty
+
+t = 3
+CPU: Running process 0 (remaining CPU burst = 45)
+Ready queue: empty
+
+t = 4
+CPU: Running process 0 (remaining CPU burst = 44)
+Ready queue: empty
+
+t = 5
+CPU: Running process 0 (remaining CPU burst = 43)
+Ready queue: 1
+
+t = 6
+CPU: Running process 0 (remaining CPU burst = 42)
+Ready queue: 1
+
+t = 7
+CPU: Running process 0 (remaining CPU burst = 41)
+Ready queue: 1
+
+t = 8
+CPU: Running process 0 (remaining CPU burst = 40)
+Ready queue: 1
+
+t = 9
+CPU: Running process 0 (remaining CPU burst = 39)
+Ready queue: 1
+
+t = 10
+CPU: Running process 0 (remaining CPU burst = 38)
+Ready queue: 1-2
+
+t = 11
+CPU: Running process 0 (remaining CPU burst = 37)
+Ready queue: 1-2
+
+t = 12
+CPU: Running process 0 (remaining CPU burst = 36)
+Ready queue: 1-2
+
+t = 13
+CPU: Running process 0 (remaining CPU burst = 35)
+Ready queue: 1-2
+
+t = 14
+CPU: Running process 0 (remaining CPU burst = 34)
+Ready queue: 1-2
+
+t = 15
+CPU: Running process 0 (remaining CPU burst = 33)
+Ready queue: 1-3-2
+
+t = 16
+CPU: Running process 0 (remaining CPU burst = 32)
+Ready queue: 1-3-2
+
+t = 17
+CPU: Running process 0 (remaining CPU burst = 31)
+Ready queue: 1-3-2
+
+t = 18
+CPU: Running process 0 (remaining CPU burst = 30)
+Ready queue: 1-3-2
+
+t = 19
+CPU: Running process 0 (remaining CPU burst = 29)
+Ready queue: 1-3-2
+
+t = 20
+CPU: Running process 0 (remaining CPU burst = 28)
+Ready queue: 1-4-3-2
+
+t = 21
+CPU: Running process 0 (remaining CPU burst = 27)
+Ready queue: 1-4-3-2
+
+t = 22
+CPU: Running process 0 (remaining CPU burst = 26)
+Ready queue: 1-4-3-2
+
+t = 23
+CPU: Running process 0 (remaining CPU burst = 25)
+Ready queue: 1-4-3-2
+
+t = 24
+CPU: Running process 0 (remaining CPU burst = 24)
+Ready queue: 1-4-3-2
+
+t = 25
+CPU: Running process 0 (remaining CPU burst = 23)
+Ready queue: 1-4-3-5-2
+
+t = 26
+CPU: Running process 0 (remaining CPU burst = 22)
+Ready queue: 1-4-3-5-2
+
+t = 27
+CPU: Running process 0 (remaining CPU burst = 21)
+Ready queue: 1-4-3-5-2
+
+t = 28
+CPU: Running process 0 (remaining CPU burst = 20)
+Ready queue: 1-4-3-5-2
+
+t = 29
+CPU: Running process 0 (remaining CPU burst = 19)
+Ready queue: 1-4-3-5-2
+
+t = 30
+CPU: Running process 0 (remaining CPU burst = 18)
+Ready queue: 1-4-3-5-6-2
+
+t = 31
+CPU: Running process 0 (remaining CPU burst = 17)
+Ready queue: 1-4-3-5-6-2
+
+t = 32
+CPU: Running process 0 (remaining CPU burst = 16)
+Ready queue: 1-4-3-5-6-2
+
+t = 33
+CPU: Running process 0 (remaining CPU burst = 15)
+Ready queue: 1-4-3-5-6-2
+
+t = 34
+CPU: Running process 0 (remaining CPU burst = 14)
+Ready queue: 1-4-3-5-6-2
+
+t = 35
+CPU: Running process 0 (remaining CPU burst = 13)
+Ready queue: 7-1-4-3-5-6-2
+
+t = 36
+CPU: Running process 0 (remaining CPU burst = 12)
+Ready queue: 7-1-4-3-5-6-2
+
+t = 37
+CPU: Running process 0 (remaining CPU burst = 11)
+Ready queue: 7-1-4-3-5-6-2
+
+t = 38
+CPU: Running process 0 (remaining CPU burst = 10)
+Ready queue: 7-1-4-3-5-6-2
+
+t = 39
+CPU: Running process 0 (remaining CPU burst = 9)
+Ready queue: 7-1-4-3-5-6-2
+
+t = 40
+CPU: Running process 0 (remaining CPU burst = 8)
+Ready queue: 7-8-1-4-3-5-6-2
+
+t = 41
+CPU: Running process 0 (remaining CPU burst = 7)
+Ready queue: 7-8-1-4-3-5-6-2
+
+t = 42
+CPU: Running process 0 (remaining CPU burst = 6)
+Ready queue: 7-8-1-4-3-5-6-2
+
+t = 43
+CPU: Running process 0 (remaining CPU burst = 5)
+Ready queue: 7-8-1-4-3-5-6-2
+
+t = 44
+CPU: Running process 0 (remaining CPU burst = 4)
+Ready queue: 7-8-1-4-3-5-6-2
+
+t = 45
+CPU: Running process 0 (remaining CPU burst = 3)
+Ready queue: 7-8-9-1-4-3-5-6-2
+
+t = 46
+CPU: Running process 0 (remaining CPU burst = 2)
+Ready queue: 7-8-9-1-4-3-5-6-2
+
+t = 47
+CPU: Running process 0 (remaining CPU burst = 1)
+Ready queue: 7-8-9-1-4-3-5-6-2
+
+t = 48
+CPU: Finishing process 0; loading process 7 (CPU burst = 2)
+Ready queue: 7-8-9-1-4-3-5-6-2
+
+t = 49
+CPU: Running process 7 (remaining CPU burst = 1)
+Ready queue: 8-9-1-4-3-5-6-2
+
+t = 50
+CPU: Finishing process 7; loading process 8 (CPU burst = 2)
+Ready queue: 8-9-1-4-3-5-6-2
+
+t = 51
+CPU: Running process 8 (remaining CPU burst = 1)
+Ready queue: 9-1-4-3-5-6-2
+
+t = 52
+CPU: Finishing process 8; loading process 9 (CPU burst = 2)
+Ready queue: 9-1-4-3-5-6-2
+
+t = 53
+CPU: Running process 9 (remaining CPU burst = 1)
+Ready queue: 1-4-3-5-6-2
+
+t = 54
+CPU: Finishing process 9; loading process 1 (CPU burst = 10)
+Ready queue: 1-4-3-5-6-2
+
+t = 55
+CPU: Running process 1 (remaining CPU burst = 9)
+Ready queue: 4-3-5-6-2
+
+t = 56
+CPU: Running process 1 (remaining CPU burst = 8)
+Ready queue: 4-3-5-6-2
+
+t = 57
+CPU: Running process 1 (remaining CPU burst = 7)
+Ready queue: 4-3-5-6-2
+
+t = 58
+CPU: Running process 1 (remaining CPU burst = 6)
+Ready queue: 4-3-5-6-2
+
+t = 59
+CPU: Running process 1 (remaining CPU burst = 5)
+Ready queue: 4-3-5-6-2
+
+t = 60
+CPU: Running process 1 (remaining CPU burst = 4)
+Ready queue: 4-3-5-6-2
+
+t = 61
+CPU: Running process 1 (remaining CPU burst = 3)
+Ready queue: 4-3-5-6-2
+
+t = 62
+CPU: Running process 1 (remaining CPU burst = 2)
+Ready queue: 4-3-5-6-2
+
+t = 63
+CPU: Running process 1 (remaining CPU burst = 1)
+Ready queue: 4-3-5-6-2
+
+t = 64
+CPU: Finishing process 1; loading process 4 (CPU burst = 11)
+Ready queue: 4-3-5-6-2
+
+t = 65
+CPU: Running process 4 (remaining CPU burst = 10)
+Ready queue: 3-5-6-2
+
+t = 66
+CPU: Running process 4 (remaining CPU burst = 9)
+Ready queue: 3-5-6-2
+
+t = 67
+CPU: Running process 4 (remaining CPU burst = 8)
+Ready queue: 3-5-6-2
+
+t = 68
+CPU: Running process 4 (remaining CPU burst = 7)
+Ready queue: 3-5-6-2
+
+t = 69
+CPU: Running process 4 (remaining CPU burst = 6)
+Ready queue: 3-5-6-2
+
+t = 70
+CPU: Running process 4 (remaining CPU burst = 5)
+Ready queue: 3-5-6-2
+
+t = 71
+CPU: Running process 4 (remaining CPU burst = 4)
+Ready queue: 3-5-6-2
+
+t = 72
+CPU: Running process 4 (remaining CPU burst = 3)
+Ready queue: 3-5-6-2
+
+t = 73
+CPU: Running process 4 (remaining CPU burst = 2)
+Ready queue: 3-5-6-2
+
+t = 74
+CPU: Running process 4 (remaining CPU burst = 1)
+Ready queue: 3-5-6-2
+
+t = 75
+CPU: Finishing process 4; loading process 3 (CPU burst = 30)
+Ready queue: 3-5-6-2
+
+t = 76
+CPU: Running process 3 (remaining CPU burst = 29)
+Ready queue: 5-6-2
+
+t = 77
+CPU: Running process 3 (remaining CPU burst = 28)
+Ready queue: 5-6-2
+
+t = 78
+CPU: Running process 3 (remaining CPU burst = 27)
+Ready queue: 5-6-2
+
+t = 79
+CPU: Running process 3 (remaining CPU burst = 26)
+Ready queue: 5-6-2
+
+t = 80
+CPU: Running process 3 (remaining CPU burst = 25)
+Ready queue: 5-6-2
+
+t = 81
+CPU: Running process 3 (remaining CPU burst = 24)
+Ready queue: 5-6-2
+
+t = 82
+CPU: Running process 3 (remaining CPU burst = 23)
+Ready queue: 5-6-2
+
+t = 83
+CPU: Running process 3 (remaining CPU burst = 22)
+Ready queue: 5-6-2
+
+t = 84
+CPU: Running process 3 (remaining CPU burst = 21)
+Ready queue: 5-6-2
+
+t = 85
+CPU: Running process 3 (remaining CPU burst = 20)
+Ready queue: 5-6-2
+
+t = 86
+CPU: Running process 3 (remaining CPU burst = 19)
+Ready queue: 5-6-2
+
+t = 87
+CPU: Running process 3 (remaining CPU burst = 18)
+Ready queue: 5-6-2
+
+t = 88
+CPU: Running process 3 (remaining CPU burst = 17)
+Ready queue: 5-6-2
+
+t = 89
+CPU: Running process 3 (remaining CPU burst = 16)
+Ready queue: 5-6-2
+
+t = 90
+CPU: Running process 3 (remaining CPU burst = 15)
+Ready queue: 5-6-2
+
+t = 91
+CPU: Running process 3 (remaining CPU burst = 14)
+Ready queue: 5-6-2
+
+t = 92
+CPU: Running process 3 (remaining CPU burst = 13)
+Ready queue: 5-6-2
+
+t = 93
+CPU: Running process 3 (remaining CPU burst = 12)
+Ready queue: 5-6-2
+
+t = 94
+CPU: Running process 3 (remaining CPU burst = 11)
+Ready queue: 5-6-2
+
+t = 95
+CPU: Running process 3 (remaining CPU burst = 10)
+Ready queue: 5-6-2
+
+t = 96
+CPU: Running process 3 (remaining CPU burst = 9)
+Ready queue: 5-6-2
+
+t = 97
+CPU: Running process 3 (remaining CPU burst = 8)
+Ready queue: 5-6-2
+
+t = 98
+CPU: Running process 3 (remaining CPU burst = 7)
+Ready queue: 5-6-2
+
+t = 99
+CPU: Running process 3 (remaining CPU burst = 6)
+Ready queue: 5-6-2
+
+t = 100
+CPU: Running process 3 (remaining CPU burst = 5)
+Ready queue: 5-6-2
+
+t = 101
+CPU: Running process 3 (remaining CPU burst = 4)
+Ready queue: 5-6-2
+
+t = 102
+CPU: Running process 3 (remaining CPU burst = 3)
+Ready queue: 5-6-2
+
+t = 103
+CPU: Running process 3 (remaining CPU burst = 2)
+Ready queue: 5-6-2
+
+t = 104
+CPU: Running process 3 (remaining CPU burst = 1)
+Ready queue: 5-6-2
+
+t = 105
+CPU: Finishing process 3; loading process 5 (CPU burst = 33)
+Ready queue: 5-6-2
+
+t = 106
+CPU: Running process 5 (remaining CPU burst = 32)
+Ready queue: 6-2
+
+t = 107
+CPU: Running process 5 (remaining CPU burst = 31)
+Ready queue: 6-2
+
+t = 108
+CPU: Running process 5 (remaining CPU burst = 30)
+Ready queue: 6-2
+
+t = 109
+CPU: Running process 5 (remaining CPU burst = 29)
+Ready queue: 6-2
+
+t = 110
+CPU: Running process 5 (remaining CPU burst = 28)
+Ready queue: 6-2
+
+t = 111
+CPU: Running process 5 (remaining CPU burst = 27)
+Ready queue: 6-2
+
+t = 112
+CPU: Running process 5 (remaining CPU burst = 26)
+Ready queue: 6-2
+
+t = 113
+CPU: Running process 5 (remaining CPU burst = 25)
+Ready queue: 6-2
+
+t = 114
+CPU: Running process 5 (remaining CPU burst = 24)
+Ready queue: 6-2
+
+t = 115
+CPU: Running process 5 (remaining CPU burst = 23)
+Ready queue: 6-2
+
+t = 116
+CPU: Running process 5 (remaining CPU burst = 22)
+Ready queue: 6-2
+
+t = 117
+CPU: Running process 5 (remaining CPU burst = 21)
+Ready queue: 6-2
+
+t = 118
+CPU: Running process 5 (remaining CPU burst = 20)
+Ready queue: 6-2
+
+t = 119
+CPU: Running process 5 (remaining CPU burst = 19)
+Ready queue: 6-2
+
+t = 120
+CPU: Running process 5 (remaining CPU burst = 18)
+Ready queue: 6-2
+
+t = 121
+CPU: Running process 5 (remaining CPU burst = 17)
+Ready queue: 6-2
+
+t = 122
+CPU: Running process 5 (remaining CPU burst = 16)
+Ready queue: 6-2
+
+t = 123
+CPU: Running process 5 (remaining CPU burst = 15)
+Ready queue: 6-2
+
+t = 124
+CPU: Running process 5 (remaining CPU burst = 14)
+Ready queue: 6-2
+
+t = 125
+CPU: Running process 5 (remaining CPU burst = 13)
+Ready queue: 6-2
+
+t = 126
+CPU: Running process 5 (remaining CPU burst = 12)
+Ready queue: 6-2
+
+t = 127
+CPU: Running process 5 (remaining CPU burst = 11)
+Ready queue: 6-2
+
+t = 128
+CPU: Running process 5 (remaining CPU burst = 10)
+Ready queue: 6-2
+
+t = 129
+CPU: Running process 5 (remaining CPU burst = 9)
+Ready queue: 6-2
+
+t = 130
+CPU: Running process 5 (remaining CPU burst = 8)
+Ready queue: 6-2
+
+t = 131
+CPU: Running process 5 (remaining CPU burst = 7)
+Ready queue: 6-2
+
+t = 132
+CPU: Running process 5 (remaining CPU burst = 6)
+Ready queue: 6-2
+
+t = 133
+CPU: Running process 5 (remaining CPU burst = 5)
+Ready queue: 6-2
+
+t = 134
+CPU: Running process 5 (remaining CPU burst = 4)
+Ready queue: 6-2
+
+t = 135
+CPU: Running process 5 (remaining CPU burst = 3)
+Ready queue: 6-2
+
+t = 136
+CPU: Running process 5 (remaining CPU burst = 2)
+Ready queue: 6-2
+
+t = 137
+CPU: Running process 5 (remaining CPU burst = 1)
+Ready queue: 6-2
+
+t = 138
+CPU: Finishing process 5; loading process 6 (CPU burst = 50)
+Ready queue: 6-2
+
+t = 139
+CPU: Running process 6 (remaining CPU burst = 49)
+Ready queue: 2
+
+t = 140
+CPU: Running process 6 (remaining CPU burst = 48)
+Ready queue: 2
+
+t = 141
+CPU: Running process 6 (remaining CPU burst = 47)
+Ready queue: 2
+
+t = 142
+CPU: Running process 6 (remaining CPU burst = 46)
+Ready queue: 2
+
+t = 143
+CPU: Running process 6 (remaining CPU burst = 45)
+Ready queue: 2
+
+t = 144
+CPU: Running process 6 (remaining CPU burst = 44)
+Ready queue: 2
+
+t = 145
+CPU: Running process 6 (remaining CPU burst = 43)
+Ready queue: 2
+
+t = 146
+CPU: Running process 6 (remaining CPU burst = 42)
+Ready queue: 2
+
+t = 147
+CPU: Running process 6 (remaining CPU burst = 41)
+Ready queue: 2
+
+t = 148
+CPU: Running process 6 (remaining CPU burst = 40)
+Ready queue: 2
+
+t = 149
+CPU: Running process 6 (remaining CPU burst = 39)
+Ready queue: 2
+
+t = 150
+CPU: Running process 6 (remaining CPU burst = 38)
+Ready queue: 2
+
+t = 151
+CPU: Running process 6 (remaining CPU burst = 37)
+Ready queue: 2
+
+t = 152
+CPU: Running process 6 (remaining CPU burst = 36)
+Ready queue: 2
+
+t = 153
+CPU: Running process 6 (remaining CPU burst = 35)
+Ready queue: 2
+
+t = 154
+CPU: Running process 6 (remaining CPU burst = 34)
+Ready queue: 2
+
+t = 155
+CPU: Running process 6 (remaining CPU burst = 33)
+Ready queue: 2
+
+t = 156
+CPU: Running process 6 (remaining CPU burst = 32)
+Ready queue: 2
+
+t = 157
+CPU: Running process 6 (remaining CPU burst = 31)
+Ready queue: 2
+
+t = 158
+CPU: Running process 6 (remaining CPU burst = 30)
+Ready queue: 2
+
+t = 159
+CPU: Running process 6 (remaining CPU burst = 29)
+Ready queue: 2
+
+t = 160
+CPU: Running process 6 (remaining CPU burst = 28)
+Ready queue: 2
+
+t = 161
+CPU: Running process 6 (remaining CPU burst = 27)
+Ready queue: 2
+
+t = 162
+CPU: Running process 6 (remaining CPU burst = 26)
+Ready queue: 2
+
+t = 163
+CPU: Running process 6 (remaining CPU burst = 25)
+Ready queue: 2
+
+t = 164
+CPU: Running process 6 (remaining CPU burst = 24)
+Ready queue: 2
+
+t = 165
+CPU: Running process 6 (remaining CPU burst = 23)
+Ready queue: 2
+
+t = 166
+CPU: Running process 6 (remaining CPU burst = 22)
+Ready queue: 2
+
+t = 167
+CPU: Running process 6 (remaining CPU burst = 21)
+Ready queue: 2
+
+t = 168
+CPU: Running process 6 (remaining CPU burst = 20)
+Ready queue: 2
+
+t = 169
+CPU: Running process 6 (remaining CPU burst = 19)
+Ready queue: 2
+
+t = 170
+CPU: Running process 6 (remaining CPU burst = 18)
+Ready queue: 2
+
+t = 171
+CPU: Running process 6 (remaining CPU burst = 17)
+Ready queue: 2
+
+t = 172
+CPU: Running process 6 (remaining CPU burst = 16)
+Ready queue: 2
+
+t = 173
+CPU: Running process 6 (remaining CPU burst = 15)
+Ready queue: 2
+
+t = 174
+CPU: Running process 6 (remaining CPU burst = 14)
+Ready queue: 2
+
+t = 175
+CPU: Running process 6 (remaining CPU burst = 13)
+Ready queue: 2
+
+t = 176
+CPU: Running process 6 (remaining CPU burst = 12)
+Ready queue: 2
+
+t = 177
+CPU: Running process 6 (remaining CPU burst = 11)
+Ready queue: 2
+
+t = 178
+CPU: Running process 6 (remaining CPU burst = 10)
+Ready queue: 2
+
+t = 179
+CPU: Running process 6 (remaining CPU burst = 9)
+Ready queue: 2
+
+t = 180
+CPU: Running process 6 (remaining CPU burst = 8)
+Ready queue: 2
+
+t = 181
+CPU: Running process 6 (remaining CPU burst = 7)
+Ready queue: 2
+
+t = 182
+CPU: Running process 6 (remaining CPU burst = 6)
+Ready queue: 2
+
+t = 183
+CPU: Running process 6 (remaining CPU burst = 5)
+Ready queue: 2
+
+t = 184
+CPU: Running process 6 (remaining CPU burst = 4)
+Ready queue: 2
+
+t = 185
+CPU: Running process 6 (remaining CPU burst = 3)
+Ready queue: 2
+
+t = 186
+CPU: Running process 6 (remaining CPU burst = 2)
+Ready queue: 2
+
+t = 187
+CPU: Running process 6 (remaining CPU burst = 1)
+Ready queue: 2
+
+t = 188
+CPU: Finishing process 6; loading process 2 (CPU burst = 57)
+Ready queue: 2
+
+t = 189
+CPU: Running process 2 (remaining CPU burst = 56)
+Ready queue: empty
+
+t = 190
+CPU: Running process 2 (remaining CPU burst = 55)
+Ready queue: empty
+
+t = 191
+CPU: Running process 2 (remaining CPU burst = 54)
+Ready queue: empty
+
+t = 192
+CPU: Running process 2 (remaining CPU burst = 53)
+Ready queue: empty
+
+t = 193
+CPU: Running process 2 (remaining CPU burst = 52)
+Ready queue: empty
+
+t = 194
+CPU: Running process 2 (remaining CPU burst = 51)
+Ready queue: empty
+
+t = 195
+CPU: Running process 2 (remaining CPU burst = 50)
+Ready queue: empty
+
+t = 196
+CPU: Running process 2 (remaining CPU burst = 49)
+Ready queue: empty
+
+t = 197
+CPU: Running process 2 (remaining CPU burst = 48)
+Ready queue: empty
+
+t = 198
+CPU: Running process 2 (remaining CPU burst = 47)
+Ready queue: empty
+
+t = 199
+CPU: Running process 2 (remaining CPU burst = 46)
+Ready queue: empty
+
+t = 200
+CPU: Running process 2 (remaining CPU burst = 45)
+Ready queue: empty
+
+t = 201
+CPU: Running process 2 (remaining CPU burst = 44)
+Ready queue: empty
+
+t = 202
+CPU: Running process 2 (remaining CPU burst = 43)
+Ready queue: empty
+
+t = 203
+CPU: Running process 2 (remaining CPU burst = 42)
+Ready queue: empty
+
+t = 204
+CPU: Running process 2 (remaining CPU burst = 41)
+Ready queue: empty
+
+t = 205
+CPU: Running process 2 (remaining CPU burst = 40)
+Ready queue: empty
+
+t = 206
+CPU: Running process 2 (remaining CPU burst = 39)
+Ready queue: empty
+
+t = 207
+CPU: Running process 2 (remaining CPU burst = 38)
+Ready queue: empty
+
+t = 208
+CPU: Running process 2 (remaining CPU burst = 37)
+Ready queue: empty
+
+t = 209
+CPU: Running process 2 (remaining CPU burst = 36)
+Ready queue: empty
+
+t = 210
+CPU: Running process 2 (remaining CPU burst = 35)
+Ready queue: empty
+
+t = 211
+CPU: Running process 2 (remaining CPU burst = 34)
+Ready queue: empty
+
+t = 212
+CPU: Running process 2 (remaining CPU burst = 33)
+Ready queue: empty
+
+t = 213
+CPU: Running process 2 (remaining CPU burst = 32)
+Ready queue: empty
+
+t = 214
+CPU: Running process 2 (remaining CPU burst = 31)
+Ready queue: empty
+
+t = 215
+CPU: Running process 2 (remaining CPU burst = 30)
+Ready queue: empty
+
+t = 216
+CPU: Running process 2 (remaining CPU burst = 29)
+Ready queue: empty
+
+t = 217
+CPU: Running process 2 (remaining CPU burst = 28)
+Ready queue: empty
+
+t = 218
+CPU: Running process 2 (remaining CPU burst = 27)
+Ready queue: empty
+
+t = 219
+CPU: Running process 2 (remaining CPU burst = 26)
+Ready queue: empty
+
+t = 220
+CPU: Running process 2 (remaining CPU burst = 25)
+Ready queue: empty
+
+t = 221
+CPU: Running process 2 (remaining CPU burst = 24)
+Ready queue: empty
+
+t = 222
+CPU: Running process 2 (remaining CPU burst = 23)
+Ready queue: empty
+
+t = 223
+CPU: Running process 2 (remaining CPU burst = 22)
+Ready queue: empty
+
+t = 224
+CPU: Running process 2 (remaining CPU burst = 21)
+Ready queue: empty
+
+t = 225
+CPU: Running process 2 (remaining CPU burst = 20)
+Ready queue: empty
+
+t = 226
+CPU: Running process 2 (remaining CPU burst = 19)
+Ready queue: empty
+
+t = 227
+CPU: Running process 2 (remaining CPU burst = 18)
+Ready queue: empty
+
+t = 228
+CPU: Running process 2 (remaining CPU burst = 17)
+Ready queue: empty
+
+t = 229
+CPU: Running process 2 (remaining CPU burst = 16)
+Ready queue: empty
+
+t = 230
+CPU: Running process 2 (remaining CPU burst = 15)
+Ready queue: empty
+
+t = 231
+CPU: Running process 2 (remaining CPU burst = 14)
+Ready queue: empty
+
+t = 232
+CPU: Running process 2 (remaining CPU burst = 13)
+Ready queue: empty
+
+t = 233
+CPU: Running process 2 (remaining CPU burst = 12)
+Ready queue: empty
+
+t = 234
+CPU: Running process 2 (remaining CPU burst = 11)
+Ready queue: empty
+
+t = 235
+CPU: Running process 2 (remaining CPU burst = 10)
+Ready queue: empty
+
+t = 236
+CPU: Running process 2 (remaining CPU burst = 9)
+Ready queue: empty
+
+t = 237
+CPU: Running process 2 (remaining CPU burst = 8)
+Ready queue: empty
+
+t = 238
+CPU: Running process 2 (remaining CPU burst = 7)
+Ready queue: empty
+
+t = 239
+CPU: Running process 2 (remaining CPU burst = 6)
+Ready queue: empty
+
+t = 240
+CPU: Running process 2 (remaining CPU burst = 5)
+Ready queue: empty
+
+t = 241
+CPU: Running process 2 (remaining CPU burst = 4)
+Ready queue: empty
+
+t = 242
+CPU: Running process 2 (remaining CPU burst = 3)
+Ready queue: empty
+
+t = 243
+CPU: Running process 2 (remaining CPU burst = 2)
+Ready queue: empty
+
+t = 244
+CPU: Running process 2 (remaining CPU burst = 1)
+Ready queue: empty
+
+t = 245
+CPU: Finishing process 2
+Ready queue: empty
+
+*********************************************************
+SJF Summary (WT = wait time, TT = turnaround time):
+
+PID     WT     TT
+ 0       0     48
+ 1      49     59
+ 2     178    235
+ 3      60     90
+ 4      44     55
+ 5      80    113
+ 6     108    158
+ 7      13     15
+ 8      10     12
+ 9       7      9
+AVG  54.90  79.40
+
+Process sequence: 0-7-8-9-1-4-3-5-6-2
+Context switches: 10
+
+
+***** STCF Scheduling *****
+t = 0
+CPU: Loading process 0 (CPU burst = 48)
+Ready queue: 0
+
+t = 1
+CPU: Running process 0 (remaining CPU burst = 47)
+Ready queue: empty
+
+t = 2
+CPU: Running process 0 (remaining CPU burst = 46)
+Ready queue: empty
+
+t = 3
+CPU: Running process 0 (remaining CPU burst = 45)
+Ready queue: empty
+
+t = 4
+CPU: Running process 0 (remaining CPU burst = 44)
+Ready queue: empty
+
+t = 5
+CPU: Preempting process 0 (remaining CPU burst = 43); loading process 1 (CPU burst = 10)
+Ready queue: 1
+
+t = 6
+CPU: Running process 1 (remaining CPU burst = 9)
+Ready queue: 0
+
+t = 7
+CPU: Running process 1 (remaining CPU burst = 8)
+Ready queue: 0
+
+t = 8
+CPU: Running process 1 (remaining CPU burst = 7)
+Ready queue: 0
+
+t = 9
+CPU: Running process 1 (remaining CPU burst = 6)
+Ready queue: 0
+
+t = 10
+CPU: Running process 1 (remaining CPU burst = 5)
+Ready queue: 0-2
+
+t = 11
+CPU: Running process 1 (remaining CPU burst = 4)
+Ready queue: 0-2
+
+t = 12
+CPU: Running process 1 (remaining CPU burst = 3)
+Ready queue: 0-2
+
+t = 13
+CPU: Running process 1 (remaining CPU burst = 2)
+Ready queue: 0-2
+
+t = 14
+CPU: Running process 1 (remaining CPU burst = 1)
+Ready queue: 0-2
+
+t = 15
+CPU: Finishing process 1; loading process 3 (CPU burst = 30)
+Ready queue: 3-0-2
+
+t = 16
+CPU: Running process 3 (remaining CPU burst = 29)
+Ready queue: 0-2
+
+t = 17
+CPU: Running process 3 (remaining CPU burst = 28)
+Ready queue: 0-2
+
+t = 18
+CPU: Running process 3 (remaining CPU burst = 27)
+Ready queue: 0-2
+
+t = 19
+CPU: Running process 3 (remaining CPU burst = 26)
+Ready queue: 0-2
+
+t = 20
+CPU: Preempting process 3 (remaining CPU burst = 25); loading process 4 (CPU burst = 11)
+Ready queue: 4-0-2
+
+t = 21
+CPU: Running process 4 (remaining CPU burst = 10)
+Ready queue: 3-0-2
+
+t = 22
+CPU: Running process 4 (remaining CPU burst = 9)
+Ready queue: 3-0-2
+
+t = 23
+CPU: Running process 4 (remaining CPU burst = 8)
+Ready queue: 3-0-2
+
+t = 24
+CPU: Running process 4 (remaining CPU burst = 7)
+Ready queue: 3-0-2
+
+t = 25
+CPU: Running process 4 (remaining CPU burst = 6)
+Ready queue: 3-5-0-2
+
+t = 26
+CPU: Running process 4 (remaining CPU burst = 5)
+Ready queue: 3-5-0-2
+
+t = 27
+CPU: Running process 4 (remaining CPU burst = 4)
+Ready queue: 3-5-0-2
+
+t = 28
+CPU: Running process 4 (remaining CPU burst = 3)
+Ready queue: 3-5-0-2
+
+t = 29
+CPU: Running process 4 (remaining CPU burst = 2)
+Ready queue: 3-5-0-2
+
+t = 30
+CPU: Running process 4 (remaining CPU burst = 1)
+Ready queue: 3-5-0-6-2
+
+t = 31
+CPU: Finishing process 4; loading process 3 (CPU burst = 25)
+Ready queue: 3-5-0-6-2
+
+t = 32
+CPU: Running process 3 (remaining CPU burst = 24)
+Ready queue: 5-0-6-2
+
+t = 33
+CPU: Running process 3 (remaining CPU burst = 23)
+Ready queue: 5-0-6-2
+
+t = 34
+CPU: Running process 3 (remaining CPU burst = 22)
+Ready queue: 5-0-6-2
+
+t = 35
+CPU: Preempting process 3 (remaining CPU burst = 21); loading process 7 (CPU burst = 2)
+Ready queue: 7-5-0-6-2
+
+t = 36
+CPU: Running process 7 (remaining CPU burst = 1)
+Ready queue: 3-5-0-6-2
+
+t = 37
+CPU: Finishing process 7; loading process 3 (CPU burst = 21)
+Ready queue: 3-5-0-6-2
+
+t = 38
+CPU: Running process 3 (remaining CPU burst = 20)
+Ready queue: 5-0-6-2
+
+t = 39
+CPU: Running process 3 (remaining CPU burst = 19)
+Ready queue: 5-0-6-2
+
+t = 40
+CPU: Preempting process 3 (remaining CPU burst = 18); loading process 8 (CPU burst = 2)
+Ready queue: 8-5-0-6-2
+
+t = 41
+CPU: Running process 8 (remaining CPU burst = 1)
+Ready queue: 3-5-0-6-2
+
+t = 42
+CPU: Finishing process 8; loading process 3 (CPU burst = 18)
+Ready queue: 3-5-0-6-2
+
+t = 43
+CPU: Running process 3 (remaining CPU burst = 17)
+Ready queue: 5-0-6-2
+
+t = 44
+CPU: Running process 3 (remaining CPU burst = 16)
+Ready queue: 5-0-6-2
+
+t = 45
+CPU: Preempting process 3 (remaining CPU burst = 15); loading process 9 (CPU burst = 2)
+Ready queue: 9-5-0-6-2
+
+t = 46
+CPU: Running process 9 (remaining CPU burst = 1)
+Ready queue: 3-5-0-6-2
+
+t = 47
+CPU: Finishing process 9; loading process 3 (CPU burst = 15)
+Ready queue: 3-5-0-6-2
+
+t = 48
+CPU: Running process 3 (remaining CPU burst = 14)
+Ready queue: 5-0-6-2
+
+t = 49
+CPU: Running process 3 (remaining CPU burst = 13)
+Ready queue: 5-0-6-2
+
+t = 50
+CPU: Running process 3 (remaining CPU burst = 12)
+Ready queue: 5-0-6-2
+
+t = 51
+CPU: Running process 3 (remaining CPU burst = 11)
+Ready queue: 5-0-6-2
+
+t = 52
+CPU: Running process 3 (remaining CPU burst = 10)
+Ready queue: 5-0-6-2
+
+t = 53
+CPU: Running process 3 (remaining CPU burst = 9)
+Ready queue: 5-0-6-2
+
+t = 54
+CPU: Running process 3 (remaining CPU burst = 8)
+Ready queue: 5-0-6-2
+
+t = 55
+CPU: Running process 3 (remaining CPU burst = 7)
+Ready queue: 5-0-6-2
+
+t = 56
+CPU: Running process 3 (remaining CPU burst = 6)
+Ready queue: 5-0-6-2
+
+t = 57
+CPU: Running process 3 (remaining CPU burst = 5)
+Ready queue: 5-0-6-2
+
+t = 58
+CPU: Running process 3 (remaining CPU burst = 4)
+Ready queue: 5-0-6-2
+
+t = 59
+CPU: Running process 3 (remaining CPU burst = 3)
+Ready queue: 5-0-6-2
+
+t = 60
+CPU: Running process 3 (remaining CPU burst = 2)
+Ready queue: 5-0-6-2
+
+t = 61
+CPU: Running process 3 (remaining CPU burst = 1)
+Ready queue: 5-0-6-2
+
+t = 62
+CPU: Finishing process 3; loading process 5 (CPU burst = 33)
+Ready queue: 5-0-6-2
+
+t = 63
+CPU: Running process 5 (remaining CPU burst = 32)
+Ready queue: 0-6-2
+
+t = 64
+CPU: Running process 5 (remaining CPU burst = 31)
+Ready queue: 0-6-2
+
+t = 65
+CPU: Running process 5 (remaining CPU burst = 30)
+Ready queue: 0-6-2
+
+t = 66
+CPU: Running process 5 (remaining CPU burst = 29)
+Ready queue: 0-6-2
+
+t = 67
+CPU: Running process 5 (remaining CPU burst = 28)
+Ready queue: 0-6-2
+
+t = 68
+CPU: Running process 5 (remaining CPU burst = 27)
+Ready queue: 0-6-2
+
+t = 69
+CPU: Running process 5 (remaining CPU burst = 26)
+Ready queue: 0-6-2
+
+t = 70
+CPU: Running process 5 (remaining CPU burst = 25)
+Ready queue: 0-6-2
+
+t = 71
+CPU: Running process 5 (remaining CPU burst = 24)
+Ready queue: 0-6-2
+
+t = 72
+CPU: Running process 5 (remaining CPU burst = 23)
+Ready queue: 0-6-2
+
+t = 73
+CPU: Running process 5 (remaining CPU burst = 22)
+Ready queue: 0-6-2
+
+t = 74
+CPU: Running process 5 (remaining CPU burst = 21)
+Ready queue: 0-6-2
+
+t = 75
+CPU: Running process 5 (remaining CPU burst = 20)
+Ready queue: 0-6-2
+
+t = 76
+CPU: Running process 5 (remaining CPU burst = 19)
+Ready queue: 0-6-2
+
+t = 77
+CPU: Running process 5 (remaining CPU burst = 18)
+Ready queue: 0-6-2
+
+t = 78
+CPU: Running process 5 (remaining CPU burst = 17)
+Ready queue: 0-6-2
+
+t = 79
+CPU: Running process 5 (remaining CPU burst = 16)
+Ready queue: 0-6-2
+
+t = 80
+CPU: Running process 5 (remaining CPU burst = 15)
+Ready queue: 0-6-2
+
+t = 81
+CPU: Running process 5 (remaining CPU burst = 14)
+Ready queue: 0-6-2
+
+t = 82
+CPU: Running process 5 (remaining CPU burst = 13)
+Ready queue: 0-6-2
+
+t = 83
+CPU: Running process 5 (remaining CPU burst = 12)
+Ready queue: 0-6-2
+
+t = 84
+CPU: Running process 5 (remaining CPU burst = 11)
+Ready queue: 0-6-2
+
+t = 85
+CPU: Running process 5 (remaining CPU burst = 10)
+Ready queue: 0-6-2
+
+t = 86
+CPU: Running process 5 (remaining CPU burst = 9)
+Ready queue: 0-6-2
+
+t = 87
+CPU: Running process 5 (remaining CPU burst = 8)
+Ready queue: 0-6-2
+
+t = 88
+CPU: Running process 5 (remaining CPU burst = 7)
+Ready queue: 0-6-2
+
+t = 89
+CPU: Running process 5 (remaining CPU burst = 6)
+Ready queue: 0-6-2
+
+t = 90
+CPU: Running process 5 (remaining CPU burst = 5)
+Ready queue: 0-6-2
+
+t = 91
+CPU: Running process 5 (remaining CPU burst = 4)
+Ready queue: 0-6-2
+
+t = 92
+CPU: Running process 5 (remaining CPU burst = 3)
+Ready queue: 0-6-2
+
+t = 93
+CPU: Running process 5 (remaining CPU burst = 2)
+Ready queue: 0-6-2
+
+t = 94
+CPU: Running process 5 (remaining CPU burst = 1)
+Ready queue: 0-6-2
+
+t = 95
+CPU: Finishing process 5; loading process 0 (CPU burst = 43)
+Ready queue: 0-6-2
+
+t = 96
+CPU: Running process 0 (remaining CPU burst = 42)
+Ready queue: 6-2
+
+t = 97
+CPU: Running process 0 (remaining CPU burst = 41)
+Ready queue: 6-2
+
+t = 98
+CPU: Running process 0 (remaining CPU burst = 40)
+Ready queue: 6-2
+
+t = 99
+CPU: Running process 0 (remaining CPU burst = 39)
+Ready queue: 6-2
+
+t = 100
+CPU: Running process 0 (remaining CPU burst = 38)
+Ready queue: 6-2
+
+t = 101
+CPU: Running process 0 (remaining CPU burst = 37)
+Ready queue: 6-2
+
+t = 102
+CPU: Running process 0 (remaining CPU burst = 36)
+Ready queue: 6-2
+
+t = 103
+CPU: Running process 0 (remaining CPU burst = 35)
+Ready queue: 6-2
+
+t = 104
+CPU: Running process 0 (remaining CPU burst = 34)
+Ready queue: 6-2
+
+t = 105
+CPU: Running process 0 (remaining CPU burst = 33)
+Ready queue: 6-2
+
+t = 106
+CPU: Running process 0 (remaining CPU burst = 32)
+Ready queue: 6-2
+
+t = 107
+CPU: Running process 0 (remaining CPU burst = 31)
+Ready queue: 6-2
+
+t = 108
+CPU: Running process 0 (remaining CPU burst = 30)
+Ready queue: 6-2
+
+t = 109
+CPU: Running process 0 (remaining CPU burst = 29)
+Ready queue: 6-2
+
+t = 110
+CPU: Running process 0 (remaining CPU burst = 28)
+Ready queue: 6-2
+
+t = 111
+CPU: Running process 0 (remaining CPU burst = 27)
+Ready queue: 6-2
+
+t = 112
+CPU: Running process 0 (remaining CPU burst = 26)
+Ready queue: 6-2
+
+t = 113
+CPU: Running process 0 (remaining CPU burst = 25)
+Ready queue: 6-2
+
+t = 114
+CPU: Running process 0 (remaining CPU burst = 24)
+Ready queue: 6-2
+
+t = 115
+CPU: Running process 0 (remaining CPU burst = 23)
+Ready queue: 6-2
+
+t = 116
+CPU: Running process 0 (remaining CPU burst = 22)
+Ready queue: 6-2
+
+t = 117
+CPU: Running process 0 (remaining CPU burst = 21)
+Ready queue: 6-2
+
+t = 118
+CPU: Running process 0 (remaining CPU burst = 20)
+Ready queue: 6-2
+
+t = 119
+CPU: Running process 0 (remaining CPU burst = 19)
+Ready queue: 6-2
+
+t = 120
+CPU: Running process 0 (remaining CPU burst = 18)
+Ready queue: 6-2
+
+t = 121
+CPU: Running process 0 (remaining CPU burst = 17)
+Ready queue: 6-2
+
+t = 122
+CPU: Running process 0 (remaining CPU burst = 16)
+Ready queue: 6-2
+
+t = 123
+CPU: Running process 0 (remaining CPU burst = 15)
+Ready queue: 6-2
+
+t = 124
+CPU: Running process 0 (remaining CPU burst = 14)
+Ready queue: 6-2
+
+t = 125
+CPU: Running process 0 (remaining CPU burst = 13)
+Ready queue: 6-2
+
+t = 126
+CPU: Running process 0 (remaining CPU burst = 12)
+Ready queue: 6-2
+
+t = 127
+CPU: Running process 0 (remaining CPU burst = 11)
+Ready queue: 6-2
+
+t = 128
+CPU: Running process 0 (remaining CPU burst = 10)
+Ready queue: 6-2
+
+t = 129
+CPU: Running process 0 (remaining CPU burst = 9)
+Ready queue: 6-2
+
+t = 130
+CPU: Running process 0 (remaining CPU burst = 8)
+Ready queue: 6-2
+
+t = 131
+CPU: Running process 0 (remaining CPU burst = 7)
+Ready queue: 6-2
+
+t = 132
+CPU: Running process 0 (remaining CPU burst = 6)
+Ready queue: 6-2
+
+t = 133
+CPU: Running process 0 (remaining CPU burst = 5)
+Ready queue: 6-2
+
+t = 134
+CPU: Running process 0 (remaining CPU burst = 4)
+Ready queue: 6-2
+
+t = 135
+CPU: Running process 0 (remaining CPU burst = 3)
+Ready queue: 6-2
+
+t = 136
+CPU: Running process 0 (remaining CPU burst = 2)
+Ready queue: 6-2
+
+t = 137
+CPU: Running process 0 (remaining CPU burst = 1)
+Ready queue: 6-2
+
+t = 138
+CPU: Finishing process 0; loading process 6 (CPU burst = 50)
+Ready queue: 6-2
+
+t = 139
+CPU: Running process 6 (remaining CPU burst = 49)
+Ready queue: 2
+
+t = 140
+CPU: Running process 6 (remaining CPU burst = 48)
+Ready queue: 2
+
+t = 141
+CPU: Running process 6 (remaining CPU burst = 47)
+Ready queue: 2
+
+t = 142
+CPU: Running process 6 (remaining CPU burst = 46)
+Ready queue: 2
+
+t = 143
+CPU: Running process 6 (remaining CPU burst = 45)
+Ready queue: 2
+
+t = 144
+CPU: Running process 6 (remaining CPU burst = 44)
+Ready queue: 2
+
+t = 145
+CPU: Running process 6 (remaining CPU burst = 43)
+Ready queue: 2
+
+t = 146
+CPU: Running process 6 (remaining CPU burst = 42)
+Ready queue: 2
+
+t = 147
+CPU: Running process 6 (remaining CPU burst = 41)
+Ready queue: 2
+
+t = 148
+CPU: Running process 6 (remaining CPU burst = 40)
+Ready queue: 2
+
+t = 149
+CPU: Running process 6 (remaining CPU burst = 39)
+Ready queue: 2
+
+t = 150
+CPU: Running process 6 (remaining CPU burst = 38)
+Ready queue: 2
+
+t = 151
+CPU: Running process 6 (remaining CPU burst = 37)
+Ready queue: 2
+
+t = 152
+CPU: Running process 6 (remaining CPU burst = 36)
+Ready queue: 2
+
+t = 153
+CPU: Running process 6 (remaining CPU burst = 35)
+Ready queue: 2
+
+t = 154
+CPU: Running process 6 (remaining CPU burst = 34)
+Ready queue: 2
+
+t = 155
+CPU: Running process 6 (remaining CPU burst = 33)
+Ready queue: 2
+
+t = 156
+CPU: Running process 6 (remaining CPU burst = 32)
+Ready queue: 2
+
+t = 157
+CPU: Running process 6 (remaining CPU burst = 31)
+Ready queue: 2
+
+t = 158
+CPU: Running process 6 (remaining CPU burst = 30)
+Ready queue: 2
+
+t = 159
+CPU: Running process 6 (remaining CPU burst = 29)
+Ready queue: 2
+
+t = 160
+CPU: Running process 6 (remaining CPU burst = 28)
+Ready queue: 2
+
+t = 161
+CPU: Running process 6 (remaining CPU burst = 27)
+Ready queue: 2
+
+t = 162
+CPU: Running process 6 (remaining CPU burst = 26)
+Ready queue: 2
+
+t = 163
+CPU: Running process 6 (remaining CPU burst = 25)
+Ready queue: 2
+
+t = 164
+CPU: Running process 6 (remaining CPU burst = 24)
+Ready queue: 2
+
+t = 165
+CPU: Running process 6 (remaining CPU burst = 23)
+Ready queue: 2
+
+t = 166
+CPU: Running process 6 (remaining CPU burst = 22)
+Ready queue: 2
+
+t = 167
+CPU: Running process 6 (remaining CPU burst = 21)
+Ready queue: 2
+
+t = 168
+CPU: Running process 6 (remaining CPU burst = 20)
+Ready queue: 2
+
+t = 169
+CPU: Running process 6 (remaining CPU burst = 19)
+Ready queue: 2
+
+t = 170
+CPU: Running process 6 (remaining CPU burst = 18)
+Ready queue: 2
+
+t = 171
+CPU: Running process 6 (remaining CPU burst = 17)
+Ready queue: 2
+
+t = 172
+CPU: Running process 6 (remaining CPU burst = 16)
+Ready queue: 2
+
+t = 173
+CPU: Running process 6 (remaining CPU burst = 15)
+Ready queue: 2
+
+t = 174
+CPU: Running process 6 (remaining CPU burst = 14)
+Ready queue: 2
+
+t = 175
+CPU: Running process 6 (remaining CPU burst = 13)
+Ready queue: 2
+
+t = 176
+CPU: Running process 6 (remaining CPU burst = 12)
+Ready queue: 2
+
+t = 177
+CPU: Running process 6 (remaining CPU burst = 11)
+Ready queue: 2
+
+t = 178
+CPU: Running process 6 (remaining CPU burst = 10)
+Ready queue: 2
+
+t = 179
+CPU: Running process 6 (remaining CPU burst = 9)
+Ready queue: 2
+
+t = 180
+CPU: Running process 6 (remaining CPU burst = 8)
+Ready queue: 2
+
+t = 181
+CPU: Running process 6 (remaining CPU burst = 7)
+Ready queue: 2
+
+t = 182
+CPU: Running process 6 (remaining CPU burst = 6)
+Ready queue: 2
+
+t = 183
+CPU: Running process 6 (remaining CPU burst = 5)
+Ready queue: 2
+
+t = 184
+CPU: Running process 6 (remaining CPU burst = 4)
+Ready queue: 2
+
+t = 185
+CPU: Running process 6 (remaining CPU burst = 3)
+Ready queue: 2
+
+t = 186
+CPU: Running process 6 (remaining CPU burst = 2)
+Ready queue: 2
+
+t = 187
+CPU: Running process 6 (remaining CPU burst = 1)
+Ready queue: 2
+
+t = 188
+CPU: Finishing process 6; loading process 2 (CPU burst = 57)
+Ready queue: 2
+
+t = 189
+CPU: Running process 2 (remaining CPU burst = 56)
+Ready queue: empty
+
+t = 190
+CPU: Running process 2 (remaining CPU burst = 55)
+Ready queue: empty
+
+t = 191
+CPU: Running process 2 (remaining CPU burst = 54)
+Ready queue: empty
+
+t = 192
+CPU: Running process 2 (remaining CPU burst = 53)
+Ready queue: empty
+
+t = 193
+CPU: Running process 2 (remaining CPU burst = 52)
+Ready queue: empty
+
+t = 194
+CPU: Running process 2 (remaining CPU burst = 51)
+Ready queue: empty
+
+t = 195
+CPU: Running process 2 (remaining CPU burst = 50)
+Ready queue: empty
+
+t = 196
+CPU: Running process 2 (remaining CPU burst = 49)
+Ready queue: empty
+
+t = 197
+CPU: Running process 2 (remaining CPU burst = 48)
+Ready queue: empty
+
+t = 198
+CPU: Running process 2 (remaining CPU burst = 47)
+Ready queue: empty
+
+t = 199
+CPU: Running process 2 (remaining CPU burst = 46)
+Ready queue: empty
+
+t = 200
+CPU: Running process 2 (remaining CPU burst = 45)
+Ready queue: empty
+
+t = 201
+CPU: Running process 2 (remaining CPU burst = 44)
+Ready queue: empty
+
+t = 202
+CPU: Running process 2 (remaining CPU burst = 43)
+Ready queue: empty
+
+t = 203
+CPU: Running process 2 (remaining CPU burst = 42)
+Ready queue: empty
+
+t = 204
+CPU: Running process 2 (remaining CPU burst = 41)
+Ready queue: empty
+
+t = 205
+CPU: Running process 2 (remaining CPU burst = 40)
+Ready queue: empty
+
+t = 206
+CPU: Running process 2 (remaining CPU burst = 39)
+Ready queue: empty
+
+t = 207
+CPU: Running process 2 (remaining CPU burst = 38)
+Ready queue: empty
+
+t = 208
+CPU: Running process 2 (remaining CPU burst = 37)
+Ready queue: empty
+
+t = 209
+CPU: Running process 2 (remaining CPU burst = 36)
+Ready queue: empty
+
+t = 210
+CPU: Running process 2 (remaining CPU burst = 35)
+Ready queue: empty
+
+t = 211
+CPU: Running process 2 (remaining CPU burst = 34)
+Ready queue: empty
+
+t = 212
+CPU: Running process 2 (remaining CPU burst = 33)
+Ready queue: empty
+
+t = 213
+CPU: Running process 2 (remaining CPU burst = 32)
+Ready queue: empty
+
+t = 214
+CPU: Running process 2 (remaining CPU burst = 31)
+Ready queue: empty
+
+t = 215
+CPU: Running process 2 (remaining CPU burst = 30)
+Ready queue: empty
+
+t = 216
+CPU: Running process 2 (remaining CPU burst = 29)
+Ready queue: empty
+
+t = 217
+CPU: Running process 2 (remaining CPU burst = 28)
+Ready queue: empty
+
+t = 218
+CPU: Running process 2 (remaining CPU burst = 27)
+Ready queue: empty
+
+t = 219
+CPU: Running process 2 (remaining CPU burst = 26)
+Ready queue: empty
+
+t = 220
+CPU: Running process 2 (remaining CPU burst = 25)
+Ready queue: empty
+
+t = 221
+CPU: Running process 2 (remaining CPU burst = 24)
+Ready queue: empty
+
+t = 222
+CPU: Running process 2 (remaining CPU burst = 23)
+Ready queue: empty
+
+t = 223
+CPU: Running process 2 (remaining CPU burst = 22)
+Ready queue: empty
+
+t = 224
+CPU: Running process 2 (remaining CPU burst = 21)
+Ready queue: empty
+
+t = 225
+CPU: Running process 2 (remaining CPU burst = 20)
+Ready queue: empty
+
+t = 226
+CPU: Running process 2 (remaining CPU burst = 19)
+Ready queue: empty
+
+t = 227
+CPU: Running process 2 (remaining CPU burst = 18)
+Ready queue: empty
+
+t = 228
+CPU: Running process 2 (remaining CPU burst = 17)
+Ready queue: empty
+
+t = 229
+CPU: Running process 2 (remaining CPU burst = 16)
+Ready queue: empty
+
+t = 230
+CPU: Running process 2 (remaining CPU burst = 15)
+Ready queue: empty
+
+t = 231
+CPU: Running process 2 (remaining CPU burst = 14)
+Ready queue: empty
+
+t = 232
+CPU: Running process 2 (remaining CPU burst = 13)
+Ready queue: empty
+
+t = 233
+CPU: Running process 2 (remaining CPU burst = 12)
+Ready queue: empty
+
+t = 234
+CPU: Running process 2 (remaining CPU burst = 11)
+Ready queue: empty
+
+t = 235
+CPU: Running process 2 (remaining CPU burst = 10)
+Ready queue: empty
+
+t = 236
+CPU: Running process 2 (remaining CPU burst = 9)
+Ready queue: empty
+
+t = 237
+CPU: Running process 2 (remaining CPU burst = 8)
+Ready queue: empty
+
+t = 238
+CPU: Running process 2 (remaining CPU burst = 7)
+Ready queue: empty
+
+t = 239
+CPU: Running process 2 (remaining CPU burst = 6)
+Ready queue: empty
+
+t = 240
+CPU: Running process 2 (remaining CPU burst = 5)
+Ready queue: empty
+
+t = 241
+CPU: Running process 2 (remaining CPU burst = 4)
+Ready queue: empty
+
+t = 242
+CPU: Running process 2 (remaining CPU burst = 3)
+Ready queue: empty
+
+t = 243
+CPU: Running process 2 (remaining CPU burst = 2)
+Ready queue: empty
+
+t = 244
+CPU: Running process 2 (remaining CPU burst = 1)
+Ready queue: empty
+
+t = 245
+CPU: Finishing process 2
+Ready queue: empty
+
+*********************************************************
+STCF Summary (WT = wait time, TT = turnaround time):
+
+PID     WT     TT
+ 0      90    138
+ 1       0     10
+ 2     178    235
+ 3      17     47
+ 4       0     11
+ 5      37     70
+ 6     108    158
+ 7       0      2
+ 8       0      2
+ 9       0      2
+AVG  43.00  67.50
+
+Process sequence: 0-1-3-4-3-7-3-8-3-9-3-5-0-6-2
+Context switches: 15
+
+
+***** Round robin Scheduling *****
+t = 0
+CPU: Loading process 0 (CPU burst = 48)
+Ready queue: 0
+
+t = 1
+CPU: Running process 0 (remaining CPU burst = 47)
+Ready queue: empty
+
+t = 2
+CPU: Running process 0 (remaining CPU burst = 46)
+Ready queue: empty
+
+t = 3
+CPU: Running process 0 (remaining CPU burst = 45)
+Ready queue: empty
+
+t = 4
+CPU: Running process 0 (remaining CPU burst = 44)
+Ready queue: empty
+
+t = 5
+CPU: Preempting process 0 (remaining CPU burst = 43); loading process 1 (CPU burst = 10)
+Ready queue: 1
+
+t = 6
+CPU: Running process 1 (remaining CPU burst = 9)
+Ready queue: 0
+
+t = 7
+CPU: Preempting process 1 (remaining CPU burst = 8); loading process 0 (CPU burst = 43)
+Ready queue: 0
+
+t = 8
+CPU: Running process 0 (remaining CPU burst = 42)
+Ready queue: 1
+
+t = 9
+CPU: Preempting process 0 (remaining CPU burst = 41); loading process 1 (CPU burst = 8)
+Ready queue: 1
+
+t = 10
+CPU: Running process 1 (remaining CPU burst = 7)
+Ready queue: 0-2
+
+t = 11
+CPU: Preempting process 1 (remaining CPU burst = 6); loading process 0 (CPU burst = 41)
+Ready queue: 0-2
+
+t = 12
+CPU: Running process 0 (remaining CPU burst = 40)
+Ready queue: 2-1
+
+t = 13
+CPU: Preempting process 0 (remaining CPU burst = 39); loading process 2 (CPU burst = 57)
+Ready queue: 2-1
+
+t = 14
+CPU: Running process 2 (remaining CPU burst = 56)
+Ready queue: 1-0
+
+t = 15
+CPU: Preempting process 2 (remaining CPU burst = 55); loading process 1 (CPU burst = 6)
+Ready queue: 1-0-3
+
+t = 16
+CPU: Running process 1 (remaining CPU burst = 5)
+Ready queue: 0-3-2
+
+t = 17
+CPU: Preempting process 1 (remaining CPU burst = 4); loading process 0 (CPU burst = 39)
+Ready queue: 0-3-2
+
+t = 18
+CPU: Running process 0 (remaining CPU burst = 38)
+Ready queue: 3-2-1
+
+t = 19
+CPU: Preempting process 0 (remaining CPU burst = 37); loading process 3 (CPU burst = 30)
+Ready queue: 3-2-1
+
+t = 20
+CPU: Running process 3 (remaining CPU burst = 29)
+Ready queue: 2-1-0-4
+
+t = 21
+CPU: Preempting process 3 (remaining CPU burst = 28); loading process 2 (CPU burst = 55)
+Ready queue: 2-1-0-4
+
+t = 22
+CPU: Running process 2 (remaining CPU burst = 54)
+Ready queue: 1-0-4-3
+
+t = 23
+CPU: Preempting process 2 (remaining CPU burst = 53); loading process 1 (CPU burst = 4)
+Ready queue: 1-0-4-3
+
+t = 24
+CPU: Running process 1 (remaining CPU burst = 3)
+Ready queue: 0-4-3-2
+
+t = 25
+CPU: Preempting process 1 (remaining CPU burst = 2); loading process 0 (CPU burst = 37)
+Ready queue: 0-4-3-2-5
+
+t = 26
+CPU: Running process 0 (remaining CPU burst = 36)
+Ready queue: 4-3-2-5-1
+
+t = 27
+CPU: Preempting process 0 (remaining CPU burst = 35); loading process 4 (CPU burst = 11)
+Ready queue: 4-3-2-5-1
+
+t = 28
+CPU: Running process 4 (remaining CPU burst = 10)
+Ready queue: 3-2-5-1-0
+
+t = 29
+CPU: Preempting process 4 (remaining CPU burst = 9); loading process 3 (CPU burst = 28)
+Ready queue: 3-2-5-1-0
+
+t = 30
+CPU: Running process 3 (remaining CPU burst = 27)
+Ready queue: 2-5-1-0-4-6
+
+t = 31
+CPU: Preempting process 3 (remaining CPU burst = 26); loading process 2 (CPU burst = 53)
+Ready queue: 2-5-1-0-4-6
+
+t = 32
+CPU: Running process 2 (remaining CPU burst = 52)
+Ready queue: 5-1-0-4-6-3
+
+t = 33
+CPU: Preempting process 2 (remaining CPU burst = 51); loading process 5 (CPU burst = 33)
+Ready queue: 5-1-0-4-6-3
+
+t = 34
+CPU: Running process 5 (remaining CPU burst = 32)
+Ready queue: 1-0-4-6-3-2
+
+t = 35
+CPU: Preempting process 5 (remaining CPU burst = 31); loading process 1 (CPU burst = 2)
+Ready queue: 1-0-4-6-3-2-7
+
+t = 36
+CPU: Running process 1 (remaining CPU burst = 1)
+Ready queue: 0-4-6-3-2-7-5
+
+t = 37
+CPU: Finishing process 1; loading process 0 (CPU burst = 35)
+Ready queue: 0-4-6-3-2-7-5
+
+t = 38
+CPU: Running process 0 (remaining CPU burst = 34)
+Ready queue: 4-6-3-2-7-5
+
+t = 39
+CPU: Preempting process 0 (remaining CPU burst = 33); loading process 4 (CPU burst = 9)
+Ready queue: 4-6-3-2-7-5
+
+t = 40
+CPU: Running process 4 (remaining CPU burst = 8)
+Ready queue: 6-3-2-7-5-0-8
+
+t = 41
+CPU: Preempting process 4 (remaining CPU burst = 7); loading process 6 (CPU burst = 50)
+Ready queue: 6-3-2-7-5-0-8
+
+t = 42
+CPU: Running process 6 (remaining CPU burst = 49)
+Ready queue: 3-2-7-5-0-8-4
+
+t = 43
+CPU: Preempting process 6 (remaining CPU burst = 48); loading process 3 (CPU burst = 26)
+Ready queue: 3-2-7-5-0-8-4
+
+t = 44
+CPU: Running process 3 (remaining CPU burst = 25)
+Ready queue: 2-7-5-0-8-4-6
+
+t = 45
+CPU: Preempting process 3 (remaining CPU burst = 24); loading process 2 (CPU burst = 51)
+Ready queue: 2-7-5-0-8-4-6-9
+
+t = 46
+CPU: Running process 2 (remaining CPU burst = 50)
+Ready queue: 7-5-0-8-4-6-9-3
+
+t = 47
+CPU: Preempting process 2 (remaining CPU burst = 49); loading process 7 (CPU burst = 2)
+Ready queue: 7-5-0-8-4-6-9-3
+
+t = 48
+CPU: Running process 7 (remaining CPU burst = 1)
+Ready queue: 5-0-8-4-6-9-3-2
+
+t = 49
+CPU: Finishing process 7; loading process 5 (CPU burst = 31)
+Ready queue: 5-0-8-4-6-9-3-2
+
+t = 50
+CPU: Running process 5 (remaining CPU burst = 30)
+Ready queue: 0-8-4-6-9-3-2
+
+t = 51
+CPU: Preempting process 5 (remaining CPU burst = 29); loading process 0 (CPU burst = 33)
+Ready queue: 0-8-4-6-9-3-2
+
+t = 52
+CPU: Running process 0 (remaining CPU burst = 32)
+Ready queue: 8-4-6-9-3-2-5
+
+t = 53
+CPU: Preempting process 0 (remaining CPU burst = 31); loading process 8 (CPU burst = 2)
+Ready queue: 8-4-6-9-3-2-5
+
+t = 54
+CPU: Running process 8 (remaining CPU burst = 1)
+Ready queue: 4-6-9-3-2-5-0
+
+t = 55
+CPU: Finishing process 8; loading process 4 (CPU burst = 7)
+Ready queue: 4-6-9-3-2-5-0
+
+t = 56
+CPU: Running process 4 (remaining CPU burst = 6)
+Ready queue: 6-9-3-2-5-0
+
+t = 57
+CPU: Preempting process 4 (remaining CPU burst = 5); loading process 6 (CPU burst = 48)
+Ready queue: 6-9-3-2-5-0
+
+t = 58
+CPU: Running process 6 (remaining CPU burst = 47)
+Ready queue: 9-3-2-5-0-4
+
+t = 59
+CPU: Preempting process 6 (remaining CPU burst = 46); loading process 9 (CPU burst = 2)
+Ready queue: 9-3-2-5-0-4
+
+t = 60
+CPU: Running process 9 (remaining CPU burst = 1)
+Ready queue: 3-2-5-0-4-6
+
+t = 61
+CPU: Finishing process 9; loading process 3 (CPU burst = 24)
+Ready queue: 3-2-5-0-4-6
+
+t = 62
+CPU: Running process 3 (remaining CPU burst = 23)
+Ready queue: 2-5-0-4-6
+
+t = 63
+CPU: Preempting process 3 (remaining CPU burst = 22); loading process 2 (CPU burst = 49)
+Ready queue: 2-5-0-4-6
+
+t = 64
+CPU: Running process 2 (remaining CPU burst = 48)
+Ready queue: 5-0-4-6-3
+
+t = 65
+CPU: Preempting process 2 (remaining CPU burst = 47); loading process 5 (CPU burst = 29)
+Ready queue: 5-0-4-6-3
+
+t = 66
+CPU: Running process 5 (remaining CPU burst = 28)
+Ready queue: 0-4-6-3-2
+
+t = 67
+CPU: Preempting process 5 (remaining CPU burst = 27); loading process 0 (CPU burst = 31)
+Ready queue: 0-4-6-3-2
+
+t = 68
+CPU: Running process 0 (remaining CPU burst = 30)
+Ready queue: 4-6-3-2-5
+
+t = 69
+CPU: Preempting process 0 (remaining CPU burst = 29); loading process 4 (CPU burst = 5)
+Ready queue: 4-6-3-2-5
+
+t = 70
+CPU: Running process 4 (remaining CPU burst = 4)
+Ready queue: 6-3-2-5-0
+
+t = 71
+CPU: Preempting process 4 (remaining CPU burst = 3); loading process 6 (CPU burst = 46)
+Ready queue: 6-3-2-5-0
+
+t = 72
+CPU: Running process 6 (remaining CPU burst = 45)
+Ready queue: 3-2-5-0-4
+
+t = 73
+CPU: Preempting process 6 (remaining CPU burst = 44); loading process 3 (CPU burst = 22)
+Ready queue: 3-2-5-0-4
+
+t = 74
+CPU: Running process 3 (remaining CPU burst = 21)
+Ready queue: 2-5-0-4-6
+
+t = 75
+CPU: Preempting process 3 (remaining CPU burst = 20); loading process 2 (CPU burst = 47)
+Ready queue: 2-5-0-4-6
+
+t = 76
+CPU: Running process 2 (remaining CPU burst = 46)
+Ready queue: 5-0-4-6-3
+
+t = 77
+CPU: Preempting process 2 (remaining CPU burst = 45); loading process 5 (CPU burst = 27)
+Ready queue: 5-0-4-6-3
+
+t = 78
+CPU: Running process 5 (remaining CPU burst = 26)
+Ready queue: 0-4-6-3-2
+
+t = 79
+CPU: Preempting process 5 (remaining CPU burst = 25); loading process 0 (CPU burst = 29)
+Ready queue: 0-4-6-3-2
+
+t = 80
+CPU: Running process 0 (remaining CPU burst = 28)
+Ready queue: 4-6-3-2-5
+
+t = 81
+CPU: Preempting process 0 (remaining CPU burst = 27); loading process 4 (CPU burst = 3)
+Ready queue: 4-6-3-2-5
+
+t = 82
+CPU: Running process 4 (remaining CPU burst = 2)
+Ready queue: 6-3-2-5-0
+
+t = 83
+CPU: Preempting process 4 (remaining CPU burst = 1); loading process 6 (CPU burst = 44)
+Ready queue: 6-3-2-5-0
+
+t = 84
+CPU: Running process 6 (remaining CPU burst = 43)
+Ready queue: 3-2-5-0-4
+
+t = 85
+CPU: Preempting process 6 (remaining CPU burst = 42); loading process 3 (CPU burst = 20)
+Ready queue: 3-2-5-0-4
+
+t = 86
+CPU: Running process 3 (remaining CPU burst = 19)
+Ready queue: 2-5-0-4-6
+
+t = 87
+CPU: Preempting process 3 (remaining CPU burst = 18); loading process 2 (CPU burst = 45)
+Ready queue: 2-5-0-4-6
+
+t = 88
+CPU: Running process 2 (remaining CPU burst = 44)
+Ready queue: 5-0-4-6-3
+
+t = 89
+CPU: Preempting process 2 (remaining CPU burst = 43); loading process 5 (CPU burst = 25)
+Ready queue: 5-0-4-6-3
+
+t = 90
+CPU: Running process 5 (remaining CPU burst = 24)
+Ready queue: 0-4-6-3-2
+
+t = 91
+CPU: Preempting process 5 (remaining CPU burst = 23); loading process 0 (CPU burst = 27)
+Ready queue: 0-4-6-3-2
+
+t = 92
+CPU: Running process 0 (remaining CPU burst = 26)
+Ready queue: 4-6-3-2-5
+
+t = 93
+CPU: Preempting process 0 (remaining CPU burst = 25); loading process 4 (CPU burst = 1)
+Ready queue: 4-6-3-2-5
+
+t = 94
+CPU: Finishing process 4; loading process 6 (CPU burst = 42)
+Ready queue: 6-3-2-5-0
+
+t = 95
+CPU: Running process 6 (remaining CPU burst = 41)
+Ready queue: 3-2-5-0
+
+t = 96
+CPU: Preempting process 6 (remaining CPU burst = 40); loading process 3 (CPU burst = 18)
+Ready queue: 3-2-5-0
+
+t = 97
+CPU: Running process 3 (remaining CPU burst = 17)
+Ready queue: 2-5-0-6
+
+t = 98
+CPU: Preempting process 3 (remaining CPU burst = 16); loading process 2 (CPU burst = 43)
+Ready queue: 2-5-0-6
+
+t = 99
+CPU: Running process 2 (remaining CPU burst = 42)
+Ready queue: 5-0-6-3
+
+t = 100
+CPU: Preempting process 2 (remaining CPU burst = 41); loading process 5 (CPU burst = 23)
+Ready queue: 5-0-6-3
+
+t = 101
+CPU: Running process 5 (remaining CPU burst = 22)
+Ready queue: 0-6-3-2
+
+t = 102
+CPU: Preempting process 5 (remaining CPU burst = 21); loading process 0 (CPU burst = 25)
+Ready queue: 0-6-3-2
+
+t = 103
+CPU: Running process 0 (remaining CPU burst = 24)
+Ready queue: 6-3-2-5
+
+t = 104
+CPU: Preempting process 0 (remaining CPU burst = 23); loading process 6 (CPU burst = 40)
+Ready queue: 6-3-2-5
+
+t = 105
+CPU: Running process 6 (remaining CPU burst = 39)
+Ready queue: 3-2-5-0
+
+t = 106
+CPU: Preempting process 6 (remaining CPU burst = 38); loading process 3 (CPU burst = 16)
+Ready queue: 3-2-5-0
+
+t = 107
+CPU: Running process 3 (remaining CPU burst = 15)
+Ready queue: 2-5-0-6
+
+t = 108
+CPU: Preempting process 3 (remaining CPU burst = 14); loading process 2 (CPU burst = 41)
+Ready queue: 2-5-0-6
+
+t = 109
+CPU: Running process 2 (remaining CPU burst = 40)
+Ready queue: 5-0-6-3
+
+t = 110
+CPU: Preempting process 2 (remaining CPU burst = 39); loading process 5 (CPU burst = 21)
+Ready queue: 5-0-6-3
+
+t = 111
+CPU: Running process 5 (remaining CPU burst = 20)
+Ready queue: 0-6-3-2
+
+t = 112
+CPU: Preempting process 5 (remaining CPU burst = 19); loading process 0 (CPU burst = 23)
+Ready queue: 0-6-3-2
+
+t = 113
+CPU: Running process 0 (remaining CPU burst = 22)
+Ready queue: 6-3-2-5
+
+t = 114
+CPU: Preempting process 0 (remaining CPU burst = 21); loading process 6 (CPU burst = 38)
+Ready queue: 6-3-2-5
+
+t = 115
+CPU: Running process 6 (remaining CPU burst = 37)
+Ready queue: 3-2-5-0
+
+t = 116
+CPU: Preempting process 6 (remaining CPU burst = 36); loading process 3 (CPU burst = 14)
+Ready queue: 3-2-5-0
+
+t = 117
+CPU: Running process 3 (remaining CPU burst = 13)
+Ready queue: 2-5-0-6
+
+t = 118
+CPU: Preempting process 3 (remaining CPU burst = 12); loading process 2 (CPU burst = 39)
+Ready queue: 2-5-0-6
+
+t = 119
+CPU: Running process 2 (remaining CPU burst = 38)
+Ready queue: 5-0-6-3
+
+t = 120
+CPU: Preempting process 2 (remaining CPU burst = 37); loading process 5 (CPU burst = 19)
+Ready queue: 5-0-6-3
+
+t = 121
+CPU: Running process 5 (remaining CPU burst = 18)
+Ready queue: 0-6-3-2
+
+t = 122
+CPU: Preempting process 5 (remaining CPU burst = 17); loading process 0 (CPU burst = 21)
+Ready queue: 0-6-3-2
+
+t = 123
+CPU: Running process 0 (remaining CPU burst = 20)
+Ready queue: 6-3-2-5
+
+t = 124
+CPU: Preempting process 0 (remaining CPU burst = 19); loading process 6 (CPU burst = 36)
+Ready queue: 6-3-2-5
+
+t = 125
+CPU: Running process 6 (remaining CPU burst = 35)
+Ready queue: 3-2-5-0
+
+t = 126
+CPU: Preempting process 6 (remaining CPU burst = 34); loading process 3 (CPU burst = 12)
+Ready queue: 3-2-5-0
+
+t = 127
+CPU: Running process 3 (remaining CPU burst = 11)
+Ready queue: 2-5-0-6
+
+t = 128
+CPU: Preempting process 3 (remaining CPU burst = 10); loading process 2 (CPU burst = 37)
+Ready queue: 2-5-0-6
+
+t = 129
+CPU: Running process 2 (remaining CPU burst = 36)
+Ready queue: 5-0-6-3
+
+t = 130
+CPU: Preempting process 2 (remaining CPU burst = 35); loading process 5 (CPU burst = 17)
+Ready queue: 5-0-6-3
+
+t = 131
+CPU: Running process 5 (remaining CPU burst = 16)
+Ready queue: 0-6-3-2
+
+t = 132
+CPU: Preempting process 5 (remaining CPU burst = 15); loading process 0 (CPU burst = 19)
+Ready queue: 0-6-3-2
+
+t = 133
+CPU: Running process 0 (remaining CPU burst = 18)
+Ready queue: 6-3-2-5
+
+t = 134
+CPU: Preempting process 0 (remaining CPU burst = 17); loading process 6 (CPU burst = 34)
+Ready queue: 6-3-2-5
+
+t = 135
+CPU: Running process 6 (remaining CPU burst = 33)
+Ready queue: 3-2-5-0
+
+t = 136
+CPU: Preempting process 6 (remaining CPU burst = 32); loading process 3 (CPU burst = 10)
+Ready queue: 3-2-5-0
+
+t = 137
+CPU: Running process 3 (remaining CPU burst = 9)
+Ready queue: 2-5-0-6
+
+t = 138
+CPU: Preempting process 3 (remaining CPU burst = 8); loading process 2 (CPU burst = 35)
+Ready queue: 2-5-0-6
+
+t = 139
+CPU: Running process 2 (remaining CPU burst = 34)
+Ready queue: 5-0-6-3
+
+t = 140
+CPU: Preempting process 2 (remaining CPU burst = 33); loading process 5 (CPU burst = 15)
+Ready queue: 5-0-6-3
+
+t = 141
+CPU: Running process 5 (remaining CPU burst = 14)
+Ready queue: 0-6-3-2
+
+t = 142
+CPU: Preempting process 5 (remaining CPU burst = 13); loading process 0 (CPU burst = 17)
+Ready queue: 0-6-3-2
+
+t = 143
+CPU: Running process 0 (remaining CPU burst = 16)
+Ready queue: 6-3-2-5
+
+t = 144
+CPU: Preempting process 0 (remaining CPU burst = 15); loading process 6 (CPU burst = 32)
+Ready queue: 6-3-2-5
+
+t = 145
+CPU: Running process 6 (remaining CPU burst = 31)
+Ready queue: 3-2-5-0
+
+t = 146
+CPU: Preempting process 6 (remaining CPU burst = 30); loading process 3 (CPU burst = 8)
+Ready queue: 3-2-5-0
+
+t = 147
+CPU: Running process 3 (remaining CPU burst = 7)
+Ready queue: 2-5-0-6
+
+t = 148
+CPU: Preempting process 3 (remaining CPU burst = 6); loading process 2 (CPU burst = 33)
+Ready queue: 2-5-0-6
+
+t = 149
+CPU: Running process 2 (remaining CPU burst = 32)
+Ready queue: 5-0-6-3
+
+t = 150
+CPU: Preempting process 2 (remaining CPU burst = 31); loading process 5 (CPU burst = 13)
+Ready queue: 5-0-6-3
+
+t = 151
+CPU: Running process 5 (remaining CPU burst = 12)
+Ready queue: 0-6-3-2
+
+t = 152
+CPU: Preempting process 5 (remaining CPU burst = 11); loading process 0 (CPU burst = 15)
+Ready queue: 0-6-3-2
+
+t = 153
+CPU: Running process 0 (remaining CPU burst = 14)
+Ready queue: 6-3-2-5
+
+t = 154
+CPU: Preempting process 0 (remaining CPU burst = 13); loading process 6 (CPU burst = 30)
+Ready queue: 6-3-2-5
+
+t = 155
+CPU: Running process 6 (remaining CPU burst = 29)
+Ready queue: 3-2-5-0
+
+t = 156
+CPU: Preempting process 6 (remaining CPU burst = 28); loading process 3 (CPU burst = 6)
+Ready queue: 3-2-5-0
+
+t = 157
+CPU: Running process 3 (remaining CPU burst = 5)
+Ready queue: 2-5-0-6
+
+t = 158
+CPU: Preempting process 3 (remaining CPU burst = 4); loading process 2 (CPU burst = 31)
+Ready queue: 2-5-0-6
+
+t = 159
+CPU: Running process 2 (remaining CPU burst = 30)
+Ready queue: 5-0-6-3
+
+t = 160
+CPU: Preempting process 2 (remaining CPU burst = 29); loading process 5 (CPU burst = 11)
+Ready queue: 5-0-6-3
+
+t = 161
+CPU: Running process 5 (remaining CPU burst = 10)
+Ready queue: 0-6-3-2
+
+t = 162
+CPU: Preempting process 5 (remaining CPU burst = 9); loading process 0 (CPU burst = 13)
+Ready queue: 0-6-3-2
+
+t = 163
+CPU: Running process 0 (remaining CPU burst = 12)
+Ready queue: 6-3-2-5
+
+t = 164
+CPU: Preempting process 0 (remaining CPU burst = 11); loading process 6 (CPU burst = 28)
+Ready queue: 6-3-2-5
+
+t = 165
+CPU: Running process 6 (remaining CPU burst = 27)
+Ready queue: 3-2-5-0
+
+t = 166
+CPU: Preempting process 6 (remaining CPU burst = 26); loading process 3 (CPU burst = 4)
+Ready queue: 3-2-5-0
+
+t = 167
+CPU: Running process 3 (remaining CPU burst = 3)
+Ready queue: 2-5-0-6
+
+t = 168
+CPU: Preempting process 3 (remaining CPU burst = 2); loading process 2 (CPU burst = 29)
+Ready queue: 2-5-0-6
+
+t = 169
+CPU: Running process 2 (remaining CPU burst = 28)
+Ready queue: 5-0-6-3
+
+t = 170
+CPU: Preempting process 2 (remaining CPU burst = 27); loading process 5 (CPU burst = 9)
+Ready queue: 5-0-6-3
+
+t = 171
+CPU: Running process 5 (remaining CPU burst = 8)
+Ready queue: 0-6-3-2
+
+t = 172
+CPU: Preempting process 5 (remaining CPU burst = 7); loading process 0 (CPU burst = 11)
+Ready queue: 0-6-3-2
+
+t = 173
+CPU: Running process 0 (remaining CPU burst = 10)
+Ready queue: 6-3-2-5
+
+t = 174
+CPU: Preempting process 0 (remaining CPU burst = 9); loading process 6 (CPU burst = 26)
+Ready queue: 6-3-2-5
+
+t = 175
+CPU: Running process 6 (remaining CPU burst = 25)
+Ready queue: 3-2-5-0
+
+t = 176
+CPU: Preempting process 6 (remaining CPU burst = 24); loading process 3 (CPU burst = 2)
+Ready queue: 3-2-5-0
+
+t = 177
+CPU: Running process 3 (remaining CPU burst = 1)
+Ready queue: 2-5-0-6
+
+t = 178
+CPU: Finishing process 3; loading process 2 (CPU burst = 27)
+Ready queue: 2-5-0-6
+
+t = 179
+CPU: Running process 2 (remaining CPU burst = 26)
+Ready queue: 5-0-6
+
+t = 180
+CPU: Preempting process 2 (remaining CPU burst = 25); loading process 5 (CPU burst = 7)
+Ready queue: 5-0-6
+
+t = 181
+CPU: Running process 5 (remaining CPU burst = 6)
+Ready queue: 0-6-2
+
+t = 182
+CPU: Preempting process 5 (remaining CPU burst = 5); loading process 0 (CPU burst = 9)
+Ready queue: 0-6-2
+
+t = 183
+CPU: Running process 0 (remaining CPU burst = 8)
+Ready queue: 6-2-5
+
+t = 184
+CPU: Preempting process 0 (remaining CPU burst = 7); loading process 6 (CPU burst = 24)
+Ready queue: 6-2-5
+
+t = 185
+CPU: Running process 6 (remaining CPU burst = 23)
+Ready queue: 2-5-0
+
+t = 186
+CPU: Preempting process 6 (remaining CPU burst = 22); loading process 2 (CPU burst = 25)
+Ready queue: 2-5-0
+
+t = 187
+CPU: Running process 2 (remaining CPU burst = 24)
+Ready queue: 5-0-6
+
+t = 188
+CPU: Preempting process 2 (remaining CPU burst = 23); loading process 5 (CPU burst = 5)
+Ready queue: 5-0-6
+
+t = 189
+CPU: Running process 5 (remaining CPU burst = 4)
+Ready queue: 0-6-2
+
+t = 190
+CPU: Preempting process 5 (remaining CPU burst = 3); loading process 0 (CPU burst = 7)
+Ready queue: 0-6-2
+
+t = 191
+CPU: Running process 0 (remaining CPU burst = 6)
+Ready queue: 6-2-5
+
+t = 192
+CPU: Preempting process 0 (remaining CPU burst = 5); loading process 6 (CPU burst = 22)
+Ready queue: 6-2-5
+
+t = 193
+CPU: Running process 6 (remaining CPU burst = 21)
+Ready queue: 2-5-0
+
+t = 194
+CPU: Preempting process 6 (remaining CPU burst = 20); loading process 2 (CPU burst = 23)
+Ready queue: 2-5-0
+
+t = 195
+CPU: Running process 2 (remaining CPU burst = 22)
+Ready queue: 5-0-6
+
+t = 196
+CPU: Preempting process 2 (remaining CPU burst = 21); loading process 5 (CPU burst = 3)
+Ready queue: 5-0-6
+
+t = 197
+CPU: Running process 5 (remaining CPU burst = 2)
+Ready queue: 0-6-2
+
+t = 198
+CPU: Preempting process 5 (remaining CPU burst = 1); loading process 0 (CPU burst = 5)
+Ready queue: 0-6-2
+
+t = 199
+CPU: Running process 0 (remaining CPU burst = 4)
+Ready queue: 6-2-5
+
+t = 200
+CPU: Preempting process 0 (remaining CPU burst = 3); loading process 6 (CPU burst = 20)
+Ready queue: 6-2-5
+
+t = 201
+CPU: Running process 6 (remaining CPU burst = 19)
+Ready queue: 2-5-0
+
+t = 202
+CPU: Preempting process 6 (remaining CPU burst = 18); loading process 2 (CPU burst = 21)
+Ready queue: 2-5-0
+
+t = 203
+CPU: Running process 2 (remaining CPU burst = 20)
+Ready queue: 5-0-6
+
+t = 204
+CPU: Preempting process 2 (remaining CPU burst = 19); loading process 5 (CPU burst = 1)
+Ready queue: 5-0-6
+
+t = 205
+CPU: Finishing process 5; loading process 0 (CPU burst = 3)
+Ready queue: 0-6-2
+
+t = 206
+CPU: Running process 0 (remaining CPU burst = 2)
+Ready queue: 6-2
+
+t = 207
+CPU: Preempting process 0 (remaining CPU burst = 1); loading process 6 (CPU burst = 18)
+Ready queue: 6-2
+
+t = 208
+CPU: Running process 6 (remaining CPU burst = 17)
+Ready queue: 2-0
+
+t = 209
+CPU: Preempting process 6 (remaining CPU burst = 16); loading process 2 (CPU burst = 19)
+Ready queue: 2-0
+
+t = 210
+CPU: Running process 2 (remaining CPU burst = 18)
+Ready queue: 0-6
+
+t = 211
+CPU: Preempting process 2 (remaining CPU burst = 17); loading process 0 (CPU burst = 1)
+Ready queue: 0-6
+
+t = 212
+CPU: Finishing process 0; loading process 6 (CPU burst = 16)
+Ready queue: 6-2
+
+t = 213
+CPU: Running process 6 (remaining CPU burst = 15)
+Ready queue: 2
+
+t = 214
+CPU: Preempting process 6 (remaining CPU burst = 14); loading process 2 (CPU burst = 17)
+Ready queue: 2
+
+t = 215
+CPU: Running process 2 (remaining CPU burst = 16)
+Ready queue: 6
+
+t = 216
+CPU: Preempting process 2 (remaining CPU burst = 15); loading process 6 (CPU burst = 14)
+Ready queue: 6
+
+t = 217
+CPU: Running process 6 (remaining CPU burst = 13)
+Ready queue: 2
+
+t = 218
+CPU: Preempting process 6 (remaining CPU burst = 12); loading process 2 (CPU burst = 15)
+Ready queue: 2
+
+t = 219
+CPU: Running process 2 (remaining CPU burst = 14)
+Ready queue: 6
+
+t = 220
+CPU: Preempting process 2 (remaining CPU burst = 13); loading process 6 (CPU burst = 12)
+Ready queue: 6
+
+t = 221
+CPU: Running process 6 (remaining CPU burst = 11)
+Ready queue: 2
+
+t = 222
+CPU: Preempting process 6 (remaining CPU burst = 10); loading process 2 (CPU burst = 13)
+Ready queue: 2
+
+t = 223
+CPU: Running process 2 (remaining CPU burst = 12)
+Ready queue: 6
+
+t = 224
+CPU: Preempting process 2 (remaining CPU burst = 11); loading process 6 (CPU burst = 10)
+Ready queue: 6
+
+t = 225
+CPU: Running process 6 (remaining CPU burst = 9)
+Ready queue: 2
+
+t = 226
+CPU: Preempting process 6 (remaining CPU burst = 8); loading process 2 (CPU burst = 11)
+Ready queue: 2
+
+t = 227
+CPU: Running process 2 (remaining CPU burst = 10)
+Ready queue: 6
+
+t = 228
+CPU: Preempting process 2 (remaining CPU burst = 9); loading process 6 (CPU burst = 8)
+Ready queue: 6
+
+t = 229
+CPU: Running process 6 (remaining CPU burst = 7)
+Ready queue: 2
+
+t = 230
+CPU: Preempting process 6 (remaining CPU burst = 6); loading process 2 (CPU burst = 9)
+Ready queue: 2
+
+t = 231
+CPU: Running process 2 (remaining CPU burst = 8)
+Ready queue: 6
+
+t = 232
+CPU: Preempting process 2 (remaining CPU burst = 7); loading process 6 (CPU burst = 6)
+Ready queue: 6
+
+t = 233
+CPU: Running process 6 (remaining CPU burst = 5)
+Ready queue: 2
+
+t = 234
+CPU: Preempting process 6 (remaining CPU burst = 4); loading process 2 (CPU burst = 7)
+Ready queue: 2
+
+t = 235
+CPU: Running process 2 (remaining CPU burst = 6)
+Ready queue: 6
+
+t = 236
+CPU: Preempting process 2 (remaining CPU burst = 5); loading process 6 (CPU burst = 4)
+Ready queue: 6
+
+t = 237
+CPU: Running process 6 (remaining CPU burst = 3)
+Ready queue: 2
+
+t = 238
+CPU: Preempting process 6 (remaining CPU burst = 2); loading process 2 (CPU burst = 5)
+Ready queue: 2
+
+t = 239
+CPU: Running process 2 (remaining CPU burst = 4)
+Ready queue: 6
+
+t = 240
+CPU: Preempting process 2 (remaining CPU burst = 3); loading process 6 (CPU burst = 2)
+Ready queue: 6
+
+t = 241
+CPU: Running process 6 (remaining CPU burst = 1)
+Ready queue: 2
+
+t = 242
+CPU: Finishing process 6; loading process 2 (CPU burst = 3)
+Ready queue: 2
+
+t = 243
+CPU: Running process 2 (remaining CPU burst = 2)
+Ready queue: empty
+
+t = 244
+CPU: Running process 2 (remaining CPU burst = 1)
+Ready queue: empty
+
+t = 245
+CPU: Finishing process 2
+Ready queue: empty
+
+*********************************************************
+Round robin Summary (WT = wait time, TT = turnaround time):
+
+PID     WT     TT
+ 0     164    212
+ 1      22     32
+ 2     178    235
+ 3     133    163
+ 4      63     74
+ 5     147    180
+ 6     162    212
+ 7      12     14
+ 8      13     15
+ 9      14     16
+AVG  90.80 115.30
+
+Process sequence: 0-1-0-1-0-2-1-0-3-2-1-0-4-3-2-5-1-0-4-6-3-2-7-5-0-8-4-6-9-3-2-5-0-4-6-3-2-5-0-4-6-3-2-5-0-4-6-3-2-5-0-6-3-2-5-0-6-3-2-5-0-6-3-2-5-0-6-3-2-5-0-6-3-2-5-0-6-3-2-5-0-6-3-2-5-0-6-3-2-5-0-6-2-5-0-6-2-5-0-6-2-5-0-6-2-0-6-2-6-2-6-2-6-2-6-2-6-2-6-2-6-2
+Context switches: 122
+
+
+***** Priority Scheduling *****
+t = 0
+CPU: Loading process 0 (CPU burst = 48)
+Ready queue: 0
+
+t = 1
+CPU: Running process 0 (remaining CPU burst = 47)
+Ready queue: empty
+
+t = 2
+CPU: Running process 0 (remaining CPU burst = 46)
+Ready queue: empty
+
+t = 3
+CPU: Running process 0 (remaining CPU burst = 45)
+Ready queue: empty
+
+t = 4
+CPU: Running process 0 (remaining CPU burst = 44)
+Ready queue: empty
+
+t = 5
+CPU: Running process 0 (remaining CPU burst = 43)
+Ready queue: 1
+
+t = 6
+CPU: Running process 0 (remaining CPU burst = 42)
+Ready queue: 1
+
+t = 7
+CPU: Running process 0 (remaining CPU burst = 41)
+Ready queue: 1
+
+t = 8
+CPU: Running process 0 (remaining CPU burst = 40)
+Ready queue: 1
+
+t = 9
+CPU: Running process 0 (remaining CPU burst = 39)
+Ready queue: 1
+
+t = 10
+CPU: Running process 0 (remaining CPU burst = 38)
+Ready queue: 1-2
+
+t = 11
+CPU: Running process 0 (remaining CPU burst = 37)
+Ready queue: 1-2
+
+t = 12
+CPU: Running process 0 (remaining CPU burst = 36)
+Ready queue: 1-2
+
+t = 13
+CPU: Running process 0 (remaining CPU burst = 35)
+Ready queue: 1-2
+
+t = 14
+CPU: Running process 0 (remaining CPU burst = 34)
+Ready queue: 1-2
+
+t = 15
+CPU: Running process 0 (remaining CPU burst = 33)
+Ready queue: 3-1-2
+
+t = 16
+CPU: Running process 0 (remaining CPU burst = 32)
+Ready queue: 3-1-2
+
+t = 17
+CPU: Running process 0 (remaining CPU burst = 31)
+Ready queue: 3-1-2
+
+t = 18
+CPU: Running process 0 (remaining CPU burst = 30)
+Ready queue: 3-1-2
+
+t = 19
+CPU: Running process 0 (remaining CPU burst = 29)
+Ready queue: 3-1-2
+
+t = 20
+CPU: Running process 0 (remaining CPU burst = 28)
+Ready queue: 3-4-1-2
+
+t = 21
+CPU: Running process 0 (remaining CPU burst = 27)
+Ready queue: 3-4-1-2
+
+t = 22
+CPU: Running process 0 (remaining CPU burst = 26)
+Ready queue: 3-4-1-2
+
+t = 23
+CPU: Running process 0 (remaining CPU burst = 25)
+Ready queue: 3-4-1-2
+
+t = 24
+CPU: Running process 0 (remaining CPU burst = 24)
+Ready queue: 3-4-1-2
+
+t = 25
+CPU: Running process 0 (remaining CPU burst = 23)
+Ready queue: 3-4-1-2-5
+
+t = 26
+CPU: Running process 0 (remaining CPU burst = 22)
+Ready queue: 3-4-1-2-5
+
+t = 27
+CPU: Running process 0 (remaining CPU burst = 21)
+Ready queue: 3-4-1-2-5
+
+t = 28
+CPU: Running process 0 (remaining CPU burst = 20)
+Ready queue: 3-4-1-2-5
+
+t = 29
+CPU: Running process 0 (remaining CPU burst = 19)
+Ready queue: 3-4-1-2-5
+
+t = 30
+CPU: Running process 0 (remaining CPU burst = 18)
+Ready queue: 3-4-1-6-2-5
+
+t = 31
+CPU: Running process 0 (remaining CPU burst = 17)
+Ready queue: 3-4-1-6-2-5
+
+t = 32
+CPU: Running process 0 (remaining CPU burst = 16)
+Ready queue: 3-4-1-6-2-5
+
+t = 33
+CPU: Running process 0 (remaining CPU burst = 15)
+Ready queue: 3-4-1-6-2-5
+
+t = 34
+CPU: Running process 0 (remaining CPU burst = 14)
+Ready queue: 3-4-1-6-2-5
+
+t = 35
+CPU: Running process 0 (remaining CPU burst = 13)
+Ready queue: 3-4-1-6-2-5-7
+
+t = 36
+CPU: Running process 0 (remaining CPU burst = 12)
+Ready queue: 3-4-1-6-2-5-7
+
+t = 37
+CPU: Running process 0 (remaining CPU burst = 11)
+Ready queue: 3-4-1-6-2-5-7
+
+t = 38
+CPU: Running process 0 (remaining CPU burst = 10)
+Ready queue: 3-4-1-6-2-5-7
+
+t = 39
+CPU: Running process 0 (remaining CPU burst = 9)
+Ready queue: 3-4-1-6-2-5-7
+
+t = 40
+CPU: Running process 0 (remaining CPU burst = 8)
+Ready queue: 3-4-1-6-2-5-7-8
+
+t = 41
+CPU: Running process 0 (remaining CPU burst = 7)
+Ready queue: 3-4-1-6-2-5-7-8
+
+t = 42
+CPU: Running process 0 (remaining CPU burst = 6)
+Ready queue: 3-4-1-6-2-5-7-8
+
+t = 43
+CPU: Running process 0 (remaining CPU burst = 5)
+Ready queue: 3-4-1-6-2-5-7-8
+
+t = 44
+CPU: Running process 0 (remaining CPU burst = 4)
+Ready queue: 3-4-1-6-2-5-7-8
+
+t = 45
+CPU: Running process 0 (remaining CPU burst = 3)
+Ready queue: 3-4-1-6-2-5-7-8-9
+
+t = 46
+CPU: Running process 0 (remaining CPU burst = 2)
+Ready queue: 3-4-1-6-2-5-7-8-9
+
+t = 47
+CPU: Running process 0 (remaining CPU burst = 1)
+Ready queue: 3-4-1-6-2-5-7-8-9
+
+t = 48
+CPU: Finishing process 0; loading process 3 (CPU burst = 30)
+Ready queue: 3-4-1-6-2-5-7-8-9
+
+t = 49
+CPU: Running process 3 (remaining CPU burst = 29)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 50
+CPU: Running process 3 (remaining CPU burst = 28)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 51
+CPU: Running process 3 (remaining CPU burst = 27)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 52
+CPU: Running process 3 (remaining CPU burst = 26)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 53
+CPU: Running process 3 (remaining CPU burst = 25)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 54
+CPU: Running process 3 (remaining CPU burst = 24)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 55
+CPU: Running process 3 (remaining CPU burst = 23)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 56
+CPU: Running process 3 (remaining CPU burst = 22)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 57
+CPU: Running process 3 (remaining CPU burst = 21)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 58
+CPU: Running process 3 (remaining CPU burst = 20)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 59
+CPU: Running process 3 (remaining CPU burst = 19)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 60
+CPU: Running process 3 (remaining CPU burst = 18)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 61
+CPU: Running process 3 (remaining CPU burst = 17)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 62
+CPU: Running process 3 (remaining CPU burst = 16)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 63
+CPU: Running process 3 (remaining CPU burst = 15)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 64
+CPU: Running process 3 (remaining CPU burst = 14)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 65
+CPU: Running process 3 (remaining CPU burst = 13)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 66
+CPU: Running process 3 (remaining CPU burst = 12)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 67
+CPU: Running process 3 (remaining CPU burst = 11)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 68
+CPU: Running process 3 (remaining CPU burst = 10)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 69
+CPU: Running process 3 (remaining CPU burst = 9)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 70
+CPU: Running process 3 (remaining CPU burst = 8)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 71
+CPU: Running process 3 (remaining CPU burst = 7)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 72
+CPU: Running process 3 (remaining CPU burst = 6)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 73
+CPU: Running process 3 (remaining CPU burst = 5)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 74
+CPU: Running process 3 (remaining CPU burst = 4)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 75
+CPU: Running process 3 (remaining CPU burst = 3)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 76
+CPU: Running process 3 (remaining CPU burst = 2)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 77
+CPU: Running process 3 (remaining CPU burst = 1)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 78
+CPU: Finishing process 3; loading process 4 (CPU burst = 11)
+Ready queue: 4-1-6-2-5-7-8-9
+
+t = 79
+CPU: Running process 4 (remaining CPU burst = 10)
+Ready queue: 1-6-2-5-7-8-9
+
+t = 80
+CPU: Running process 4 (remaining CPU burst = 9)
+Ready queue: 1-6-2-5-7-8-9
+
+t = 81
+CPU: Running process 4 (remaining CPU burst = 8)
+Ready queue: 1-6-2-5-7-8-9
+
+t = 82
+CPU: Running process 4 (remaining CPU burst = 7)
+Ready queue: 1-6-2-5-7-8-9
+
+t = 83
+CPU: Running process 4 (remaining CPU burst = 6)
+Ready queue: 1-6-2-5-7-8-9
+
+t = 84
+CPU: Running process 4 (remaining CPU burst = 5)
+Ready queue: 1-6-2-5-7-8-9
+
+t = 85
+CPU: Running process 4 (remaining CPU burst = 4)
+Ready queue: 1-6-2-5-7-8-9
+
+t = 86
+CPU: Running process 4 (remaining CPU burst = 3)
+Ready queue: 1-6-2-5-7-8-9
+
+t = 87
+CPU: Running process 4 (remaining CPU burst = 2)
+Ready queue: 1-6-2-5-7-8-9
+
+t = 88
+CPU: Running process 4 (remaining CPU burst = 1)
+Ready queue: 1-6-2-5-7-8-9
+
+t = 89
+CPU: Finishing process 4; loading process 1 (CPU burst = 10)
+Ready queue: 1-6-2-5-7-8-9
+
+t = 90
+CPU: Running process 1 (remaining CPU burst = 9)
+Ready queue: 6-2-5-7-8-9
+
+t = 91
+CPU: Running process 1 (remaining CPU burst = 8)
+Ready queue: 6-2-5-7-8-9
+
+t = 92
+CPU: Running process 1 (remaining CPU burst = 7)
+Ready queue: 6-2-5-7-8-9
+
+t = 93
+CPU: Running process 1 (remaining CPU burst = 6)
+Ready queue: 6-2-5-7-8-9
+
+t = 94
+CPU: Running process 1 (remaining CPU burst = 5)
+Ready queue: 6-2-5-7-8-9
+
+t = 95
+CPU: Running process 1 (remaining CPU burst = 4)
+Ready queue: 6-2-5-7-8-9
+
+t = 96
+CPU: Running process 1 (remaining CPU burst = 3)
+Ready queue: 6-2-5-7-8-9
+
+t = 97
+CPU: Running process 1 (remaining CPU burst = 2)
+Ready queue: 6-2-5-7-8-9
+
+t = 98
+CPU: Running process 1 (remaining CPU burst = 1)
+Ready queue: 6-2-5-7-8-9
+
+t = 99
+CPU: Finishing process 1; loading process 6 (CPU burst = 50)
+Ready queue: 6-2-5-7-8-9
+
+t = 100
+CPU: Running process 6 (remaining CPU burst = 49)
+Ready queue: 2-5-7-8-9
+
+t = 101
+CPU: Running process 6 (remaining CPU burst = 48)
+Ready queue: 2-5-7-8-9
+
+t = 102
+CPU: Running process 6 (remaining CPU burst = 47)
+Ready queue: 2-5-7-8-9
+
+t = 103
+CPU: Running process 6 (remaining CPU burst = 46)
+Ready queue: 2-5-7-8-9
+
+t = 104
+CPU: Running process 6 (remaining CPU burst = 45)
+Ready queue: 2-5-7-8-9
+
+t = 105
+CPU: Running process 6 (remaining CPU burst = 44)
+Ready queue: 2-5-7-8-9
+
+t = 106
+CPU: Running process 6 (remaining CPU burst = 43)
+Ready queue: 2-5-7-8-9
+
+t = 107
+CPU: Running process 6 (remaining CPU burst = 42)
+Ready queue: 2-5-7-8-9
+
+t = 108
+CPU: Running process 6 (remaining CPU burst = 41)
+Ready queue: 2-5-7-8-9
+
+t = 109
+CPU: Running process 6 (remaining CPU burst = 40)
+Ready queue: 2-5-7-8-9
+
+t = 110
+CPU: Running process 6 (remaining CPU burst = 39)
+Ready queue: 2-5-7-8-9
+
+t = 111
+CPU: Running process 6 (remaining CPU burst = 38)
+Ready queue: 2-5-7-8-9
+
+t = 112
+CPU: Running process 6 (remaining CPU burst = 37)
+Ready queue: 2-5-7-8-9
+
+t = 113
+CPU: Running process 6 (remaining CPU burst = 36)
+Ready queue: 2-5-7-8-9
+
+t = 114
+CPU: Running process 6 (remaining CPU burst = 35)
+Ready queue: 2-5-7-8-9
+
+t = 115
+CPU: Running process 6 (remaining CPU burst = 34)
+Ready queue: 2-5-7-8-9
+
+t = 116
+CPU: Running process 6 (remaining CPU burst = 33)
+Ready queue: 2-5-7-8-9
+
+t = 117
+CPU: Running process 6 (remaining CPU burst = 32)
+Ready queue: 2-5-7-8-9
+
+t = 118
+CPU: Running process 6 (remaining CPU burst = 31)
+Ready queue: 2-5-7-8-9
+
+t = 119
+CPU: Running process 6 (remaining CPU burst = 30)
+Ready queue: 2-5-7-8-9
+
+t = 120
+CPU: Running process 6 (remaining CPU burst = 29)
+Ready queue: 2-5-7-8-9
+
+t = 121
+CPU: Running process 6 (remaining CPU burst = 28)
+Ready queue: 2-5-7-8-9
+
+t = 122
+CPU: Running process 6 (remaining CPU burst = 27)
+Ready queue: 2-5-7-8-9
+
+t = 123
+CPU: Running process 6 (remaining CPU burst = 26)
+Ready queue: 2-5-7-8-9
+
+t = 124
+CPU: Running process 6 (remaining CPU burst = 25)
+Ready queue: 2-5-7-8-9
+
+t = 125
+CPU: Running process 6 (remaining CPU burst = 24)
+Ready queue: 2-5-7-8-9
+
+t = 126
+CPU: Running process 6 (remaining CPU burst = 23)
+Ready queue: 2-5-7-8-9
+
+t = 127
+CPU: Running process 6 (remaining CPU burst = 22)
+Ready queue: 2-5-7-8-9
+
+t = 128
+CPU: Running process 6 (remaining CPU burst = 21)
+Ready queue: 2-5-7-8-9
+
+t = 129
+CPU: Running process 6 (remaining CPU burst = 20)
+Ready queue: 2-5-7-8-9
+
+t = 130
+CPU: Running process 6 (remaining CPU burst = 19)
+Ready queue: 2-5-7-8-9
+
+t = 131
+CPU: Running process 6 (remaining CPU burst = 18)
+Ready queue: 2-5-7-8-9
+
+t = 132
+CPU: Running process 6 (remaining CPU burst = 17)
+Ready queue: 2-5-7-8-9
+
+t = 133
+CPU: Running process 6 (remaining CPU burst = 16)
+Ready queue: 2-5-7-8-9
+
+t = 134
+CPU: Running process 6 (remaining CPU burst = 15)
+Ready queue: 2-5-7-8-9
+
+t = 135
+CPU: Running process 6 (remaining CPU burst = 14)
+Ready queue: 2-5-7-8-9
+
+t = 136
+CPU: Running process 6 (remaining CPU burst = 13)
+Ready queue: 2-5-7-8-9
+
+t = 137
+CPU: Running process 6 (remaining CPU burst = 12)
+Ready queue: 2-5-7-8-9
+
+t = 138
+CPU: Running process 6 (remaining CPU burst = 11)
+Ready queue: 2-5-7-8-9
+
+t = 139
+CPU: Running process 6 (remaining CPU burst = 10)
+Ready queue: 2-5-7-8-9
+
+t = 140
+CPU: Running process 6 (remaining CPU burst = 9)
+Ready queue: 2-5-7-8-9
+
+t = 141
+CPU: Running process 6 (remaining CPU burst = 8)
+Ready queue: 2-5-7-8-9
+
+t = 142
+CPU: Running process 6 (remaining CPU burst = 7)
+Ready queue: 2-5-7-8-9
+
+t = 143
+CPU: Running process 6 (remaining CPU burst = 6)
+Ready queue: 2-5-7-8-9
+
+t = 144
+CPU: Running process 6 (remaining CPU burst = 5)
+Ready queue: 2-5-7-8-9
+
+t = 145
+CPU: Running process 6 (remaining CPU burst = 4)
+Ready queue: 2-5-7-8-9
+
+t = 146
+CPU: Running process 6 (remaining CPU burst = 3)
+Ready queue: 2-5-7-8-9
+
+t = 147
+CPU: Running process 6 (remaining CPU burst = 2)
+Ready queue: 2-5-7-8-9
+
+t = 148
+CPU: Running process 6 (remaining CPU burst = 1)
+Ready queue: 2-5-7-8-9
+
+t = 149
+CPU: Finishing process 6; loading process 2 (CPU burst = 57)
+Ready queue: 2-5-7-8-9
+
+t = 150
+CPU: Running process 2 (remaining CPU burst = 56)
+Ready queue: 5-7-8-9
+
+t = 151
+CPU: Running process 2 (remaining CPU burst = 55)
+Ready queue: 5-7-8-9
+
+t = 152
+CPU: Running process 2 (remaining CPU burst = 54)
+Ready queue: 5-7-8-9
+
+t = 153
+CPU: Running process 2 (remaining CPU burst = 53)
+Ready queue: 5-7-8-9
+
+t = 154
+CPU: Running process 2 (remaining CPU burst = 52)
+Ready queue: 5-7-8-9
+
+t = 155
+CPU: Running process 2 (remaining CPU burst = 51)
+Ready queue: 5-7-8-9
+
+t = 156
+CPU: Running process 2 (remaining CPU burst = 50)
+Ready queue: 5-7-8-9
+
+t = 157
+CPU: Running process 2 (remaining CPU burst = 49)
+Ready queue: 5-7-8-9
+
+t = 158
+CPU: Running process 2 (remaining CPU burst = 48)
+Ready queue: 5-7-8-9
+
+t = 159
+CPU: Running process 2 (remaining CPU burst = 47)
+Ready queue: 5-7-8-9
+
+t = 160
+CPU: Running process 2 (remaining CPU burst = 46)
+Ready queue: 5-7-8-9
+
+t = 161
+CPU: Running process 2 (remaining CPU burst = 45)
+Ready queue: 5-7-8-9
+
+t = 162
+CPU: Running process 2 (remaining CPU burst = 44)
+Ready queue: 5-7-8-9
+
+t = 163
+CPU: Running process 2 (remaining CPU burst = 43)
+Ready queue: 5-7-8-9
+
+t = 164
+CPU: Running process 2 (remaining CPU burst = 42)
+Ready queue: 5-7-8-9
+
+t = 165
+CPU: Running process 2 (remaining CPU burst = 41)
+Ready queue: 5-7-8-9
+
+t = 166
+CPU: Running process 2 (remaining CPU burst = 40)
+Ready queue: 5-7-8-9
+
+t = 167
+CPU: Running process 2 (remaining CPU burst = 39)
+Ready queue: 5-7-8-9
+
+t = 168
+CPU: Running process 2 (remaining CPU burst = 38)
+Ready queue: 5-7-8-9
+
+t = 169
+CPU: Running process 2 (remaining CPU burst = 37)
+Ready queue: 5-7-8-9
+
+t = 170
+CPU: Running process 2 (remaining CPU burst = 36)
+Ready queue: 5-7-8-9
+
+t = 171
+CPU: Running process 2 (remaining CPU burst = 35)
+Ready queue: 5-7-8-9
+
+t = 172
+CPU: Running process 2 (remaining CPU burst = 34)
+Ready queue: 5-7-8-9
+
+t = 173
+CPU: Running process 2 (remaining CPU burst = 33)
+Ready queue: 5-7-8-9
+
+t = 174
+CPU: Running process 2 (remaining CPU burst = 32)
+Ready queue: 5-7-8-9
+
+t = 175
+CPU: Running process 2 (remaining CPU burst = 31)
+Ready queue: 5-7-8-9
+
+t = 176
+CPU: Running process 2 (remaining CPU burst = 30)
+Ready queue: 5-7-8-9
+
+t = 177
+CPU: Running process 2 (remaining CPU burst = 29)
+Ready queue: 5-7-8-9
+
+t = 178
+CPU: Running process 2 (remaining CPU burst = 28)
+Ready queue: 5-7-8-9
+
+t = 179
+CPU: Running process 2 (remaining CPU burst = 27)
+Ready queue: 5-7-8-9
+
+t = 180
+CPU: Running process 2 (remaining CPU burst = 26)
+Ready queue: 5-7-8-9
+
+t = 181
+CPU: Running process 2 (remaining CPU burst = 25)
+Ready queue: 5-7-8-9
+
+t = 182
+CPU: Running process 2 (remaining CPU burst = 24)
+Ready queue: 5-7-8-9
+
+t = 183
+CPU: Running process 2 (remaining CPU burst = 23)
+Ready queue: 5-7-8-9
+
+t = 184
+CPU: Running process 2 (remaining CPU burst = 22)
+Ready queue: 5-7-8-9
+
+t = 185
+CPU: Running process 2 (remaining CPU burst = 21)
+Ready queue: 5-7-8-9
+
+t = 186
+CPU: Running process 2 (remaining CPU burst = 20)
+Ready queue: 5-7-8-9
+
+t = 187
+CPU: Running process 2 (remaining CPU burst = 19)
+Ready queue: 5-7-8-9
+
+t = 188
+CPU: Running process 2 (remaining CPU burst = 18)
+Ready queue: 5-7-8-9
+
+t = 189
+CPU: Running process 2 (remaining CPU burst = 17)
+Ready queue: 5-7-8-9
+
+t = 190
+CPU: Running process 2 (remaining CPU burst = 16)
+Ready queue: 5-7-8-9
+
+t = 191
+CPU: Running process 2 (remaining CPU burst = 15)
+Ready queue: 5-7-8-9
+
+t = 192
+CPU: Running process 2 (remaining CPU burst = 14)
+Ready queue: 5-7-8-9
+
+t = 193
+CPU: Running process 2 (remaining CPU burst = 13)
+Ready queue: 5-7-8-9
+
+t = 194
+CPU: Running process 2 (remaining CPU burst = 12)
+Ready queue: 5-7-8-9
+
+t = 195
+CPU: Running process 2 (remaining CPU burst = 11)
+Ready queue: 5-7-8-9
+
+t = 196
+CPU: Running process 2 (remaining CPU burst = 10)
+Ready queue: 5-7-8-9
+
+t = 197
+CPU: Running process 2 (remaining CPU burst = 9)
+Ready queue: 5-7-8-9
+
+t = 198
+CPU: Running process 2 (remaining CPU burst = 8)
+Ready queue: 5-7-8-9
+
+t = 199
+CPU: Running process 2 (remaining CPU burst = 7)
+Ready queue: 5-7-8-9
+
+t = 200
+CPU: Running process 2 (remaining CPU burst = 6)
+Ready queue: 5-7-8-9
+
+t = 201
+CPU: Running process 2 (remaining CPU burst = 5)
+Ready queue: 5-7-8-9
+
+t = 202
+CPU: Running process 2 (remaining CPU burst = 4)
+Ready queue: 5-7-8-9
+
+t = 203
+CPU: Running process 2 (remaining CPU burst = 3)
+Ready queue: 5-7-8-9
+
+t = 204
+CPU: Running process 2 (remaining CPU burst = 2)
+Ready queue: 5-7-8-9
+
+t = 205
+CPU: Running process 2 (remaining CPU burst = 1)
+Ready queue: 5-7-8-9
+
+t = 206
+CPU: Finishing process 2; loading process 5 (CPU burst = 33)
+Ready queue: 5-7-8-9
+
+t = 207
+CPU: Running process 5 (remaining CPU burst = 32)
+Ready queue: 7-8-9
+
+t = 208
+CPU: Running process 5 (remaining CPU burst = 31)
+Ready queue: 7-8-9
+
+t = 209
+CPU: Running process 5 (remaining CPU burst = 30)
+Ready queue: 7-8-9
+
+t = 210
+CPU: Running process 5 (remaining CPU burst = 29)
+Ready queue: 7-8-9
+
+t = 211
+CPU: Running process 5 (remaining CPU burst = 28)
+Ready queue: 7-8-9
+
+t = 212
+CPU: Running process 5 (remaining CPU burst = 27)
+Ready queue: 7-8-9
+
+t = 213
+CPU: Running process 5 (remaining CPU burst = 26)
+Ready queue: 7-8-9
+
+t = 214
+CPU: Running process 5 (remaining CPU burst = 25)
+Ready queue: 7-8-9
+
+t = 215
+CPU: Running process 5 (remaining CPU burst = 24)
+Ready queue: 7-8-9
+
+t = 216
+CPU: Running process 5 (remaining CPU burst = 23)
+Ready queue: 7-8-9
+
+t = 217
+CPU: Running process 5 (remaining CPU burst = 22)
+Ready queue: 7-8-9
+
+t = 218
+CPU: Running process 5 (remaining CPU burst = 21)
+Ready queue: 7-8-9
+
+t = 219
+CPU: Running process 5 (remaining CPU burst = 20)
+Ready queue: 7-8-9
+
+t = 220
+CPU: Running process 5 (remaining CPU burst = 19)
+Ready queue: 7-8-9
+
+t = 221
+CPU: Running process 5 (remaining CPU burst = 18)
+Ready queue: 7-8-9
+
+t = 222
+CPU: Running process 5 (remaining CPU burst = 17)
+Ready queue: 7-8-9
+
+t = 223
+CPU: Running process 5 (remaining CPU burst = 16)
+Ready queue: 7-8-9
+
+t = 224
+CPU: Running process 5 (remaining CPU burst = 15)
+Ready queue: 7-8-9
+
+t = 225
+CPU: Running process 5 (remaining CPU burst = 14)
+Ready queue: 7-8-9
+
+t = 226
+CPU: Running process 5 (remaining CPU burst = 13)
+Ready queue: 7-8-9
+
+t = 227
+CPU: Running process 5 (remaining CPU burst = 12)
+Ready queue: 7-8-9
+
+t = 228
+CPU: Running process 5 (remaining CPU burst = 11)
+Ready queue: 7-8-9
+
+t = 229
+CPU: Running process 5 (remaining CPU burst = 10)
+Ready queue: 7-8-9
+
+t = 230
+CPU: Running process 5 (remaining CPU burst = 9)
+Ready queue: 7-8-9
+
+t = 231
+CPU: Running process 5 (remaining CPU burst = 8)
+Ready queue: 7-8-9
+
+t = 232
+CPU: Running process 5 (remaining CPU burst = 7)
+Ready queue: 7-8-9
+
+t = 233
+CPU: Running process 5 (remaining CPU burst = 6)
+Ready queue: 7-8-9
+
+t = 234
+CPU: Running process 5 (remaining CPU burst = 5)
+Ready queue: 7-8-9
+
+t = 235
+CPU: Running process 5 (remaining CPU burst = 4)
+Ready queue: 7-8-9
+
+t = 236
+CPU: Running process 5 (remaining CPU burst = 3)
+Ready queue: 7-8-9
+
+t = 237
+CPU: Running process 5 (remaining CPU burst = 2)
+Ready queue: 7-8-9
+
+t = 238
+CPU: Running process 5 (remaining CPU burst = 1)
+Ready queue: 7-8-9
+
+t = 239
+CPU: Finishing process 5; loading process 7 (CPU burst = 2)
+Ready queue: 7-8-9
+
+t = 240
+CPU: Running process 7 (remaining CPU burst = 1)
+Ready queue: 8-9
+
+t = 241
+CPU: Finishing process 7; loading process 8 (CPU burst = 2)
+Ready queue: 8-9
+
+t = 242
+CPU: Running process 8 (remaining CPU burst = 1)
+Ready queue: 9
+
+t = 243
+CPU: Finishing process 8; loading process 9 (CPU burst = 2)
+Ready queue: 9
+
+t = 244
+CPU: Running process 9 (remaining CPU burst = 1)
+Ready queue: empty
+
+t = 245
+CPU: Finishing process 9
+Ready queue: empty
+
+*********************************************************
+Priority Summary (WT = wait time, TT = turnaround time):
+
+PID     WT     TT
+ 0       0     48
+ 1      84     94
+ 2     139    196
+ 3      33     63
+ 4      58     69
+ 5     181    214
+ 6      69    119
+ 7     204    206
+ 8     201    203
+ 9     198    200
+AVG 116.70 141.20
+
+Process sequence: 0-3-4-1-6-2-5-7-8-9
+Context switches: 10
+
+
+***** OVERALL SUMMARY *****
+
+Wait Time Comparison
+1 STCF          43.00
+2 SJF           54.90
+3 Round robin   90.80
+4 Priority     116.70
+5 FCFS         120.90
+
+Turnaround Time Comparison
+1 STCF          67.50
+2 SJF           79.40
+3 Round robin  115.30
+4 Priority     141.20
+5 FCFS         145.40
+
+Context Switch Comparison
+1 SJF           10
+2 Priority      10
+3 FCFS          10
+4 STCF          15
+5 Round robin  122
