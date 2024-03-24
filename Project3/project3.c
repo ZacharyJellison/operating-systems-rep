@@ -1,7 +1,8 @@
-//#include "sched_sim.c"
+#include "sched_sim.c"
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <pthread.h>
 
 int main(int argc, char **argv){     /*
 Input 1 is program
@@ -27,27 +28,20 @@ Input 4 is interval between scheduler snapshots     */
         }
     } while (c != EOF);
 
- //   int interval = atoi(argv[3]);
+    int interval = atoi(argv[3]);
     int size = current_line;
     int size_all = size * 3;
-
-    //printf("size: %d, sizeall: %d \n", size, size_all);
 
     int *all_input;
     all_input = (int *)malloc(sizeof(int) * size_all);
 
+    fseek(fp, 0, SEEK_SET);     //Return to start of file
+
     for(int loop = 0; loop < size_all; loop++){
-        fscanf(fp, "%d", &all_input[loop]);
+        fscanf(fp, "%d ", &all_input[loop]);
     }
 
     fclose(fp);
-
-    for(int loop = 0; loop < size_all; loop++){
-        printf("%d ", all_input[loop]);
-    }
-    printf("\n");
-
-    /*
 
 // Create for loops to read simulation info
 //First find number of processes to create sim info
@@ -64,6 +58,27 @@ Input 4 is interval between scheduler snapshots     */
         simDat.arrivalTime[i] = all_input[inputIndex];
         inputIndex++;
     }
+//ALL CODE ABOVE WORKS, SAVES ALL INPUT DATA TO A
+//DATA STRUCTURE THAT VARIES IN SIZE DEPENDENT ON INPUT
 
-    */
+//FCFS
+    pthread_t fcfs_thread;
+    pthread_create(&fcfs_thread, NULL, FCFS, &simDat);
+    pthread_join(fcfs_thread, NULL);
+//SJF
+    pthread_t sjf_thread;
+    pthread_create(&sjf_thread, NULL, SJF, &simDat);
+    pthread_join(sjf_thread, NULL);
+//STCF
+    pthread_t stcf_thread;
+    pthread_create(&stcf_thread, NULL, STCF, &simDat);
+    pthread_join(stcf_thread, NULL);
+//ROUND ROBIN
+    pthread_t RR_thread;
+    pthread_create(&RR_thread, NULL, RoundRobin, &simDat);
+    pthread_join(RR_thread, NULL);
+//PRIORITY
+    pthread_t prio_thread;
+    pthread_create(&prio_thread, NULL, Priority, &simDat);
+    pthread_join(prio_thread, NULL);
 }
