@@ -17,7 +17,7 @@ typedef struct Sim_Info{
     //Created
     float* AVGwaitTime;
     float* AVGturnTime;
-    float* contextSwitch;
+    int* contextSwitch;
 }Sim_Info;
 
 typedef struct passed_Info{

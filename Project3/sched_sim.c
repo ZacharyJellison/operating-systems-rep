@@ -9,7 +9,7 @@ void init_Info(Sim_Info *simInfo, int size){
 
     simInfo->AVGwaitTime = (float *)malloc(sizeof(int) * size);
     simInfo->AVGturnTime = (float *)malloc(sizeof(int) * size);
-    simInfo->contextSwitch = (float *)malloc(sizeof(int) * size);
+    simInfo->contextSwitch = (int *)malloc(sizeof(int) * size);
 }
 
 //      https://www.learnc.net/c-tutorial/c-write-text-file/
@@ -36,7 +36,7 @@ void *FCFS(void *args) {
     int current_time = 0;
     float waiting_time = 0;
     float turnaround_time = 0;
-    int contextSwitches = 0;
+    int contextSwitches = 1;
     int* process_sequence = (int*)malloc(functionInfo->simData->size * sizeof(int));
     int* WT = (int*)malloc(functionInfo->simData->size * sizeof(int));
     int* TT = (int*)malloc(functionInfo->simData->size * sizeof(int));
@@ -128,7 +128,9 @@ void *FCFS(void *args) {
         if (j < n - 1)
             fprintf(functionInfo->output, "-");
     }
-    fprintf(functionInfo->output, "\nContext switches: %d\n\n\n", contextSwitches + 1);
+    fprintf(functionInfo->output, "\nContext switches: %d\n\n\n", contextSwitches);
+
+    functionInfo->simData->contextSwitch[0] = contextSwitches;
     
     free(process_sequence);
     free(tempBurst);
@@ -221,9 +223,9 @@ void *Summary(void *args){
     fprintf(functionInfo->output, "5  %.2lf\n\n", 0.1);
 
     fprintf(functionInfo->output, "Context Switch Comparison\n");
-    fprintf(functionInfo->output, "1  %.0lf\n", 0.1);
-    fprintf(functionInfo->output, "2  %.0lf\n", 0.1);
-    fprintf(functionInfo->output, "3  %.0lf\n", 0.1);
-    fprintf(functionInfo->output, "4  %.0lf\n", 0.1);
-    fprintf(functionInfo->output, "5  %.0lf", 0.1);
+    fprintf(functionInfo->output, "1  %s    %d\n", sortingNames[0], functionInfo->simData->contextSwitch[0]);
+    fprintf(functionInfo->output, "2  %d\n", 1);
+    fprintf(functionInfo->output, "3  %d\n", 1);
+    fprintf(functionInfo->output, "4  %d\n", 1);
+    fprintf(functionInfo->output, "5  %d", 1);
 }
