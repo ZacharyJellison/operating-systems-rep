@@ -1,162 +1,123 @@
 ***** FCFS Scheduling *****
 t = 0
 CPU: Running process 1 (remaining CPU burst = 48)
-Ready queue: 1-1-1-1-1-1-1-1-1
+Ready queue: Ready queue: 0
 
 t = 10
 CPU: Running process 1 (remaining CPU burst = 38)
-Ready queue: 1-1-1-1-1-1-1-1-1
+Ready queue: 1-2
 
 t = 20
 CPU: Running process 1 (remaining CPU burst = 28)
-Ready queue: 1-1-1-1-1-1-1-1-1
+Ready queue: 1-2-3-4
 
 t = 30
 CPU: Running process 1 (remaining CPU burst = 18)
-Ready queue: 1-1-1-1-1-1-1-1-1
+Ready queue: 1-2-3-4-5-6
 
 t = 40
 CPU: Running process 1 (remaining CPU burst = 8)
-Ready queue: 1-1-1-1-1-1-1-1-1
+Ready queue: 1-2-3-4-5-6-7-8
 
 t = 50
-CPU: Running process 1 (remaining CPU burst = -2)
-Ready queue: 1-1-1-1-1-1-1-1-1
-
-t = 50
-CPU: Context switch
-Ready queue: 1-1-1-1-1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 8)
+Ready queue: 2-3-4-5-6-7-8-9
 
 t = 60
-CPU: Running process 1 (remaining CPU burst = 0)
-Ready queue: 1-1-1-1-1-1-1-1
-
-t = 60
-CPU: Context switch
-Ready queue: 1-1-1-1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 55)
+Ready queue: 3-4-5-6-7-8-9
 
 t = 70
-CPU: Running process 1 (remaining CPU burst = 47)
-Ready queue: 1-1-1-1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 45)
+Ready queue: 3-4-5-6-7-8-9
 
 t = 80
-CPU: Running process 1 (remaining CPU burst = 37)
-Ready queue: 1-1-1-1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 35)
+Ready queue: 3-4-5-6-7-8-9
 
 t = 90
-CPU: Running process 1 (remaining CPU burst = 27)
-Ready queue: 1-1-1-1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 25)
+Ready queue: 3-4-5-6-7-8-9
 
 t = 100
-CPU: Running process 1 (remaining CPU burst = 17)
-Ready queue: 1-1-1-1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 15)
+Ready queue: 3-4-5-6-7-8-9
 
 t = 110
-CPU: Running process 1 (remaining CPU burst = 7)
-Ready queue: 1-1-1-1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 5)
+Ready queue: 3-4-5-6-7-8-9
 
 t = 120
-CPU: Running process 1 (remaining CPU burst = -3)
-Ready queue: 1-1-1-1-1-1-1
-
-t = 120
-CPU: Context switch
-Ready queue: 1-1-1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 25)
+Ready queue: 4-5-6-7-8-9
 
 t = 130
-CPU: Running process 1 (remaining CPU burst = 20)
-Ready queue: 1-1-1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 15)
+Ready queue: 4-5-6-7-8-9
 
 t = 140
-CPU: Running process 1 (remaining CPU burst = 10)
-Ready queue: 1-1-1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 5)
+Ready queue: 4-5-6-7-8-9
 
 t = 150
-CPU: Running process 1 (remaining CPU burst = 0)
-Ready queue: 1-1-1-1-1-1
-
-t = 150
-CPU: Context switch
-Ready queue: 1-1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 6)
+Ready queue: 5-6-7-8-9
 
 t = 160
-CPU: Running process 1 (remaining CPU burst = 1)
-Ready queue: 1-1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 29)
+Ready queue: 6-7-8-9
 
 t = 170
-CPU: Running process 1 (remaining CPU burst = -9)
-Ready queue: 1-1-1-1-1
-
-t = 170
-CPU: Context switch
-Ready queue: 1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 19)
+Ready queue: 6-7-8-9
 
 t = 180
-CPU: Running process 1 (remaining CPU burst = 23)
-Ready queue: 1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 9)
+Ready queue: 6-7-8-9
 
 t = 190
-CPU: Running process 1 (remaining CPU burst = 13)
-Ready queue: 1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 49)
+Ready queue: 7-8-9
 
 t = 200
-CPU: Running process 1 (remaining CPU burst = 3)
-Ready queue: 1-1-1-1
+CPU: Running process 1 (remaining CPU burst = 39)
+Ready queue: 7-8-9
 
 t = 210
-CPU: Running process 1 (remaining CPU burst = -7)
-Ready queue: 1-1-1-1
-
-t = 210
-CPU: Context switch
-Ready queue: 1-1-1
+CPU: Running process 1 (remaining CPU burst = 29)
+Ready queue: 7-8-9
 
 t = 220
-CPU: Running process 1 (remaining CPU burst = 40)
-Ready queue: 1-1-1
+CPU: Running process 1 (remaining CPU burst = 19)
+Ready queue: 7-8-9
 
 t = 230
-CPU: Running process 1 (remaining CPU burst = 30)
-Ready queue: 1-1-1
+CPU: Running process 1 (remaining CPU burst = 9)
+Ready queue: 7-8-9
 
 t = 240
-CPU: Running process 1 (remaining CPU burst = 20)
-Ready queue: 1-1-1
-
-t = 250
-CPU: Running process 1 (remaining CPU burst = 10)
-Ready queue: 1-1-1
-
-t = 260
-CPU: Running process 1 (remaining CPU burst = 0)
-Ready queue: 1-1-1
-
-t = 260
-CPU: Context switch
-Ready queue: 1-1
-
-t = 270
-CPU: Running process 1 (remaining CPU burst = -8)
-Ready queue: 1-1
-
-t = 270
-CPU: Context switch
-Ready queue: 1
-
-t = 280
-CPU: Running process 1 (remaining CPU burst = -8)
-Ready queue: 1
-
-t = 280
-CPU: Context switch
-Ready queue: 
-
-t = 290
-CPU: Running process 1 (remaining CPU burst = -8)
-Ready queue: 
+CPU: Running process 1 (remaining CPU burst = 1)
+Ready queue: 8-9
 
 *********************************************************
 FCFS Summary (WT = wait time, TT = turnaround time):
+
+PID	WT	TT
+ 0	0	48
+ 1	43	53
+ 2	48	105
+ 3	100	130
+ 4	125	136
+ 5	131	164
+ 6	159	209
+ 7	204	206
+ 8	201	203
+ 9	198	200
+AVG	120.90	145.40
+
+Process sequence: 0-1-2-3-4-5-6-7-8-9
+Context switches: 10
+
 
 ***** SJF Schedueling *****
 
@@ -181,14 +142,14 @@ Priority Summary (WT = wait time, TT = turnaround time):
 ***** Overall Summary *****
 
 Wait Time Comparison
-1  354.00
+1  FCFS    120.90
 2  0.10
 3  0.10
 4  0.10
 5  0.10
 
 Turnaround Time Comparison
-1  418.20
+1  FCFS    145.40
 2  0.10
 3  0.10
 4  0.10
