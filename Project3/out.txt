@@ -236,14 +236,130 @@ PID	WT	TT
  9	0	2
 AVG	43.00	67.50
 
-Process sequence: 0 6 2 -832059211 0 0 0 0 0 0 
+Process sequence: 0 6 2 46888109 0 0 0 0 0 0 
 Context switches: 3
 
 
-***** STCF Schedueling *****
+***** STCF Scheduling *****
+t = 0
+CPU: Loading process 0 (remaining CPU burst = 48)
+Ready queue: 0
+
+t = 10
+CPU: Running process 1 (remaining CPU burst = 5)
+Ready queue: 0 2 
+
+t = 20
+CPU: Running process 3 (remaining CPU burst = 25)
+Ready queue: 0 2 4 
+
+t = 30
+CPU: Running process 4 (remaining CPU burst = 1)
+Ready queue: 0 2 3 5 6 
+
+t = 40
+CPU: Running process 3 (remaining CPU burst = 18)
+Ready queue: 0 2 5 6 8 
+
+t = 50
+CPU: Running process 3 (remaining CPU burst = 12)
+Ready queue: 0 2 5 6 
+
+t = 60
+CPU: Running process 3 (remaining CPU burst = 2)
+Ready queue: 0 2 5 6 
+
+t = 70
+CPU: Running process 5 (remaining CPU burst = 25)
+Ready queue: 0 2 6 
+
+t = 80
+CPU: Running process 5 (remaining CPU burst = 15)
+Ready queue: 0 2 6 
+
+t = 90
+CPU: Running process 5 (remaining CPU burst = 5)
+Ready queue: 0 2 6 
+
+t = 100
+CPU: Running process 0 (remaining CPU burst = 38)
+Ready queue: 2 6 
+
+t = 110
+CPU: Running process 0 (remaining CPU burst = 28)
+Ready queue: 2 6 
+
+t = 120
+CPU: Running process 0 (remaining CPU burst = 18)
+Ready queue: 2 6 
+
+t = 130
+CPU: Running process 0 (remaining CPU burst = 8)
+Ready queue: 2 6 
+
+t = 140
+CPU: Running process 6 (remaining CPU burst = 48)
+Ready queue: 2 
+
+t = 150
+CPU: Running process 6 (remaining CPU burst = 38)
+Ready queue: 2 
+
+t = 160
+CPU: Running process 6 (remaining CPU burst = 28)
+Ready queue: 2 
+
+t = 170
+CPU: Running process 6 (remaining CPU burst = 18)
+Ready queue: 2 
+
+t = 180
+CPU: Running process 6 (remaining CPU burst = 8)
+Ready queue: 2 
+
+t = 190
+CPU: Running process 2 (remaining CPU burst = 55)
+Ready queue: empty
+
+t = 200
+CPU: Running process 2 (remaining CPU burst = 45)
+Ready queue: empty
+
+t = 210
+CPU: Running process 2 (remaining CPU burst = 35)
+Ready queue: empty
+
+t = 220
+CPU: Running process 2 (remaining CPU burst = 25)
+Ready queue: empty
+
+t = 230
+CPU: Running process 2 (remaining CPU burst = 15)
+Ready queue: empty
+
+t = 240
+CPU: Running process 2 (remaining CPU burst = 5)
+Ready queue: empty
 
 *********************************************************
 STCF Summary (WT = wait time, TT = turnaround time):
+
+PID	WT	TT
+ 0	90	138
+ 1	0	10
+ 2	178	235
+ 3	17	47
+ 4	0	11
+ 5	37	70
+ 6	108	158
+ 7	0	2
+ 8	0	2
+ 9	0	2
+AVG	43.00	67.50
+
+Process sequence: 0-1-3-4-3-7-3-8-3-9-3-5-0-6-2
+Context switches: 15
+
 
 ***** Round robin Schedueling *****
 
@@ -260,20 +376,20 @@ Priority Summary (WT = wait time, TT = turnaround time):
 Wait Time Comparison
 1 FCFS		120.90
 2 SJF		43.00
-3 STCF		0.10
+3 STCF		43.00
 4 Round robin		0.10
 5 Priority		0.10
 
 Turnaround Time Comparison
 1 FCFS		145.40
 2 SJF		67.50
-3 STCF		0.10
+3 STCF		67.50
 4 Round robin		0.10
 5 Priority		0.10
 
 Context Switch Comparison
-1 FCFS		3
-2 SJF		32659
-3 STCF		1
+1 FCFS		10
+2 SJF		3
+3 STCF		15
 4 Round robin		1
 5 Priority		1
