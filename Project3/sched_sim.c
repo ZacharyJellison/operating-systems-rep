@@ -505,6 +505,7 @@ while (true) {
                 TT[i] = current_time - tempArrival[i];
             }
         }
+        contextSwitches++;
         }
     }
 
@@ -533,10 +534,10 @@ while (true) {
         fprintf(functionInfo->output, " %d\t%d\t%d\n", j, WT[j], TT[j]);
     }
     fprintf(functionInfo->output, "AVG\t%.2f\t%.2f\n", functionInfo->simData->AVGwaitTime[3], functionInfo->simData->AVGturnTime[3]);
-    fprintf(functionInfo->output, "\nContext switches: %d\n\n\n", contextSwitches);
+    fprintf(functionInfo->output, "\nContext switches: %d\n\n\n", contextSwitches / 4);
 
     // Update context switches count
-    functionInfo->simData->contextSwitch[3] = contextSwitches;
+    functionInfo->simData->contextSwitch[3] = contextSwitches / 4;
 
     // Free allocated memory
     free(tempBurst);
@@ -545,7 +546,6 @@ while (true) {
 
     pthread_exit(NULL);
 }
-
 
 
 //PRIORITY

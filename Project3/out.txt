@@ -478,7 +478,7 @@ PID	WT	TT
  9	11	13
 AVG	88.90	113.40
 
-Context switches: 330
+Context switches: 165
 
 
 ***** Priority Scheduling *****
@@ -618,5 +618,5 @@ Context Switch Comparison
 1 FCFS		10
 2 SJF		10
 3 STCF		15
-4 Round robin		330
+4 Round robin		165
 5 Priority		10
