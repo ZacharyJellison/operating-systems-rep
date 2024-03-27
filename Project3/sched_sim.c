@@ -138,13 +138,11 @@ void *FCFS(void *args) {
 
 
 //SJF
-void *SJF(void *args) {
+void *SJF(void *args){
     passed_Info *functionInfo = (passed_Info *)args;
     int current_time = 0;
-    float waiting_time = 0;
-    float turnaround_time = 0;
-    int contextSwitches = 0;
-    int* process_sequence = (int*)malloc(functionInfo->simData->size * sizeof(int));
+    int contextSwitches = 1;
+    int process[100];
     int* WT = (int*)malloc(functionInfo->simData->size * sizeof(int));
     int* TT = (int*)malloc(functionInfo->simData->size * sizeof(int));
 
@@ -157,6 +155,8 @@ void *SJF(void *args) {
     }
 
     int i = 0;
+    int p = 0;
+    process[0] = 0;
     int interval = functionInfo->simData->interval; // Interval for periodic updates
 
     // Print initial state
@@ -165,59 +165,75 @@ void *SJF(void *args) {
     fprintf(functionInfo->output, "Ready queue: %d", i);
     fprintf(functionInfo->output, "\n\n");
 
+    int last_job = 0;
+    int shortest_job = 0;
+
     while (1) {
-        int shortest_job = -1;
         int shortest_burst = INT_MAX;
 
-        // Find the shortest job in the ready queue
-
+        // Find the shortest job in the ready queue once current job is finished
+        if(tempBurst[shortest_job] < 1){
             for (int j = 0; j < n; j++) {
                 if (tempBurst[j] > 0 && functionInfo->simData->arrivalTime[j] <= current_time && tempBurst[j] < shortest_burst) {
                     shortest_job = j;
                     shortest_burst = tempBurst[j];
                 }
             }
+            i++;
+        }
+
+        if(i > n-1)
+            break;
+
+
+            if(last_job != shortest_job){
+                contextSwitches++;
+                process[p+1] = shortest_job;
+                p += 1;
+            }
+
+            last_job = shortest_job;
 
             if(shortest_job == -1)
                 break;
 
         // Update time and execute the shortest job
-        //current_time += tempBurst[shortest_job];
         current_time += 1;
         tempBurst[shortest_job] -= 1;
 
         // Update waiting and turnaround time for the completed job
         WT[shortest_job] = current_time - functionInfo->simData->arrivalTime[shortest_job] - functionInfo->simData->CPU_Burst[shortest_job];
         TT[shortest_job] = current_time - functionInfo->simData->arrivalTime[shortest_job];
-        process_sequence[i] = shortest_job;
-
-        // Move to the next process
-        if (tempBurst[i] <= 0 && i < n) {
-            i++; // Move to the next process
-            contextSwitches++;
-        }
-
-        if (i >= n)
-            break;
 
         // Check if it's time for a periodic update
         if (current_time % interval == 0) {
             // Print periodic update
             fprintf(functionInfo->output, "t = %d\n", current_time);
-            fprintf(functionInfo->output, "CPU: Running process %d (remaining CPU burst = %d)\n", shortest_job, tempBurst[shortest_job]);
+            fprintf(functionInfo->output, "CPU: Running process %d (remaining CPU burst = %d)", shortest_job, tempBurst[shortest_job]);
+            fprintf(functionInfo->output, "\n");
             fprintf(functionInfo->output, "Ready queue: ");
+            int count = 0;
             for (int q = 0; q < n; q++) {
-                if (tempBurst[q] > 0 && functionInfo->simData->arrivalTime[q] <= current_time) {
-                    fprintf(functionInfo->output, "%d", q);
-                    if (q < n - 1)
-                        fprintf(functionInfo->output, "-");
+                if (tempBurst[q] > 0 && functionInfo->simData->arrivalTime[q] <= current_time && (q != shortest_job)) {
+                    fprintf(functionInfo->output, "%d ", q);
+                    count ++;
                 }
+            }
+            if(count == 0){
+                fprintf(functionInfo->output, "empty");
             }
             fprintf(functionInfo->output, "\n\n");
         }
     }
 
+    int* process_sequence = (int*)malloc(contextSwitches * sizeof(int));
+    for(int y = 0; y < contextSwitches; y++){
+        process_sequence[y] = process[y];
+    }
+
     // Calculate average waiting and turnaround time
+    float waiting_time = 0;
+    float turnaround_time = 0;
     for (int k = 0; k < n; k++) {
         waiting_time += WT[k];
     }
@@ -238,8 +254,10 @@ void *SJF(void *args) {
     }
     fprintf(functionInfo->output, "AVG\t%.2f\t%.2f\n", functionInfo->simData->AVGwaitTime[1], functionInfo->simData->AVGturnTime[1]);
     fprintf(functionInfo->output, "\nProcess sequence: ");
-    for (int j = 0; j < n; j++) {
-        fprintf(functionInfo->output, "%d ", process_sequence[j]);
+    for (int j = 0; j < contextSwitches; j++) {
+        fprintf(functionInfo->output, "%d", process_sequence[j]);
+        if (j < contextSwitches - 1)
+            fprintf(functionInfo->output, "-");
     }
     fprintf(functionInfo->output, "\nContext switches: %d\n\n\n", contextSwitches);
 
@@ -251,7 +269,6 @@ void *SJF(void *args) {
     free(TT);
     pthread_exit(NULL);
 }
-
 
 
 //STCF DONE
@@ -384,6 +401,7 @@ void *STCF(void *args){
     free(TT);
     pthread_exit(NULL);
 }
+
 
 //ROUND ROBIN
 void *RoundRobin(void *args){
