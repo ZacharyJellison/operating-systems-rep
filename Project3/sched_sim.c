@@ -29,7 +29,7 @@ void bubble(float arr[], int n) {         //Take input size and the array for ei
     }
 }
 
-//FCFS
+//FCFS DONE
 void *FCFS(void *args) {
     passed_Info *functionInfo = (passed_Info *)args;
     int current_time = 0;
@@ -254,34 +254,7 @@ void *SJF(void *args) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//STCF
+//STCF DONE
 void *STCF(void *args){
     passed_Info *functionInfo = (passed_Info *)args;
     int current_time = 0;
