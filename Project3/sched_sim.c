@@ -587,7 +587,7 @@ void *Priority(void *args){
     }
 
     int i = 0;
-    int lowestPrio = 1;
+    int lowestPrio = 0;
     
     // Print initial state
     fprintf(functionInfo->output, "t = %d\n", current_time);
@@ -612,6 +612,10 @@ void *Priority(void *args){
         tasks[i] = i;
     }
 
+        if ((arrival[i] == 0) && (arrival[i] != arrival[i+1])){
+            priorityQ[i] = 0;
+        }
+
     for (int i = 0; i < n - 1; i++) {
         // Last i elements are already in place, so we don't need to check them again
         for (int j = 0; j < n - i - 1; j++) {
@@ -633,6 +637,9 @@ void *Priority(void *args){
         }
     }
 
+    
+
+
     int nextProcess = 0;
     int currentProcess = 0;
     
@@ -650,7 +657,7 @@ void *Priority(void *args){
             fprintf(functionInfo->output, "Ready queue: ");
 //Ready Queue
             for(int q = 0; q < n; q++){
-                if((functionInfo->simData->arrivalTime[q] <= current_time) && (currentProcess < q)){
+                if((arrival[q] <= current_time) && (inArray(q, process_sequence, n) == false)){
                     fprintf(functionInfo->output, "%d ", q);
                 }
             }
@@ -658,10 +665,11 @@ void *Priority(void *args){
         }
 
         for(int l = 0; l < n; l++){
-            if((arrival[l] <= current_time) && (priorityQ[l] == lowestPrio) && (currentProcess == nextProcess)){
+            if(((arrival[l] <= current_time) && (priorityQ[l] == lowestPrio)) || (currentProcess == nextProcess)){
                 nextProcess = tasks[l];
             }
         }
+
         printf("CURRENT: %d ", currentProcess);
         printf("NEXT: %d\n", nextProcess);
 
