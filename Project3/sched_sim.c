@@ -450,80 +450,80 @@ void *RoundRobin(void *args) {
     int* WT = (int*)malloc(n * sizeof(int));
     int* TT = (int*)malloc(n * sizeof(int));
     int* tempBurst = (int*)malloc(n * sizeof(int));
-    int* shortestBurst = (int*)malloc(n * sizeof(int));
     int* tempArrival = (int*)malloc(n * sizeof(int));
-    int* tasks = (int*)malloc(n * sizeof(int));
-
+    int* processOrder = (int*)malloc(n * sizeof(int));
 
     for (int i = 0; i < n; i++) {
         tempBurst[i] = functionInfo->simData->CPU_Burst[i];
-        shortestBurst[i] = tempBurst[i];
         tempArrival[i] = functionInfo->simData->arrivalTime[i];
-        tasks[i] = i;
+        processOrder[i] = i; // Initialize process order
     }
-
-    bubbleInt(shortestBurst, tempArrival, tasks, n);
-
-    for(int o = 0; o < n; o++){
-        printf("%d: ", tasks[o]);
-        printf("%d ", shortestBurst[o]);
-        printf("%d\n", tempArrival[o]);
-    }
-    printf("\n");
 
     fprintf(functionInfo->output, "***** Round Robin Scheduling *****\n");
-    int i = 0;
 
     // Print initial state
     fprintf(functionInfo->output, "t = %d\n", current_time);
-    fprintf(functionInfo->output, "CPU: Loading process %d (remaining CPU burst = %d)\n", i, tempBurst[i]);
-    fprintf(functionInfo->output, "Ready queue: %d", i);
+    fprintf(functionInfo->output, "CPU: Loading process %d (remaining CPU burst = %d)\n", processOrder[0], tempBurst[0]);
+    fprintf(functionInfo->output, "Ready queue: ");
     fprintf(functionInfo->output, "\n\n");
 
-    bool all_completed = false;
-    int current_job;
+    // Main RR loop
+    int nextProcessIndex = 0; // Index of the next process to execute
 
-    while (!all_completed) {
-        all_completed = true; // Assume all processes are completed
+    while (true) {
+        bool all_completed = true;
 
-        // Iterate over each process
-        for (i = 0; i < n; i++) {
-            // If the process is not completed and its arrival time is less than or equal to the current time
-            if (shortestBurst[i] > 0 && tempArrival[i] <= current_time + 1) {
-                all_completed = false; // At least one process is not completed
+        // Iterate over processes in sorted order
+        for (int idx = 0; idx < n; idx++) {
+            int i = processOrder[idx];
+
+            // Check if process has arrived and is not completed
+            if (tempBurst[i] > 0 && tempArrival[i] <= current_time) {
+                all_completed = false;
 
                 // Execute the process for one time unit
                 current_time += 1;
-                shortestBurst[i] -= 1;
+                tempBurst[i] -= 1;
 
                 // Print periodic update
                 if (current_time % functionInfo->simData->interval == 0) {
-                    current_job = i;
                     fprintf(functionInfo->output, "t = %d\n", current_time);
-                    fprintf(functionInfo->output, "CPU: Running process %d (remaining CPU burst = %d)\n", i, shortestBurst[i]);
+                    fprintf(functionInfo->output, "CPU: Running process %d (remaining CPU burst = %d)\n", i, tempBurst[i]);
                     fprintf(functionInfo->output, "Ready queue: ");
-                    int count = 0;
-                    for (int q = 0; q < n; q++) {
-                        if ((shortestBurst[q] > 0) && (tempArrival[q] <= current_time) && (tasks[q] != current_job)) {
-                            fprintf(functionInfo->output, "%d ", tasks[q]);
-                            count++;
+                    bool isQueueEmpty = true;
+
+                    // Print ready queue
+                    for (int j = idx + 1; j < n; j++) {
+                        int nextProcess = processOrder[j];
+                        if (tempBurst[nextProcess] > 0 && tempArrival[nextProcess] <= current_time) {
+                            fprintf(functionInfo->output, "%d ", nextProcess);
+                            isQueueEmpty = false;
                         }
                     }
-                    if(count == 0){
+                    if (isQueueEmpty)
                         fprintf(functionInfo->output, "empty");
-                    }
                     fprintf(functionInfo->output, "\n\n");
                 }
 
-                if (shortestBurst[i] == 0) {
+                // Check if process completed
+                if (tempBurst[i] == 0) {
                     // Process completed
                     WT[i] = current_time - tempArrival[i] - functionInfo->simData->CPU_Burst[i];
                     TT[i] = current_time - tempArrival[i];
+                    contextSwitches++;
                 }
+            }
+
+            // Check if a new process has arrived and should start immediately
+            if (tempArrival[i] == current_time + 1) {
+                nextProcessIndex = idx; // Set the next process to the newly arrived one
             }
         }
 
-        // If all processes are completed, exit the loop
+        // Update next process to execute
+        nextProcessIndex = (nextProcessIndex + 1) % n;
+
+        // Check if all processes are completed or if no more processes will arrive
         if (all_completed)
             break;
     }
@@ -548,9 +548,6 @@ void *RoundRobin(void *args) {
     fprintf(functionInfo->output, "AVG\t%.2f\t%.2f\n", functionInfo->simData->AVGwaitTime[3], functionInfo->simData->AVGturnTime[3]);
     fprintf(functionInfo->output, "\nContext switches: %d\n\n\n", contextSwitches);
 
-    // Update context switches count
-    functionInfo->simData->contextSwitch[3] = contextSwitches;
-
     // Free allocated memory
     free(tempBurst);
     free(WT);
@@ -558,6 +555,9 @@ void *RoundRobin(void *args) {
 
     pthread_exit(NULL);
 }
+
+
+
 
 
 //PRIORITY
@@ -670,8 +670,6 @@ void *Priority(void *args){
             }
         }
 
-        printf("CURRENT: %d ", currentProcess);
-        printf("NEXT: %d\n", nextProcess);
 
 
         // Check if current process is completed
@@ -682,14 +680,6 @@ void *Priority(void *args){
 
         //find the index in tasks, use that for where to edit priority Q
 
-            for(int a = 0; a < n; a++){
-                printf("%d ", priorityQ[a]);
-            }
-            for(int a = 0; a < n; a++){
-                printf("%d ", tasks[a]);
-            }
-
-
             i++; // Move to the next process
             currentProcess = nextProcess;
             contextSwitches++;
@@ -697,7 +687,6 @@ void *Priority(void *args){
             if(inArray(lowestPrio, priorityQ, n) == false){
                 lowestPrio++;
             }
-            printf("\nLowest Prio: %d\n", lowestPrio);
         }
     }
 
