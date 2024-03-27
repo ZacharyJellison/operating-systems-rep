@@ -50,6 +50,22 @@ void bubbleInt(int burst[], int arrival[], int tasks[], int n) {         //Take 
     }
 }
 
+bool inArray(int val, int* arr, int n){
+    for(int i = 0; i < n; i++) {
+        if(arr[i] == val)
+            return true;
+    }
+    return false;
+}
+
+int findIndex(int val, int* arr, int n){
+    for(int i = 0; i < n; i++) {
+        if(arr[i] == val)
+            return i;
+    }
+    return 0;
+}
+
 //FCFS DONE
 void *FCFS(void *args) {
     passed_Info *functionInfo = (passed_Info *)args;
@@ -550,11 +566,12 @@ void *Priority(void *args){
     int current_time = 0;
     float waiting_time = 0;
     float turnaround_time = 0;
-    int contextSwitches = 1;
+    int contextSwitches = 0;
     int* process_sequence = (int*)malloc(functionInfo->simData->size * sizeof(int));
     int* WT = (int*)malloc(functionInfo->simData->size * sizeof(int));
     int* TT = (int*)malloc(functionInfo->simData->size * sizeof(int));
     int* tasks = (int*)malloc(functionInfo->simData->size * sizeof(int));
+    
     
     
     fprintf(functionInfo->output, "***** Priority Scheduling *****\n");
@@ -570,6 +587,7 @@ void *Priority(void *args){
     }
 
     int i = 0;
+    int lowestPrio = 1;
     
     // Print initial state
     fprintf(functionInfo->output, "t = %d\n", current_time);
@@ -617,11 +635,10 @@ void *Priority(void *args){
 
     int nextProcess = 0;
     int currentProcess = 0;
-
     
-    while (tempBurst[i] > 0) {
-        WT[currentProcess] = current_time - functionInfo->simData->arrivalTime[currentProcess] - functionInfo->simData->CPU_Burst[currentProcess] + 1;
-        TT[currentProcess] = current_time - functionInfo->simData->arrivalTime[currentProcess] + 1;
+    while (tempBurst[currentProcess] > 0) {
+        WT[currentProcess] = current_time - functionInfo->simData->arrivalTime[currentProcess] - functionInfo->simData->CPU_Burst[currentProcess] + 2;
+        TT[currentProcess] = current_time - functionInfo->simData->arrivalTime[currentProcess] + 2;
 
         current_time += 1;
         tempBurst[currentProcess] -= 1;
@@ -637,13 +654,11 @@ void *Priority(void *args){
                     fprintf(functionInfo->output, "%d ", q);
                 }
             }
-
-
             fprintf(functionInfo->output, "\n\n");
         }
 
         for(int l = 0; l < n; l++){
-            if((arrival[l] <= current_time) && (priorityQ[l] < priorityQ[l + 1])){
+            if((arrival[l] <= current_time) && (priorityQ[l] == lowestPrio) && (currentProcess == nextProcess)){
                 nextProcess = tasks[l];
             }
         }
@@ -652,12 +667,29 @@ void *Priority(void *args){
 
 
         // Check if current process is completed
-        if ((tempBurst[currentProcess] <= 0) && (i < n)) {
-            
-            process_sequence[i] = currentProcess;
+        if ((tempBurst[currentProcess] <= 1) && (i < n)) {
+            int foundIndex = findIndex(currentProcess, tasks, n);
+            process_sequence[i]= currentProcess;
+            priorityQ[foundIndex] = 100;
+
+        //find the index in tasks, use that for where to edit priority Q
+
+            for(int a = 0; a < n; a++){
+                printf("%d ", priorityQ[a]);
+            }
+            for(int a = 0; a < n; a++){
+                printf("%d ", tasks[a]);
+            }
+
+
             i++; // Move to the next process
             currentProcess = nextProcess;
             contextSwitches++;
+
+            if(inArray(lowestPrio, priorityQ, n) == false){
+                lowestPrio++;
+            }
+            printf("\nLowest Prio: %d\n", lowestPrio);
         }
     }
 
@@ -683,7 +715,7 @@ void *Priority(void *args){
     fprintf(functionInfo->output, "AVG\t%.2f\t%.2f\n", functionInfo->simData->AVGwaitTime[4], functionInfo->simData->AVGturnTime[4]);
     fprintf(functionInfo->output, "\nProcess sequence: ");
     for (int j = 0; j < n; j++) {
-        fprintf(functionInfo->output, "%d", j);
+        fprintf(functionInfo->output, "%d", process_sequence[j]);
         if (j < n - 1)
             fprintf(functionInfo->output, "-");
     }
