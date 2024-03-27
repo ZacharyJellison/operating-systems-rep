@@ -361,15 +361,170 @@ Process sequence: 0-1-3-4-3-7-3-8-3-9-3-5-0-6-2
 Context switches: 15
 
 
-***** Round robin Schedueling *****
+***** Round Robin Scheduling *****
+t = 0
+CPU: Loading process 0 (remaining CPU burst = 48)
+Ready queue: 0
+
+t = 10
+CPU: Running process 7 (remaining CPU burst = 41)
+Ready queue: 1 0 2 
+
+t = 20
+CPU: Running process 4 (remaining CPU burst = 10)
+Ready queue: 1 3 0 2 
+
+t = 30
+CPU: Running process 3 (remaining CPU burst = 2)
+Ready queue: 1 4 5 0 6 2 
+
+t = 40
+CPU: Running process 5 (remaining CPU burst = 25)
+Ready queue: 7 8 1 4 3 0 6 2 
+
+t = 50
+CPU: Running process 5 (remaining CPU burst = 24)
+Ready queue: 8 9 4 3 0 6 2 
+
+t = 60
+CPU: Running process 7 (remaining CPU burst = 33)
+Ready queue: 4 3 5 0 6 2 
+
+t = 70
+CPU: Running process 5 (remaining CPU burst = 21)
+Ready queue: 4 3 0 6 2 
+
+t = 80
+CPU: Running process 9 (remaining CPU burst = 45)
+Ready queue: 4 3 5 0 6 2 
+
+t = 90
+CPU: Running process 7 (remaining CPU burst = 28)
+Ready queue: 3 5 0 6 2 
+
+t = 100
+CPU: Running process 7 (remaining CPU burst = 26)
+Ready queue: 3 5 0 6 2 
+
+t = 110
+CPU: Running process 7 (remaining CPU burst = 24)
+Ready queue: 3 5 0 6 2 
+
+t = 120
+CPU: Running process 7 (remaining CPU burst = 22)
+Ready queue: 3 5 0 6 2 
+
+t = 130
+CPU: Running process 7 (remaining CPU burst = 20)
+Ready queue: 3 5 0 6 2 
+
+t = 140
+CPU: Running process 7 (remaining CPU burst = 18)
+Ready queue: 3 5 0 6 2 
+
+t = 150
+CPU: Running process 7 (remaining CPU burst = 16)
+Ready queue: 3 5 0 6 2 
+
+t = 160
+CPU: Running process 7 (remaining CPU burst = 14)
+Ready queue: 3 5 0 6 2 
+
+t = 170
+CPU: Running process 7 (remaining CPU burst = 12)
+Ready queue: 3 5 0 6 2 
+
+t = 180
+CPU: Running process 7 (remaining CPU burst = 10)
+Ready queue: 5 0 6 2 
+
+t = 190
+CPU: Running process 9 (remaining CPU burst = 23)
+Ready queue: 5 0 6 2 
+
+t = 200
+CPU: Running process 7 (remaining CPU burst = 5)
+Ready queue: 0 6 2 
+
+t = 210
+CPU: Running process 8 (remaining CPU burst = 15)
+Ready queue: 0 6 2 
+
+t = 220
+CPU: Running process 8 (remaining CPU burst = 11)
+Ready queue: 6 2 
+
+t = 230
+CPU: Running process 8 (remaining CPU burst = 6)
+Ready queue: 6 2 
+
+t = 240
+CPU: Running process 8 (remaining CPU burst = 1)
+Ready queue: 6 2 
 
 *********************************************************
-Round robin Summary (WT = wait time, TT = turnaround time):
+Round Robin Summary (WT = wait time, TT = turnaround time):
 
-***** Priority Schedueling *****
+PID	WT	TT
+ 0	-38	10
+ 1	5	15
+ 2	-46	11
+ 3	13	43
+ 4	56	67
+ 5	130	163
+ 6	124	174
+ 7	213	215
+ 8	210	212
+ 9	233	235
+AVG	90.00	114.50
+
+Context switches: 0
+
+
+***** Priority Scheduling *****
+t = 0
+CPU: Loading process 0 (remaining CPU burst = 48)
+Ready queue: Ready queue: 0
+
+t = 10
+CPU: Running process 0 (remaining CPU burst = 38)
+Ready queue: 1 2 
+
+t = 20
+CPU: Running process 0 (remaining CPU burst = 28)
+Ready queue: 1 2 3 4 
+
+t = 30
+CPU: Running process 0 (remaining CPU burst = 18)
+Ready queue: 1 2 3 4 5 6 
+
+t = 40
+CPU: Running process 0 (remaining CPU burst = 8)
+Ready queue: 1 2 3 4 5 6 7 8 
+
+t = 50
+CPU: Running process 9 (remaining CPU burst = 10)
+Ready queue: 
 
 *********************************************************
 Priority Summary (WT = wait time, TT = turnaround time):
+
+PID	WT	TT
+ 0	0	48
+ 1	32561	7
+ 2	0	0
+ 3	0	0
+ 4	67	56
+ 5	163	130
+ 6	174	124
+ 7	215	213
+ 8	212	210
+ 9	10	12
+AVG	3340.20	80.00
+
+Process sequence: 0-1-2-3-4-5-6-7-8-9
+Context switches: 10
+
 
 ***** Overall Summary *****
 
@@ -377,19 +532,19 @@ Wait Time Comparison
 1 FCFS		120.90
 2 SJF		54.90
 3 STCF		43.00
-4 Round robin		0.10
-5 Priority		0.10
+4 Round robin		90.00
+5 Priority		3340.20
 
 Turnaround Time Comparison
 1 FCFS		145.40
 2 SJF		79.40
 3 STCF		67.50
-4 Round robin		0.10
-5 Priority		0.10
+4 Round robin		114.50
+5 Priority		80.00
 
 Context Switch Comparison
 1 FCFS		10
 2 SJF		10
 3 STCF		15
-4 Round robin		1
-5 Priority		1
+4 Round robin		0
+5 Priority		10
