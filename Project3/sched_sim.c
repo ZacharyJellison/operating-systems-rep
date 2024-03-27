@@ -29,7 +29,6 @@ void bubble(float arr[], int n) {         //Take input size and the array for ei
     }
 }
 
-
 //FCFS
 void *FCFS(void *args) {
     passed_Info *functionInfo = (passed_Info *)args;
@@ -59,14 +58,12 @@ void *FCFS(void *args) {
     
     // Print initial state
     fprintf(functionInfo->output, "t = %d\n", current_time);
-    fprintf(functionInfo->output, "CPU: Running process %d (remaining CPU burst = %d)\n", functionInfo->processID, tempBurst[i]);
+    fprintf(functionInfo->output, "CPU: Loading process %d (remaining CPU burst = %d)\n", i, tempBurst[i]);
     fprintf(functionInfo->output, "Ready queue: ");
     for(int q = 0; q < n; q++){
         if(functionInfo->simData->arrivalTime[q] == 0)
             fprintf(functionInfo->output, "Ready queue: %d", tasks[q]);
     }
-//Ready Queue
-
 
     fprintf(functionInfo->output, "\n\n");
     
@@ -80,7 +77,7 @@ void *FCFS(void *args) {
         // Print updates at intervals
         if(current_time % 10 == 0){
             fprintf(functionInfo->output, "t = %d\n", current_time);
-            fprintf(functionInfo->output, "CPU: Running process %d (remaining CPU burst = %d)\n", functionInfo->processID, tempBurst[i]);
+            fprintf(functionInfo->output, "CPU: Running process %d (remaining CPU burst = %d)\n", i, tempBurst[i]);
             fprintf(functionInfo->output, "Ready queue: ");
 //Ready Queue
             for(int q = 0; q < n; q++){
@@ -134,31 +131,268 @@ void *FCFS(void *args) {
     
     free(process_sequence);
     free(tempBurst);
+    free(WT);
+    free(TT);
     pthread_exit(NULL);
 }
 
 
 //SJF
-void *SJF(void *args){
+void *SJF(void *args) {
     passed_Info *functionInfo = (passed_Info *)args;
-    //fprintf(functionInfo->output, "This is SJF\n");
-    fprintf(functionInfo->output, "***** SJF Schedueling *****\n\n");
+    int current_time = 0;
+    float waiting_time = 0;
+    float turnaround_time = 0;
+    int contextSwitches = 0;
+    int* process_sequence = (int*)malloc(functionInfo->simData->size * sizeof(int));
+    int* WT = (int*)malloc(functionInfo->simData->size * sizeof(int));
+    int* TT = (int*)malloc(functionInfo->simData->size * sizeof(int));
+
+    fprintf(functionInfo->output, "***** SJF Scheduling *****\n");
+
+    int n = functionInfo->simData->size;
+    int* tempBurst = (int*)malloc(n * sizeof(int));
+    for (int i = 0; i < n; i++) {
+        tempBurst[i] = functionInfo->simData->CPU_Burst[i];
+    }
+
+    int i = 0;
+    int interval = functionInfo->simData->interval; // Interval for periodic updates
+
+    // Print initial state
+    fprintf(functionInfo->output, "t = %d\n", current_time);
+    fprintf(functionInfo->output, "CPU: Loading process %d (remaining CPU burst = %d)\n", i, tempBurst[i]);
+    fprintf(functionInfo->output, "Ready queue: %d", i);
+    fprintf(functionInfo->output, "\n\n");
+
+    while (1) {
+        int shortest_job = -1;
+        int shortest_burst = INT_MAX;
+
+        // Find the shortest job in the ready queue
+
+            for (int j = 0; j < n; j++) {
+                if (tempBurst[j] > 0 && functionInfo->simData->arrivalTime[j] <= current_time && tempBurst[j] < shortest_burst) {
+                    shortest_job = j;
+                    shortest_burst = tempBurst[j];
+                }
+            }
+
+            if(shortest_job == -1)
+                break;
+
+        // Update time and execute the shortest job
+        //current_time += tempBurst[shortest_job];
+        current_time += 1;
+        tempBurst[shortest_job] -= 1;
+
+        // Update waiting and turnaround time for the completed job
+        WT[shortest_job] = current_time - functionInfo->simData->arrivalTime[shortest_job] - functionInfo->simData->CPU_Burst[shortest_job];
+        TT[shortest_job] = current_time - functionInfo->simData->arrivalTime[shortest_job];
+        process_sequence[i] = shortest_job;
+
+        // Move to the next process
+        if (tempBurst[i] <= 0 && i < n) {
+            i++; // Move to the next process
+            contextSwitches++;
+        }
+
+        if (i >= n)
+            break;
+
+        // Check if it's time for a periodic update
+        if (current_time % interval == 0) {
+            // Print periodic update
+            fprintf(functionInfo->output, "t = %d\n", current_time);
+            fprintf(functionInfo->output, "CPU: Running process %d (remaining CPU burst = %d)\n", shortest_job, tempBurst[shortest_job]);
+            fprintf(functionInfo->output, "Ready queue: ");
+            for (int q = 0; q < n; q++) {
+                if (tempBurst[q] > 0 && functionInfo->simData->arrivalTime[q] <= current_time) {
+                    fprintf(functionInfo->output, "%d", q);
+                    if (q < n - 1)
+                        fprintf(functionInfo->output, "-");
+                }
+            }
+            fprintf(functionInfo->output, "\n\n");
+        }
+    }
+
+    // Calculate average waiting and turnaround time
+    for (int k = 0; k < n; k++) {
+        waiting_time += WT[k];
+    }
+    functionInfo->simData->AVGwaitTime[1] = waiting_time / n;
+
+    for (int k = 0; k < n; k++) {
+        turnaround_time += TT[k];
+    }
+    functionInfo->simData->AVGturnTime[1] = turnaround_time / n;
 
 
+    // Print summary
     fprintf(functionInfo->output, "*********************************************************\n");
     fprintf(functionInfo->output, "SJF Summary (WT = wait time, TT = turnaround time):\n\n");
+    fprintf(functionInfo->output, "PID\tWT\tTT\n");
+    for (int j = 0; j < n; j++) {
+        fprintf(functionInfo->output, " %d\t%d\t%d\n", j, WT[j], TT[j]);
+    }
+    fprintf(functionInfo->output, "AVG\t%.2f\t%.2f\n", functionInfo->simData->AVGwaitTime[1], functionInfo->simData->AVGturnTime[1]);
+    fprintf(functionInfo->output, "\nProcess sequence: ");
+    for (int j = 0; j < n; j++) {
+        fprintf(functionInfo->output, "%d ", process_sequence[j]);
+    }
+    fprintf(functionInfo->output, "\nContext switches: %d\n\n\n", contextSwitches);
+
+    functionInfo->simData->contextSwitch[0] = contextSwitches;
+
+    free(process_sequence);
+    free(tempBurst);
+    free(WT);
+    free(TT);
     pthread_exit(NULL);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //STCF
 void *STCF(void *args){
     passed_Info *functionInfo = (passed_Info *)args;
-    //fprintf(functionInfo->output, "This is STCF\n");
-    fprintf(functionInfo->output, "***** STCF Schedueling *****\n\n");
+    int current_time = 0;
+    float waiting_time = 0;
+    float turnaround_time = 0;
+    int contextSwitches = 0;
+    int* process_sequence = (int*)malloc(functionInfo->simData->size * sizeof(int));
+    int* WT = (int*)malloc(functionInfo->simData->size * sizeof(int));
+    int* TT = (int*)malloc(functionInfo->simData->size * sizeof(int));
+
+    fprintf(functionInfo->output, "***** SJF Scheduling *****\n");
+
+    int n = functionInfo->simData->size;
+    int* tempBurst = (int*)malloc(n * sizeof(int));
+    for (int i = 0; i < n; i++) {
+        tempBurst[i] = functionInfo->simData->CPU_Burst[i];
+    }
+
+    int i = 0;
+    int interval = functionInfo->simData->interval; // Interval for periodic updates
+
+    // Print initial state
+    fprintf(functionInfo->output, "t = %d\n", current_time);
+    fprintf(functionInfo->output, "CPU: Loading process %d (remaining CPU burst = %d)\n", i, tempBurst[i]);
+    fprintf(functionInfo->output, "Ready queue: %d", i);
+    fprintf(functionInfo->output, "\n\n");
+
+    while (1) {
+        int shortest_job = -1;
+        int shortest_burst = INT_MAX;
+
+        // Find the shortest job in the ready queue
+
+            for (int j = 0; j < n; j++) {
+                if (tempBurst[j] > 0 && functionInfo->simData->arrivalTime[j] <= current_time && tempBurst[j] < shortest_burst) {
+                    shortest_job = j;
+                    shortest_burst = tempBurst[j];
+                }
+            }
+
+            if(shortest_job == -1)
+                break;
+
+        // Update time and execute the shortest job
+        //current_time += tempBurst[shortest_job];
+        current_time += 1;
+        tempBurst[shortest_job] -= 1;
+
+        // Update waiting and turnaround time for the completed job
+        WT[shortest_job] = current_time - functionInfo->simData->arrivalTime[shortest_job] - functionInfo->simData->CPU_Burst[shortest_job];
+        TT[shortest_job] = current_time - functionInfo->simData->arrivalTime[shortest_job];
+        process_sequence[i] = shortest_job;
+
+        // Move to the next process
+        if (tempBurst[i] <= 0 && i < n) {
+            i++; // Move to the next process
+            contextSwitches++;
+        }
+
+        if (i >= n)
+            break;
+
+        // Check if it's time for a periodic update
+        if (current_time % interval == 0) {
+            // Print periodic update
+            fprintf(functionInfo->output, "t = %d\n", current_time);
+            fprintf(functionInfo->output, "CPU: Running process %d (remaining CPU burst = %d)\n", shortest_job, tempBurst[shortest_job]);
+            fprintf(functionInfo->output, "Ready queue: ");
+            for (int q = 0; q < n; q++) {
+                if (tempBurst[q] > 0 && functionInfo->simData->arrivalTime[q] <= current_time) {
+                    fprintf(functionInfo->output, "%d", q);
+                    if (q < n - 1)
+                        fprintf(functionInfo->output, "-");
+                }
+            }
+            fprintf(functionInfo->output, "\n\n");
+        }
+    }
+
+    // Calculate average waiting and turnaround time
+    for (int k = 0; k < n; k++) {
+        waiting_time += WT[k];
+    }
+    functionInfo->simData->AVGwaitTime[1] = waiting_time / n;
+
+    for (int k = 0; k < n; k++) {
+        turnaround_time += TT[k];
+    }
+    functionInfo->simData->AVGturnTime[1] = turnaround_time / n;
 
 
+    // Print summary
     fprintf(functionInfo->output, "*********************************************************\n");
-    fprintf(functionInfo->output, "STCF Summary (WT = wait time, TT = turnaround time):\n\n");
+    fprintf(functionInfo->output, "SJF Summary (WT = wait time, TT = turnaround time):\n\n");
+    fprintf(functionInfo->output, "PID\tWT\tTT\n");
+    for (int j = 0; j < n; j++) {
+        fprintf(functionInfo->output, " %d\t%d\t%d\n", j, WT[j], TT[j]);
+    }
+    fprintf(functionInfo->output, "AVG\t%.2f\t%.2f\n", functionInfo->simData->AVGwaitTime[1], functionInfo->simData->AVGturnTime[1]);
+    fprintf(functionInfo->output, "\nProcess sequence: ");
+    for (int j = 0; j < n; j++) {
+        fprintf(functionInfo->output, "%d ", process_sequence[j]);
+    }
+    fprintf(functionInfo->output, "\nContext switches: %d\n\n\n", contextSwitches);
+
+    functionInfo->simData->contextSwitch[0] = contextSwitches;
+
+    free(process_sequence);
+    free(tempBurst);
+    free(WT);
+    free(TT);
     pthread_exit(NULL);
 }
 
@@ -189,7 +423,7 @@ void *Priority(void *args){
 void *Summary(void *args){
     passed_Info *functionInfo = (passed_Info *)args;
     fprintf(functionInfo->output, "***** Overall Summary *****\n\n");
-    char sortingNames[5][11] = {"FCFS", "SJF", "STCF", "Round robin", "Priority"};
+    char sortingNames[5][20] = {"FCFS", "SJF", "STCF", "Round robin", "Priority"};
     //                            0       1       2          3             4
 /*
     float* orderedWait;
@@ -209,23 +443,23 @@ void *Summary(void *args){
 */
 
     fprintf(functionInfo->output, "Wait Time Comparison\n");
-    fprintf(functionInfo->output, "1  %s    %.2lf\n", sortingNames[0], functionInfo->simData->AVGwaitTime[0]);
-    fprintf(functionInfo->output, "2  %.2lf\n", 0.1);
-    fprintf(functionInfo->output, "3  %.2lf\n", 0.1);
-    fprintf(functionInfo->output, "4  %.2lf\n", 0.1);
-    fprintf(functionInfo->output, "5  %.2lf\n\n", 0.1);
+    fprintf(functionInfo->output, "1 %s\t\t%.2lf\n", sortingNames[0], functionInfo->simData->AVGwaitTime[0]);
+    fprintf(functionInfo->output, "2 %s\t\t%.2lf\n", sortingNames[1], functionInfo->simData->AVGwaitTime[1]);
+    fprintf(functionInfo->output, "3 %s\t\t%.2lf\n", sortingNames[2], 0.1);
+    fprintf(functionInfo->output, "4 %s\t\t%.2lf\n", sortingNames[3], 0.1);
+    fprintf(functionInfo->output, "5 %s\t\t%.2lf\n\n", sortingNames[4], 0.1);
 
     fprintf(functionInfo->output, "Turnaround Time Comparison\n");
-    fprintf(functionInfo->output, "1  %s    %.2lf\n", sortingNames[0], functionInfo->simData->AVGturnTime[0]);
-    fprintf(functionInfo->output, "2  %.2lf\n", 0.1);
-    fprintf(functionInfo->output, "3  %.2lf\n", 0.1);
-    fprintf(functionInfo->output, "4  %.2lf\n", 0.1);
-    fprintf(functionInfo->output, "5  %.2lf\n\n", 0.1);
+    fprintf(functionInfo->output, "1 %s\t\t%.2lf\n", sortingNames[0], functionInfo->simData->AVGturnTime[0]);
+    fprintf(functionInfo->output, "2 %s\t\t%.2lf\n", sortingNames[1], functionInfo->simData->AVGturnTime[1]);
+    fprintf(functionInfo->output, "3 %s\t\t%.2lf\n", sortingNames[2], 0.1);
+    fprintf(functionInfo->output, "4 %s\t\t%.2lf\n", sortingNames[3], 0.1);
+    fprintf(functionInfo->output, "5 %s\t\t%.2lf\n\n", sortingNames[4], 0.1);
 
     fprintf(functionInfo->output, "Context Switch Comparison\n");
-    fprintf(functionInfo->output, "1  %s    %d\n", sortingNames[0], functionInfo->simData->contextSwitch[0]);
-    fprintf(functionInfo->output, "2  %d\n", 1);
-    fprintf(functionInfo->output, "3  %d\n", 1);
-    fprintf(functionInfo->output, "4  %d\n", 1);
-    fprintf(functionInfo->output, "5  %d", 1);
+    fprintf(functionInfo->output, "1 %s\t\t%d\n", sortingNames[0], functionInfo->simData->contextSwitch[0]);
+    fprintf(functionInfo->output, "2 %s\t\t%d\n", sortingNames[1], functionInfo->simData->contextSwitch[1]);
+    fprintf(functionInfo->output, "3 %s\t\t%d\n", sortingNames[2], 1);
+    fprintf(functionInfo->output, "4 %s\t\t%d\n", sortingNames[3], 1);
+    fprintf(functionInfo->output, "5 %s\t\t%d", sortingNames[4], 1);
 }

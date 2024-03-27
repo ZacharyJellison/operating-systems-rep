@@ -5,6 +5,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <string.h>
+#include <limits.h>
 
 typedef struct Sim_Info{
     //Initial
@@ -28,7 +29,7 @@ typedef struct passed_Info{
 
 void init_Info(Sim_Info *simInfo, int size);
 
-//BUBBLE SORT
+//Extra Functions
 void bubble(float arr[], int n);
 
 //FCFS          ASSOCIATED WITH 0
