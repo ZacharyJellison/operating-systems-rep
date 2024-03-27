@@ -30,7 +30,6 @@ typedef struct passed_Info{
 void init_Info(Sim_Info *simInfo, int size);
 
 //Extra Functions
-void bubble(float arr[], int n);
 void bubbleInt(int burst[], int arrival[], int tasks[], int n);
 bool inArray(int val, int *arr, int n);
 int findIndex(int val, int* arr, int n);

@@ -15,19 +15,6 @@ void init_Info(Sim_Info *simInfo, int size){
 //      https://www.learnc.net/c-tutorial/c-write-text-file/
 
 
-void bubble(float arr[], int n) {         //Take input size and the array for either wait or turn around
-    for (int i = 0; i < n - 1; i++) {
-        // Last i elements are already in place, so we don't need to check them again
-        for (int j = 0; j < n - i - 1; j++) {
-            // Swap if the element found is greater than the next element
-            if (arr[j] > arr[j + 1]) {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-}
 
 //No reason to include priority
 void bubbleInt(int burst[], int arrival[], int tasks[], int n) {         //Take input size and the array for either wait or turn around
@@ -715,46 +702,111 @@ void *Priority(void *args){
     pthread_exit(NULL);
 }
 
+
 void *Summary(void *args){
     passed_Info *functionInfo = (passed_Info *)args;
+    int n = 5;
     fprintf(functionInfo->output, "***** Overall Summary *****\n\n");
     char sortingNames[5][20] = {"FCFS", "SJF", "STCF", "Round robin", "Priority"};
     //                            0       1       2          3             4
-/*
-    float* orderedWait;
-    orderedWait = (float *)malloc(sizeof(int) * functionInfo->simData->size);
-    orderedWait = functionInfo->simData->AVGwaitTime;
-    bubble(orderedWait, functionInfo->simData->size);
 
-    float* orderedTurn;
-    orderedTurn = (float *)malloc(sizeof(int) * functionInfo->simData->size);
-    orderedTurn = functionInfo->simData->AVGturnTime;
-    bubble(orderedTurn, functionInfo->simData->size);
 
-    float* orderedConSwitch;
-    orderedConSwitch = (float *)malloc(sizeof(int) * functionInfo->simData->size);
-    orderedConSwitch = functionInfo->simData->contextSwitch;
-    bubble(orderedConSwitch, functionInfo->simData->size);
-*/
+//Organize Wait
+    int nameNumWait[5] = {0, 1, 2, 3, 4};
+
+    float orderedWait[5];
+
+    for(int u = 0; u < 5; u++){
+        orderedWait[u] = functionInfo->simData->AVGwaitTime[u];
+    }
+
+    for (int i = 0; i < n - 1; i++) {
+        // Last i elements are already in place, so we don't need to check them again
+        for (int j = 0; j < n - i - 1; j++) {
+            // Swap if the element found is greater than the next element
+            if (orderedWait[j] > orderedWait[j + 1]) {
+                int temp = orderedWait[j];
+                int tempName = nameNumWait[j];
+                orderedWait[j] = orderedWait[j + 1];
+                nameNumWait[j] = nameNumWait[j + 1];
+                orderedWait[j + 1] = temp;
+                nameNumWait[j + 1] = tempName;
+            }
+        }
+    }
+
+
+//Organize Turn
+    int nameNumTurn[5] = {0, 1, 2, 3, 4};
+
+    float orderedTurn[5];
+
+    for(int v = 0; v < 5; v++){
+        orderedTurn[v] = functionInfo->simData->AVGturnTime[v];
+    }
+
+    for (int i = 0; i < n - 1; i++) {
+        // Last i elements are already in place, so we don't need to check them again
+        for (int j = 0; j < n - i - 1; j++) {
+            // Swap if the element found is greater than the next element
+            if (orderedTurn[j] > orderedTurn[j + 1]) {
+                int temp2 = orderedTurn[j];
+                int tempName2 = nameNumTurn[j];
+                orderedTurn[j] = orderedTurn[j + 1];
+                nameNumTurn[j] = nameNumTurn[j + 1];
+                orderedTurn[j + 1] = temp2;
+                nameNumTurn[j + 1] = tempName2;
+            }
+        }
+    }
+
+
+//Organize Context Switches
+    int nameNumSwitch[5] = {0, 1, 2, 3, 4};
+
+    int orderedSwitch[5];
+
+    for(int u = 0; u < 5; u++){
+        orderedSwitch[u] = functionInfo->simData->contextSwitch[u];
+    }
+
+    for (int i = 0; i < n - 1; i++) {
+        // Last i elements are already in place, so we don't need to check them again
+        for (int j = 0; j < n - i - 1; j++) {
+            // Swap if the element found is greater than the next element
+            if (orderedSwitch[j] > orderedSwitch[j + 1]) {
+                int temp = orderedSwitch[j];
+                int tempName = nameNumSwitch[j];
+                orderedSwitch[j] = orderedSwitch[j + 1];
+                nameNumSwitch[j] = nameNumSwitch[j + 1];
+                orderedSwitch[j + 1] = temp;
+                nameNumSwitch[j + 1] = tempName;
+            }
+        }
+    }
+
+
+
 
     fprintf(functionInfo->output, "Wait Time Comparison\n");
-    fprintf(functionInfo->output, "1 %s\t\t%.2lf\n", sortingNames[0], functionInfo->simData->AVGwaitTime[0]);
-    fprintf(functionInfo->output, "2 %s\t\t%.2lf\n", sortingNames[1], functionInfo->simData->AVGwaitTime[1]);
-    fprintf(functionInfo->output, "3 %s\t\t%.2lf\n", sortingNames[2], functionInfo->simData->AVGwaitTime[2]);
-    fprintf(functionInfo->output, "4 %s\t\t%.2lf\n", sortingNames[3], functionInfo->simData->AVGwaitTime[3]);
-    fprintf(functionInfo->output, "5 %s\t\t%.2lf\n\n", sortingNames[4], functionInfo->simData->AVGwaitTime[4]);
+    fprintf(functionInfo->output, "1 %s\t\t%.2lf\n", sortingNames[nameNumWait[0]], orderedWait[0]);
+    fprintf(functionInfo->output, "2 %s\t\t%.2lf\n", sortingNames[nameNumWait[1]], orderedWait[1]);
+    fprintf(functionInfo->output, "3 %s\t\t%.2lf\n", sortingNames[nameNumWait[2]], orderedWait[2]);
+    fprintf(functionInfo->output, "4 %s\t\t%.2lf\n", sortingNames[nameNumWait[3]], orderedWait[3]);
+    fprintf(functionInfo->output, "5 %s\t\t%.2lf\n\n", sortingNames[nameNumWait[4]], orderedWait[4]);
 
     fprintf(functionInfo->output, "Turnaround Time Comparison\n");
-    fprintf(functionInfo->output, "1 %s\t\t%.2lf\n", sortingNames[0], functionInfo->simData->AVGturnTime[0]);
-    fprintf(functionInfo->output, "2 %s\t\t%.2lf\n", sortingNames[1], functionInfo->simData->AVGturnTime[1]);
-    fprintf(functionInfo->output, "3 %s\t\t%.2lf\n", sortingNames[2], functionInfo->simData->AVGturnTime[2]);
-    fprintf(functionInfo->output, "4 %s\t\t%.2lf\n", sortingNames[3], functionInfo->simData->AVGturnTime[3]);
-    fprintf(functionInfo->output, "5 %s\t\t%.2lf\n\n", sortingNames[4], functionInfo->simData->AVGturnTime[4]);
+    fprintf(functionInfo->output, "1 %s\t\t%.2lf\n", sortingNames[nameNumTurn[0]], orderedTurn[0]);
+    fprintf(functionInfo->output, "2 %s\t\t%.2lf\n", sortingNames[nameNumTurn[1]], orderedTurn[1]);
+    fprintf(functionInfo->output, "3 %s\t\t%.2lf\n", sortingNames[nameNumTurn[2]], orderedTurn[2]);
+    fprintf(functionInfo->output, "4 %s\t\t%.2lf\n", sortingNames[nameNumTurn[3]], orderedTurn[3]);
+    fprintf(functionInfo->output, "5 %s\t\t%.2lf\n\n", sortingNames[nameNumTurn[4]], orderedTurn[4]);
 
     fprintf(functionInfo->output, "Context Switch Comparison\n");
-    fprintf(functionInfo->output, "1 %s\t\t%d\n", sortingNames[0], functionInfo->simData->contextSwitch[0]);
-    fprintf(functionInfo->output, "2 %s\t\t%d\n", sortingNames[1], functionInfo->simData->contextSwitch[1]);
-    fprintf(functionInfo->output, "3 %s\t\t%d\n", sortingNames[2], functionInfo->simData->contextSwitch[2]);
-    fprintf(functionInfo->output, "4 %s\t\t%d\n", sortingNames[3], functionInfo->simData->contextSwitch[3]);
-    fprintf(functionInfo->output, "5 %s\t\t%d", sortingNames[4], functionInfo->simData->contextSwitch[4]);
+    fprintf(functionInfo->output, "1 %s\t\t%d\n", sortingNames[nameNumSwitch[0]], orderedSwitch[0]);
+    fprintf(functionInfo->output, "2 %s\t\t%d\n", sortingNames[nameNumSwitch[1]], orderedSwitch[1]);
+    fprintf(functionInfo->output, "3 %s\t\t%d\n", sortingNames[nameNumSwitch[2]], orderedSwitch[2]);
+    fprintf(functionInfo->output, "4 %s\t\t%d\n", sortingNames[nameNumSwitch[3]], orderedSwitch[3]);
+    fprintf(functionInfo->output, "5 %s\t\t%d", sortingNames[nameNumSwitch[4]], orderedSwitch[4]);
+
 }

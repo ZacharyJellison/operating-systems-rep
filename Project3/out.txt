@@ -601,22 +601,22 @@ Context switches: 10
 ***** Overall Summary *****
 
 Wait Time Comparison
-1 FCFS		120.90
-2 SJF		54.90
-3 STCF		43.00
-4 Round robin		88.90
-5 Priority		112.50
+1 STCF		43.00
+2 SJF		54.00
+3 Round robin		88.90
+4 Priority		112.50
+5 FCFS		120.00
 
 Turnaround Time Comparison
-1 FCFS		145.40
-2 SJF		79.40
-3 STCF		67.50
-4 Round robin		113.40
-5 Priority		137.00
+1 STCF		67.50
+2 SJF		79.00
+3 Round robin		113.40
+4 Priority		137.00
+5 FCFS		145.00
 
 Context Switch Comparison
 1 FCFS		10
 2 SJF		10
-3 STCF		15
-4 Round robin		165
-5 Priority		10
+3 Priority		10
+4 STCF		15
+5 Round robin		165
