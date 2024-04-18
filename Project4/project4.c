@@ -1,4 +1,4 @@
-//#include "dataDef.c"
+#include "dataDef.c"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -56,6 +56,10 @@ Input:
 //Everything above correctly reads and puts value   ----------------------------------------------------------------------------
 
 
+
+    pthread_t thread_One;
+    pthread_create(&thread_One, NULL, childOne, &threadInfo);
+    pthread_join(thread_One, NULL);
 
 
 
