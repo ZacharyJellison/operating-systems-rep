@@ -6,7 +6,7 @@
         "request": "launch",
         "name": "Launch Program",
         "skipFiles": ["<node_internals>/**"],
-        "program": "homework1zjellison.c"
+        "program": "project4.c"
       }
     ]
   }
