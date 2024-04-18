@@ -16,4 +16,6 @@ typedef struct SUBSYSTEM{
 
 
 //Child process that simulates different processes
-void *child(void *args);
+void *childOne(void *args);
+void *childTwo(void *args);
+void *childThree(void *args);

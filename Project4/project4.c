@@ -24,19 +24,39 @@ Input:
         thread3.txt
 */
 
+
     int memorySize;
     int pageSize;
     int totalProcesses;
 
-    char threadNames[3][13] = {"thread1.txt\0", "thread2.txt\0", "thread3.txt\0"};        //Max of three threads
-
-    printf("%s\n", threadNames[0]);
-    printf("%s\n", threadNames[1]);
-    printf("%s\n", threadNames[2]);
+    char threadNames[3][13];            //Max of 3 threads
 
 
-    //FILE *fp;
-    //fp = fopen(argv[1], "r");
+    FILE *fp;
+    fp = fopen(argv[1], "r");
+
+//Interger assisnment
+    fscanf(fp, "%d", &memorySize);
+    printf("%d\n", memorySize);
+
+    fscanf(fp, "%d", &pageSize);
+    printf("%d\n", pageSize);
+
+    fscanf(fp, "%d", &totalProcesses);
+    printf("%d\n", totalProcesses);
+
+//Thread name assignment
+    for(int i = 0; i < totalProcesses; i++){
+        fscanf(fp, "%s ", threadNames[i]);
+        printf("%s\n", threadNames[i]);
+    }
+
+    fclose(fp);
+
+//Everything above correctly reads and puts value   ----------------------------------------------------------------------------
+
+
+
 
 
     return 0;
