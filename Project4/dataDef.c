@@ -8,10 +8,9 @@ void initInfo(PASSED_INFO *passedInfo, int mem, int page, int processes){
     passedInfo->pageSize = page;
     passedInfo->totalProcesses = processes;
 
-//fix
-    passedInfo->threadNames[3][13];
-
 }
+
+
 
 
 void *childOne(void *args){
@@ -20,7 +19,7 @@ void *childOne(void *args){
     int addressNum[10];
 
 
-    char ReadWrite[1][10];
+    char ReadWrite[10][1];
 
     FILE *fp;
     fp = fopen("thread1.txt", "r");
@@ -34,7 +33,9 @@ void *childOne(void *args){
 //Thread name assignment
     for(int i = 0; i < 10; i++){
         fscanf(fp, "%s r%d %d", ReadWrite[i], &registerNum[i], &addressNum[i]);
-        printf("%s\n", ReadWrite[i]);
+        printf("Read/Write:  %s", ReadWrite[i]);
+        printf("  Register:  %d", registerNum[i]);
+        printf("  Address:  %d\n", addressNum[i]);
     }
 
     fclose(fp);
@@ -43,12 +44,60 @@ void *childOne(void *args){
 
 
 void *childTwo(void *args){
+    int threadMemoryOne;
+    int registerNum[10];
+    int addressNum[10];
 
+
+    char ReadWrite[10][1];
+
+    FILE *fp;
+    fp = fopen("thread2.txt", "r");
+
+//Interger assisnment
+    fscanf(fp, "%d", &threadMemoryOne);
+    printf("%d\n", threadMemoryOne);
+
+
+
+//Thread name assignment
+    for(int i = 0; i < 10; i++){
+        fscanf(fp, "%s r%d %d", ReadWrite[i], &registerNum[i], &addressNum[i]);
+        printf("Read/Write:  %s", ReadWrite[i]);
+        printf("  Register:  %d", registerNum[i]);
+        printf("  Address:  %d\n", addressNum[i]);
+    }
+
+    fclose(fp);
 
 }
 
 
 void *childThree(void *args){
+    int threadMemoryOne;
+    int registerNum[10];
+    int addressNum[10];
 
+
+    char ReadWrite[10][1];
+
+    FILE *fp;
+    fp = fopen("thread3.txt", "r");
+
+//Interger assisnment
+    fscanf(fp, "%d", &threadMemoryOne);
+    printf("%d\n", threadMemoryOne);
+
+
+
+//Thread name assignment
+    for(int i = 0; i < 10; i++){
+        fscanf(fp, "%s r%d %d", ReadWrite[i], &registerNum[i], &addressNum[i]);
+        printf("Read/Write:  %s", ReadWrite[i]);
+        printf("  Register:  %d", registerNum[i]);
+        printf("  Address:  %d\n", addressNum[i]);
+    }
+
+    fclose(fp);
 
 }

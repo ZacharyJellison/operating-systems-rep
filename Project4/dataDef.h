@@ -18,9 +18,8 @@ typedef struct PASSED_INFO{
     int pageSize;
     int totalProcesses;
 
-    char threadNames[3][13];
+    char threadName[3][13];
 }PASSED_INFO;
-
 
 void initInfo(PASSED_INFO *passedInfo, int mem, int page, int processes);
 
