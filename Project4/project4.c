@@ -63,6 +63,10 @@ Input:
 
 //Everything above correctly reads and puts value   ----------------------------------------------------------------------------
 
+//Open file to be written in
+
+    FILE *output = fopen(argv[2], "w");
+    passedInfo.output = output;
 
 
     pthread_t thread_One;
@@ -81,6 +85,9 @@ Input:
     pthread_join(thread_Two, NULL);
     pthread_join(thread_Three, NULL);
 
+
+    fprintf(output, "Main: program completed");
+    fclose(output);
 
     return 0;
 }

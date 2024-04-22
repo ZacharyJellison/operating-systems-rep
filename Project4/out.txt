@@ -1,0 +1,34 @@
+1024
+Read/Write:  R  Register:  0  Address:  0
+Read/Write:  R  Register:  1  Address:  1
+Read/Write:  R  Register:  2  Address:  2
+Read/Write:  R  Register:  3  Address:  3
+Read/Write:  R  Register:  4  Address:  4
+Read/Write:  R  Register:  5  Address:  1020
+Read/Write:  R  Register:  6  Address:  1019
+Read/Write:  R  Register:  7  Address:  1018
+Read/Write:  R  Register:  8  Address:  1017
+Read/Write:  R  Register:  9  Address:  1016
+2048
+Read/Write:  R  Register:  0  Address:  0
+Read/Write:  R  Register:  1  Address:  32
+Read/Write:  R  Register:  2  Address:  64
+Read/Write:  R  Register:  3  Address:  96
+Read/Write:  R  Register:  4  Address:  128
+Read/Write:  R  Register:  5  Address:  160
+Read/Write:  R  Register:  6  Address:  192
+Read/Write:  R  Register:  7  Address:  224
+Read/Write:  R  Register:  8  Address:  256
+Read/Write:  R  Register:  9  Address:  288
+512
+Read/Write:  R  Register:  10  Address:  16
+Read/Write:  R  Register:  11  Address:  48
+Read/Write:  R  Register:  12  Address:  80
+Read/Write:  R  Register:  13  Address:  112
+Read/Write:  R  Register:  14  Address:  144
+Read/Write:  R  Register:  15  Address:  176
+Read/Write:  R  Register:  16  Address:  208
+Read/Write:  R  Register:  17  Address:  240
+Read/Write:  R  Register:  18  Address:  272
+Read/Write:  R  Register:  19  Address:  304
+Main: program completed
