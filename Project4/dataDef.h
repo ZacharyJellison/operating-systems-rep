@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <limits.h>
+#include <semaphore.h>
 
 
 typedef struct SUBSYSTEM{
@@ -19,6 +20,7 @@ typedef struct PASSED_INFO{
     int totalProcesses;
 
     char threadName[3][13];
+    int threadIndexer;
     FILE *output;
 }PASSED_INFO;
 

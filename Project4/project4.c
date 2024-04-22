@@ -1,15 +1,10 @@
 #include "dataDef.c"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <pthread.h>
-#include <time.h>
-#include <unistd.h>
-#include <string.h>
-#include <limits.h>
+
 
 //      ./project4 infile.txt outfile.txt randomNumSeed
+
+sem_t mutex;
 
 int main(int argc, char **argv){
 /*
@@ -39,22 +34,22 @@ Input:
     fp = fopen(argv[1], "r");
 
 //Interger assisnment
-    printf("%d\n", randSeed);
+    //printf("%d\n", randSeed);
 
     fscanf(fp, "%d", &memorySize);
-    printf("%d\n", memorySize);
+    //printf("%d\n", memorySize);
 
     fscanf(fp, "%d", &pageSize);
-    printf("%d\n", pageSize);
+    //printf("%d\n", pageSize);
 
     fscanf(fp, "%d", &totalProcesses);
-    printf("%d\n", totalProcesses);
+    //printf("%d\n", totalProcesses);
 
 //Thread name assignment
     for(int i = 0; i < totalProcesses; i++){
         fscanf(fp, "%s ", threadNames[i]);
         strcpy(passedInfo.threadName[i], threadNames[i]);
-        printf("%s\n", threadNames[i]);
+        //printf("%s\n", threadNames[i]);
     }
 
     fclose(fp);
@@ -67,25 +62,21 @@ Input:
 
     FILE *output = fopen(argv[2], "w");
     passedInfo.output = output;
+    passedInfo.threadIndexer = 0;
+
+    sem_init(&mutex, 0, 1);
 
 
-    pthread_t thread_One;
-    pthread_create(&thread_One, NULL, childOne, &passedInfo);
+    pthread_t thread1, thread2, thread3;
+    pthread_create(&thread1, NULL, child, &passedInfo);
+    pthread_create(&thread2, NULL, child, &passedInfo);
+    pthread_create(&thread3, NULL, child, &passedInfo);
 
+    pthread_join(thread1, NULL);
+    pthread_join(thread2, NULL);
+    pthread_join(thread3, NULL);
 
-    pthread_t thread_Two;
-    pthread_create(&thread_Two, NULL, childTwo, &passedInfo);
-
-
-    pthread_t thread_Three;
-    pthread_create(&thread_Three, NULL, childThree, &passedInfo);
-    
-    
-    pthread_join(thread_One, NULL);
-    pthread_join(thread_Two, NULL);
-    pthread_join(thread_Three, NULL);
-
-
+    sem_destroy(&mutex);
     fprintf(output, "Main: program completed");
     fclose(output);
 
