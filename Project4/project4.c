@@ -9,6 +9,8 @@
 #include <string.h>
 #include <limits.h>
 
+//      ./project4 infile.txt outfile.txt randomNumSeed
+
 int main(int argc, char **argv){
 /*
 Input:
@@ -28,6 +30,7 @@ Input:
     int memorySize;
     int pageSize;
     int totalProcesses;
+    int randSeed = atoi(argv[3]);
 
     char threadNames[3][13];            //Max of 3 threads
 
@@ -36,6 +39,8 @@ Input:
     fp = fopen(argv[1], "r");
 
 //Interger assisnment
+    printf("%d\n", randSeed);
+
     fscanf(fp, "%d", &memorySize);
     printf("%d\n", memorySize);
 
@@ -62,16 +67,18 @@ Input:
 
     pthread_t thread_One;
     pthread_create(&thread_One, NULL, childOne, &passedInfo);
-    pthread_join(thread_One, NULL);
 
 
     pthread_t thread_Two;
     pthread_create(&thread_Two, NULL, childTwo, &passedInfo);
-    pthread_join(thread_Two, NULL);
 
 
     pthread_t thread_Three;
     pthread_create(&thread_Three, NULL, childThree, &passedInfo);
+    
+    
+    pthread_join(thread_One, NULL);
+    pthread_join(thread_Two, NULL);
     pthread_join(thread_Three, NULL);
 
 
