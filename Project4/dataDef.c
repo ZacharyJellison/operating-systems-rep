@@ -22,17 +22,19 @@ void *child(void *args){
 
 //Critical section to increment which thread get accessed and exit if total processes is reached
     sem_wait(&mutex);
-    fp = fopen(passedInfo->threadName[passedInfo->threadIndexer], "r");
-    personalThreadNum = passedInfo->threadIndexer;
-    passedInfo->threadIndexer += 1;
-    if (passedInfo->threadIndexer > passedInfo->totalProcesses){
-        pthread_exit(NULL);
-    }
+        if (passedInfo->threadIndexer >= passedInfo->totalProcesses){
+            pthread_exit(NULL);
+        }
+        fp = fopen(passedInfo->threadName[passedInfo->threadIndexer], "r");
+        personalThreadNum = passedInfo->threadIndexer;
+        passedInfo->threadIndexer += 1;
     sem_post(&mutex);
+
+    fprintf(passedInfo->output, "Process %d started\n", personalThreadNum);
 
 //Interger assisnment
     fscanf(fp, "%d", &threadMemory);
-    fprintf(passedInfo->output, "%d\n", threadMemory);
+    //fprintf(passedInfo->output, "%d\n", threadMemory);
 
 //Thread name assignment
     for(int i = 0; i < 10; i++){
@@ -42,12 +44,14 @@ void *child(void *args){
     fclose(fp);
 
     for(int i = 0; i < 10; i++){
-        fprintf(passedInfo->output, "Thread: %d  ", personalThreadNum);
+        fprintf(passedInfo->output, "P%d:  ", personalThreadNum);
         fprintf(passedInfo->output, "Read/Write:  %s", ReadWrite[i]);
         fprintf(passedInfo->output, "  Register:  %d", registerNum[i]);
         fprintf(passedInfo->output, "  Address:  %d\n", addressNum[i]);
     }
 
+
+    fprintf(passedInfo->output, "Process %d complete\n", personalThreadNum);
     pthread_exit(NULL);
 }
 

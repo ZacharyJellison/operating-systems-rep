@@ -1,34 +1,25 @@
-1024
-Thread: 0  Read/Write:  R  Register:  0  Address:  0
-Thread: 0  Read/Write:  R  Register:  1  Address:  1
-Thread: 0  Read/Write:  R  Register:  2  Address:  2
-Thread: 0  Read/Write:  R  Register:  3  Address:  3
-Thread: 0  Read/Write:  R  Register:  4  Address:  4
-Thread: 0  Read/Write:  R  Register:  5  Address:  1020
-Thread: 0  Read/Write:  R  Register:  6  Address:  1019
-Thread: 0  Read/Write:  R  Register:  7  Address:  1018
-Thread: 0  Read/Write:  R  Register:  8  Address:  1017
-Thread: 0  Read/Write:  R  Register:  9  Address:  1016
-2048
-Thread: 1  Read/Write:  R  Register:  0  Address:  0
-Thread: 1  Read/Write:  R  Register:  1  Address:  32
-Thread: 1  Read/Write:  R  Register:  2  Address:  64
-Thread: 1  Read/Write:  R  Register:  3  Address:  96
-Thread: 1  Read/Write:  R  Register:  4  Address:  128
-Thread: 1  Read/Write:  R  Register:  5  Address:  160
-Thread: 1  Read/Write:  R  Register:  6  Address:  192
-Thread: 1  Read/Write:  R  Register:  7  Address:  224
-Thread: 1  Read/Write:  R  Register:  8  Address:  256
-Thread: 1  Read/Write:  R  Register:  9  Address:  288
-512
-Thread: 2  Read/Write:  R  Register:  10  Address:  16
-Thread: 2  Read/Write:  R  Register:  11  Address:  48
-Thread: 2  Read/Write:  R  Register:  12  Address:  80
-Thread: 2  Read/Write:  R  Register:  13  Address:  112
-Thread: 2  Read/Write:  R  Register:  14  Address:  144
-Thread: 2  Read/Write:  R  Register:  15  Address:  176
-Thread: 2  Read/Write:  R  Register:  16  Address:  208
-Thread: 2  Read/Write:  R  Register:  17  Address:  240
-Thread: 2  Read/Write:  R  Register:  18  Address:  272
-Thread: 2  Read/Write:  R  Register:  19  Address:  304
+Process 0 started
+P0:  Read/Write:  R  Register:  0  Address:  0
+P0:  Read/Write:  R  Register:  1  Address:  1
+P0:  Read/Write:  R  Register:  2  Address:  2
+P0:  Read/Write:  R  Register:  3  Address:  3
+P0:  Read/Write:  R  Register:  4  Address:  4
+P0:  Read/Write:  R  Register:  5  Address:  1020
+P0:  Read/Write:  R  Register:  6  Address:  1019
+P0:  Read/Write:  R  Register:  7  Address:  1018
+P0:  Read/Write:  R  Register:  8  Address:  1017
+P0:  Read/Write:  R  Register:  9  Address:  1016
+Process 0 complete
+Process 1 started
+P1:  Read/Write:  R  Register:  0  Address:  0
+P1:  Read/Write:  R  Register:  1  Address:  32
+P1:  Read/Write:  R  Register:  2  Address:  64
+P1:  Read/Write:  R  Register:  3  Address:  96
+P1:  Read/Write:  R  Register:  4  Address:  128
+P1:  Read/Write:  R  Register:  5  Address:  160
+P1:  Read/Write:  R  Register:  6  Address:  192
+P1:  Read/Write:  R  Register:  7  Address:  224
+P1:  Read/Write:  R  Register:  8  Address:  256
+P1:  Read/Write:  R  Register:  9  Address:  288
+Process 1 complete
 Main: program completed
