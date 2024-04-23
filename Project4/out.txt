@@ -1,37 +1,61 @@
 Process 0 started
-P0:  Read/Write:  R  Register:  0  Address:  0
-P0:  Read/Write:  R  Register:  1  Address:  1
-P0:  Read/Write:  R  Register:  2  Address:  2
-P0:  Read/Write:  R  Register:  3  Address:  3
-P0:  Read/Write:  R  Register:  4  Address:  4
-P0:  Read/Write:  R  Register:  5  Address:  1020
-P0:  Read/Write:  R  Register:  6  Address:  1019
-P0:  Read/Write:  R  Register:  7  Address:  1018
-P0:  Read/Write:  R  Register:  8  Address:  1017
-P0:  Read/Write:  R  Register:  9  Address:  1016
+P0 OPERATION: R r0 0x00000000
+P0 OPERATION: R r1 0x00000001
+P0 OPERATION: R r2 0x00000002
+P0 OPERATION: R r3 0x00000003
+P0 OPERATION: R r4 0x00000004
+P0 OPERATION: R r5 0x000003FC
+P0 OPERATION: R r6 0x000003FB
+P0 OPERATION: R r7 0x000003FA
+P0 OPERATION: R r8 0x000003F9
+P0 OPERATION: R r9 0x000003F8
+P0 OPERATION: R r0 0x00000000
+P0: page 0 not resident in memory
+P0: using free frame 0
+P0: new translation from page 0 to frame 0
+P0: translated VA 0x00000000 to PA 0x00000000
+P0: r0 = 0x00000000 (mem at virtual addr 0xAF437BD7)
+P0: valid translation from page 0 to frame 0
+P0: evicting process 0, page 0 from frame 0
 Process 0 complete
 Process 1 started
-P1:  Read/Write:  R  Register:  0  Address:  0
-P1:  Read/Write:  R  Register:  1  Address:  32
-P1:  Read/Write:  R  Register:  2  Address:  64
-P1:  Read/Write:  R  Register:  3  Address:  96
-P1:  Read/Write:  R  Register:  4  Address:  128
-P1:  Read/Write:  R  Register:  5  Address:  160
-P1:  Read/Write:  R  Register:  6  Address:  192
-P1:  Read/Write:  R  Register:  7  Address:  224
-P1:  Read/Write:  R  Register:  8  Address:  256
-P1:  Read/Write:  R  Register:  9  Address:  288
+P1 OPERATION: R r0 0x00000000
+P1 OPERATION: R r1 0x00000020
+P1 OPERATION: R r2 0x00000040
+P1 OPERATION: R r3 0x00000060
+P1 OPERATION: R r4 0x00000080
+P1 OPERATION: R r5 0x000000A0
+P1 OPERATION: R r6 0x000000C0
+P1 OPERATION: R r7 0x000000E0
+P1 OPERATION: R r8 0x00000100
+P1 OPERATION: R r9 0x00000120
+P1 OPERATION: R r0 0x00000000
+P1: page 0 not resident in memory
+P1: using free frame 0
+P1: new translation from page 0 to frame 0
+P1: translated VA 0x00000000 to PA 0x00000000
+P1: r0 = 0x00000000 (mem at virtual addr 0xAEC36BD7)
+P1: valid translation from page 0 to frame 0
+P1: evicting process 0, page 0 from frame 0
 Process 1 complete
 Process 2 started
-P2:  Read/Write:  R  Register:  10  Address:  16
-P2:  Read/Write:  R  Register:  11  Address:  48
-P2:  Read/Write:  R  Register:  12  Address:  80
-P2:  Read/Write:  R  Register:  13  Address:  112
-P2:  Read/Write:  R  Register:  14  Address:  144
-P2:  Read/Write:  R  Register:  15  Address:  176
-P2:  Read/Write:  R  Register:  16  Address:  208
-P2:  Read/Write:  R  Register:  17  Address:  240
-P2:  Read/Write:  R  Register:  18  Address:  272
-P2:  Read/Write:  R  Register:  19  Address:  304
+P2 OPERATION: R r10 0x00000010
+P2 OPERATION: R r11 0x00000030
+P2 OPERATION: R r12 0x00000050
+P2 OPERATION: R r13 0x00000070
+P2 OPERATION: R r14 0x00000090
+P2 OPERATION: R r15 0x000000B0
+P2 OPERATION: R r16 0x000000D0
+P2 OPERATION: R r17 0x000000F0
+P2 OPERATION: R r18 0x00000110
+P2 OPERATION: R r19 0x00000130
+P2 OPERATION: R r10 0x00000010
+P2: page 0 not resident in memory
+P2: using free frame 0
+P2: new translation from page 0 to frame 0
+P2: translated VA 0x0000000A to PA 0x00000010
+P2: r16 = 0x00000010 (mem at virtual addr 0xAE435BD6)
+P2: valid translation from page 0 to frame 0
+P2: evicting process 0, page 0 from frame 0
 Process 2 complete
 Main: program completed

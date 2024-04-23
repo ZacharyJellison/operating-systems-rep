@@ -9,20 +9,26 @@
 #include <semaphore.h>
 
 
-typedef struct SUBSYSTEM{
-
-
-}SUBSYSTEM;
-
 typedef struct PASSED_INFO{
     int memorySize;
     int pageSize;
     int totalProcesses;
 
+    int clockPage[16];
+    int clockIndex[16];
+
     char threadName[3][13];
     int threadIndexer;
     FILE *output;
 }PASSED_INFO;
+
+/*
+typedef struct BIT_INFO{
+    int dirty;
+    int valid;
+    int reference;
+}BIT_INFO;
+*/
 
 void initInfo(PASSED_INFO *passedInfo, int mem, int page, int processes);
 

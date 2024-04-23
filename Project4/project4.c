@@ -57,6 +57,9 @@ Input:
 
     initInfo(&passedInfo, memorySize, pageSize, totalProcesses);
 
+    for (int i = 0; i < 16; i++){
+        passedInfo.clockIndex[i] = i;
+    }
 //Everything above correctly reads and puts value   ----------------------------------------------------------------------------
 
 //Open file to be written in
