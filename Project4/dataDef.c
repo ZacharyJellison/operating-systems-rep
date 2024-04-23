@@ -41,10 +41,15 @@ void *child(void *args){
 
     fclose(fp);
 
+
+
+
+//THIS IS IMPORTANT FOR LOOP IT RUN THROUGH ALL 10 PAGES NEED MUTEX FOR WHEN ACCESSING CLOCK MEMORY
     for (int i = 0; i < 10; i++){
         fprintf(passedInfo->output, "P%d OPERATION: %s r%d 0x%08X\n", personalThreadNum, ReadWrite[i], registerNum[i], addressNum[i]);
         sleep((rand() % 10) / 1000);
-    }
+
+
 
 
 
@@ -52,14 +57,23 @@ void *child(void *args){
 /*
     int i = 0;
     fprintf(passedInfo->output, "P%d OPERATION: %s r%d 0x%08X\n", personalThreadNum, ReadWrite[i], registerNum[i], addressNum[i]);
-    fprintf(passedInfo->output, "P%d: page %d not resident in memory\n", personalThreadNum, clockPage[i]);
-    fprintf(passedInfo->output, "P%d: using free frame %d\n", personalThreadNum, clockIndex[i]);
-    fprintf(passedInfo->output, "P%d: new translation from page %d to frame %d\n", personalThreadNum, clockPage[i], clockIndex[i]);
-    fprintf(passedInfo->output, "P%d: translated VA 0x%08X to PA 0x%08X\n", personalThreadNum, registerNum[i], addressNum[i]);
-    fprintf(passedInfo->output, "P%d: r%d = 0x%08X (mem at virtual addr 0x%08X)\n", personalThreadNum, addressNum[i], addressNum[i]);
-    fprintf(passedInfo->output, "P%d: valid translation from page %d to frame %d\n", personalThreadNum, clockPage[i], clockIndex[i]);
-    fprintf(passedInfo->output, "P%d: evicting process %d, page %d from frame %d\n", personalThreadNum, clockPage[i], clockPage[i], clockIndex[i]);
+    fprintf(passedInfo->output, "P%d: page %d not resident in memory\n", personalThreadNum, passedInfo->clockPage[i].pageNum[i]);
+    fprintf(passedInfo->output, "P%d: using free frame %d\n", personalThreadNum, passedInfo->clockPage[i].index[i]);
+    fprintf(passedInfo->output, "P%d: new translation from page %d to frame %d\n", personalThreadNum, passedInfo->clockPage[i].pageNum[i], passedInfo->clockPage[i].index[i]);
+    fprintf(passedInfo->output, "P%d: translated VA 0x%08X to PA 0x%08X\n", personalThreadNum, registerNum[i], addressNum[i]);      //Needs Fixing
+    fprintf(passedInfo->output, "P%d: r%d = 0x%08X (mem at virtual addr 0x%08X)\n", personalThreadNum, addressNum[i], addressNum[i]);       //Needs Fixing
+    fprintf(passedInfo->output, "P%d: valid translation from page %d to frame %d\n", personalThreadNum, passedInfo->clockPage[i].pageNum[i], passedInfo->clockPage[i].index[i]);
+    fprintf(passedInfo->output, "P%d: evicting process %d, page %d from frame %d\n", personalThreadNum, passedInfo->clockPage[i].processIn[i], passedInfo->clockPage[i].pageNum[i], passedInfo->clockPage[i].index[i]);
 */
+
+
+
+
+    }
+
+
+
+
 
     fprintf(passedInfo->output, "Process %d complete\n", personalThreadNum);
     pthread_exit(NULL);

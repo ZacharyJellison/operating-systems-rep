@@ -10,7 +10,8 @@
 
 typedef struct CLOCK_INFO{
     int index[16];
-    int pageNum[16];
+    int pageNum[16];        //Page number in the index
+    int processIn[16];      //What process is int the clock index
 
     //Bit Info
     int dirty[16];
