@@ -4,8 +4,7 @@
 
 //      ./project4 infile.txt outfile.txt randomNumSeed
 
-sem_t mutex;
-sem_t outputMut;
+pthread_mutex_t mutex;
 
 int main(int argc, char **argv){
 /*
@@ -58,8 +57,12 @@ Input:
     initInfo(&passedInfo, memorySize, pageSize, totalProcesses);
 
     for (int i = 0; i < 16; i++){
-        passedInfo.clockIndex[i] = i;
+        passedInfo.clockPage[i].index[i] = i;
     }
+
+    passedInfo.currentIndex = 0;
+    passedInfo.randomSeed = randSeed;
+
 //Everything above correctly reads and puts value   ----------------------------------------------------------------------------
 
 //Open file to be written in
@@ -68,8 +71,7 @@ Input:
     passedInfo.output = output;
     passedInfo.threadIndexer = 0;
 
-    sem_init(&mutex, 0, 1);
-    sem_init(&outputMut, 0, 1);
+    pthread_mutex_init(&mutex, NULL);
 
 //3 Threads max
     pthread_t thread[3];
@@ -82,8 +84,7 @@ Input:
         pthread_join(thread[t], NULL);
     }
 
-    sem_destroy(&outputMut);
-    sem_destroy(&mutex);
+    pthread_mutex_destroy(&mutex);
 
     fprintf(output, "Main: program completed");
     fclose(output);

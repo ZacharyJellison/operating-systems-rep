@@ -1,7 +1,6 @@
 #include "dataDef.h"
 
-extern sem_t mutex;
-extern sem_t outputMut;
+extern pthread_mutex_t mutex;
 
 void initInfo(PASSED_INFO *passedInfo, int mem, int page, int processes){
     passedInfo->memorySize = mem;
@@ -16,20 +15,18 @@ void *child(void *args){
     int registerNum[10];
     unsigned int addressNum[10];
     int personalThreadNum;
-    int clockIndex[16];
-    int clockPage[16];
 
     char ReadWrite[10][2];
 
     FILE *fp;
 
-//Critical section to increment which thread get accessed and exit if total processes is reached
-    sem_wait(&mutex);
 
+//Critical section to increment which thread get accessed and exit if total processes is reached
+    pthread_mutex_lock(&mutex);
         fp = fopen(passedInfo->threadName[passedInfo->threadIndexer], "r");
         personalThreadNum = passedInfo->threadIndexer;
         passedInfo->threadIndexer += 1;
-    sem_post(&mutex);
+    pthread_mutex_unlock(&mutex);
 
     fprintf(passedInfo->output, "Process %d started\n", personalThreadNum);
 
@@ -45,9 +42,8 @@ void *child(void *args){
     fclose(fp);
 
     for (int i = 0; i < 10; i++){
-        sem_wait(&outputMut);
         fprintf(passedInfo->output, "P%d OPERATION: %s r%d 0x%08X\n", personalThreadNum, ReadWrite[i], registerNum[i], addressNum[i]);
-        sem_post(&outputMut);
+        sleep((rand() % 10) / 1000);
     }
 
 
@@ -64,13 +60,6 @@ void *child(void *args){
     fprintf(passedInfo->output, "P%d: valid translation from page %d to frame %d\n", personalThreadNum, clockPage[i], clockIndex[i]);
     fprintf(passedInfo->output, "P%d: evicting process %d, page %d from frame %d\n", personalThreadNum, clockPage[i], clockPage[i], clockIndex[i]);
 */
-
-
-
-
-
-
-
 
     fprintf(passedInfo->output, "Process %d complete\n", personalThreadNum);
     pthread_exit(NULL);

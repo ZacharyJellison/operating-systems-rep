@@ -8,27 +8,30 @@
 #include <limits.h>
 #include <semaphore.h>
 
+typedef struct CLOCK_INFO{
+    int index[16];
+    int pageNum[16];
+
+    //Bit Info
+    int dirty[16];
+    int valid[16];
+    int reference[16];
+}CLOCK_INFO;
 
 typedef struct PASSED_INFO{
     int memorySize;
     int pageSize;
     int totalProcesses;
+    int randomSeed;
 
-    int clockPage[16];
-    int clockIndex[16];
+    CLOCK_INFO clockPage[16];
+    int currentIndex;
 
     char threadName[3][13];
     int threadIndexer;
     FILE *output;
 }PASSED_INFO;
 
-/*
-typedef struct BIT_INFO{
-    int dirty;
-    int valid;
-    int reference;
-}BIT_INFO;
-*/
 
 void initInfo(PASSED_INFO *passedInfo, int mem, int page, int processes);
 
