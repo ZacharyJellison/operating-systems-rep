@@ -22,4 +22,16 @@ P1:  Read/Write:  R  Register:  7  Address:  224
 P1:  Read/Write:  R  Register:  8  Address:  256
 P1:  Read/Write:  R  Register:  9  Address:  288
 Process 1 complete
+Process 2 started
+P2:  Read/Write:  R  Register:  10  Address:  16
+P2:  Read/Write:  R  Register:  11  Address:  48
+P2:  Read/Write:  R  Register:  12  Address:  80
+P2:  Read/Write:  R  Register:  13  Address:  112
+P2:  Read/Write:  R  Register:  14  Address:  144
+P2:  Read/Write:  R  Register:  15  Address:  176
+P2:  Read/Write:  R  Register:  16  Address:  208
+P2:  Read/Write:  R  Register:  17  Address:  240
+P2:  Read/Write:  R  Register:  18  Address:  272
+P2:  Read/Write:  R  Register:  19  Address:  304
+Process 2 complete
 Main: program completed

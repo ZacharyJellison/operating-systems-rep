@@ -5,6 +5,7 @@
 //      ./project4 infile.txt outfile.txt randomNumSeed
 
 sem_t mutex;
+sem_t outputMut;
 
 int main(int argc, char **argv){
 /*
@@ -65,18 +66,22 @@ Input:
     passedInfo.threadIndexer = 0;
 
     sem_init(&mutex, 0, 1);
+    sem_init(&outputMut, 0, 1);
+
+//3 Threads max
+    pthread_t thread[3];
+    for (int t = 0; t < totalProcesses; t++){
+        pthread_create(&thread[t], NULL, child, &passedInfo);
+    }
 
 
-    pthread_t thread1, thread2, thread3;
-    pthread_create(&thread1, NULL, child, &passedInfo);
-    pthread_create(&thread2, NULL, child, &passedInfo);
-    pthread_create(&thread3, NULL, child, &passedInfo);
+    for (int t = 0; t < totalProcesses; t++){
+        pthread_join(thread[t], NULL);
+    }
 
-    pthread_join(thread1, NULL);
-    pthread_join(thread2, NULL);
-    pthread_join(thread3, NULL);
-
+    sem_destroy(&outputMut);
     sem_destroy(&mutex);
+
     fprintf(output, "Main: program completed");
     fclose(output);
 
