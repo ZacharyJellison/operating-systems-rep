@@ -23,10 +23,12 @@ void *child(void *args){
     PASSED_INFO *passedInfo = (PASSED_INFO *)args;
     int threadMemory;
     int registerNum[10];
-    unsigned int addressNum[10];
+    int addressNum[10];
     int personalThreadNum;
 
     char ReadWrite[10][2];
+
+    srand(passedInfo->randomSeed);              //Set seed for rand
 
     FILE *fp;
 
@@ -64,15 +66,29 @@ void *child(void *args){
             sleep((rand() % 10) / 1000);
         
 
-            if(inArray(registerNum[i], passedInfo->clockArr) == 0){
+            if((inArray(registerNum[i], passedInfo->clockArr) == 0) || (inArray(registerNum[i], passedInfo->clockArr) == 1 && (passedInfo->clockPage[passedInfo->currentIndex].processIn != personalThreadNum))){
                 fprintf(passedInfo->output, "P%d: page %d not resident in memory\n", personalThreadNum, passedInfo->clockPage[i].pageNum);
-                passedInfo->clockPage[passedInfo->currentIndex].pageNum = registerNum[i];
-                passedInfo->clockArr[passedInfo->currentIndex] = passedInfo->clockPage[passedInfo->currentIndex].pageNum;
-
-                passedInfo->clockPage[passedInfo->currentIndex].reference = 1;
+                
         
                 if (passedInfo->clockPage[passedInfo->currentIndex].reference == 0){
-                    fprintf(passedInfo->output, "P%d: using free frame %d\n", personalThreadNum, passedInfo->clockPage[i].index);
+                    fprintf(passedInfo->output, "P%d: using free frame %d\n", personalThreadNum, passedInfo->clockPage[passedInfo->currentIndex].index);
+                    passedInfo->clockPage[passedInfo->currentIndex].pageNum = registerNum[i];
+                    passedInfo->clockArr[passedInfo->currentIndex] = passedInfo->clockPage[passedInfo->currentIndex].pageNum;
+
+                    passedInfo->clockPage[passedInfo->currentIndex].reference = 1;
+
+                    fprintf(passedInfo->output, "P%d: new translation from page %d to frame %d\n", personalThreadNum, passedInfo->clockPage[passedInfo->currentIndex].pageNum, passedInfo->clockPage[passedInfo->currentIndex].index);
+                    fprintf(passedInfo->output, "P%d: translated VA 0x%08X to PA 0x%08X\n", personalThreadNum, registerNum[i], addressNum[i]);              //Needs Fixing?
+                    fprintf(passedInfo->output, "P%d: r%d = 0x%08X (mem at virtual addr 0x%08X)\n", personalThreadNum, addressNum[i], rand(), addressNum[i]);       //Needs Fixing
+                    pthread_mutex_lock(&currentIndexMut);
+                    passedInfo->currentIndex +=1;
+
+                    if(passedInfo->currentIndex >= 16){
+                        passedInfo->currentIndex = 0;
+                    }
+
+                    pthread_mutex_unlock(&currentIndexMut);
+                    printf("%d\n", passedInfo->currentIndex);
                 }
                 else if (passedInfo->clockPage[passedInfo->currentIndex].reference == 1){
                     pthread_mutex_lock(&currentIndexMut);
@@ -83,10 +99,11 @@ void *child(void *args){
                     }
 
                     pthread_mutex_unlock(&currentIndexMut);
+                    printf("%d\n", passedInfo->currentIndex);
                 }
         
             }
-            else if(inArray(registerNum[i], passedInfo->clockArr) == 0){
+            else if(inArray(registerNum[i], passedInfo->clockArr) == 1 && passedInfo->clockPage[passedInfo->currentIndex].processIn == personalThreadNum){
                 passedInfo->clockPage[passedInfo->currentIndex].reference = 1;
             }
 
