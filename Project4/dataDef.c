@@ -88,7 +88,6 @@ void *child(void *args){
                     }
 
                     pthread_mutex_unlock(&currentIndexMut);
-                    printf("%d\n", passedInfo->currentIndex);
                 }
                 else if (passedInfo->clockPage[passedInfo->currentIndex].reference == 1){
                     pthread_mutex_lock(&currentIndexMut);
@@ -99,14 +98,12 @@ void *child(void *args){
                     }
 
                     pthread_mutex_unlock(&currentIndexMut);
-                    printf("%d\n", passedInfo->currentIndex);
                 }
         
             }
             else if(inArray(registerNum[i], passedInfo->clockArr) == 1 && passedInfo->clockPage[passedInfo->currentIndex].processIn == personalThreadNum){
                 passedInfo->clockPage[passedInfo->currentIndex].reference = 1;
             }
-
 
             flag = 0;
         }
