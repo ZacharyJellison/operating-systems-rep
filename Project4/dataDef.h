@@ -9,14 +9,14 @@
 #include <semaphore.h>
 
 typedef struct CLOCK_INFO{
-    int index[16];
-    int pageNum[16];        //Page number in the index
-    int processIn[16];      //What process is int the clock index
+    int index;
+    int pageNum;        //Page number in the index
+    int processIn;      //What process is int the clock index
 
     //Bit Info
-    int dirty[16];
-    int valid[16];
-    int reference[16];
+    int dirty;
+    int valid;
+    int reference;
 }CLOCK_INFO;
 
 typedef struct PASSED_INFO{
@@ -24,6 +24,7 @@ typedef struct PASSED_INFO{
     int pageSize;
     int totalProcesses;
     int randomSeed;
+    int clockArr[16];
 
     CLOCK_INFO clockPage[16];
     int currentIndex;
@@ -35,6 +36,8 @@ typedef struct PASSED_INFO{
 
 
 void initInfo(PASSED_INFO *passedInfo, int mem, int page, int processes);
+
+int inArray(int numToFind, int arr[16]);
 
 //Child process that simulates different processes
 void *childOne(void *args);

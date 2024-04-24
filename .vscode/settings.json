@@ -4,6 +4,10 @@
         "array": "c",
         "string_view": "c",
         "initializer_list": "c",
-        "utility": "c"
+        "utility": "c",
+        "deque": "c",
+        "string": "c",
+        "vector": "c",
+        "iterator": "c"
     }
 }

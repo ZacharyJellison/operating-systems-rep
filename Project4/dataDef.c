@@ -1,11 +1,21 @@
 #include "dataDef.h"
 
 extern pthread_mutex_t mutex;
+extern pthread_mutex_t currentIndexMut;
 
 void initInfo(PASSED_INFO *passedInfo, int mem, int page, int processes){
     passedInfo->memorySize = mem;
     passedInfo->pageSize = page;
     passedInfo->totalProcesses = processes;
+}
+
+int inArray(int numToFind, int arr[16]){
+    for(int i = 0; i < 16; i++){
+        if(numToFind == arr[i]){
+            return 1;
+        }
+    }
+    return 0;
 }
 
 
@@ -34,6 +44,7 @@ void *child(void *args){
     fscanf(fp, "%d", &threadMemory);
     //fprintf(passedInfo->output, "%d\n", threadMemory);
 
+
 //Thread name assignment
     for (int i = 0; i < 10; i++){
         fscanf(fp, "%s r%d %d", ReadWrite[i], &registerNum[i], &addressNum[i]);
@@ -46,12 +57,43 @@ void *child(void *args){
 
 //THIS IS IMPORTANT FOR LOOP IT RUN THROUGH ALL 10 PAGES NEED MUTEX FOR WHEN ACCESSING CLOCK MEMORY
     for (int i = 0; i < 10; i++){
-        fprintf(passedInfo->output, "P%d OPERATION: %s r%d 0x%08X\n", personalThreadNum, ReadWrite[i], registerNum[i], addressNum[i]);
-        sleep((rand() % 10) / 1000);
+        int flag = 1;
+
+        while(flag == 1){
+            fprintf(passedInfo->output, "P%d OPERATION: %s r%d 0x%08X\n", personalThreadNum, ReadWrite[i], registerNum[i], addressNum[i]);
+            sleep((rand() % 10) / 1000);
+        
+
+            if(inArray(registerNum[i], passedInfo->clockArr) == 0){
+                fprintf(passedInfo->output, "P%d: page %d not resident in memory\n", personalThreadNum, passedInfo->clockPage[i].pageNum);
+                passedInfo->clockPage[passedInfo->currentIndex].pageNum = registerNum[i];
+                passedInfo->clockArr[passedInfo->currentIndex] = passedInfo->clockPage[passedInfo->currentIndex].pageNum;
+
+                passedInfo->clockPage[passedInfo->currentIndex].reference = 1;
+        
+                if (passedInfo->clockPage[passedInfo->currentIndex].reference == 0){
+                    fprintf(passedInfo->output, "P%d: using free frame %d\n", personalThreadNum, passedInfo->clockPage[i].index);
+                }
+                else if (passedInfo->clockPage[passedInfo->currentIndex].reference == 1){
+                    pthread_mutex_lock(&currentIndexMut);
+                    passedInfo->currentIndex +=1;
+
+                    if(passedInfo->currentIndex >= 16){
+                        passedInfo->currentIndex = 0;
+                    }
+
+                    pthread_mutex_unlock(&currentIndexMut);
+                }
+        
+            }
+            else if(inArray(registerNum[i], passedInfo->clockArr) == 0){
+                passedInfo->clockPage[passedInfo->currentIndex].reference = 1;
+            }
 
 
-
-
+            flag = 0;
+        }
+    }
 
 //All Output messages
 /*
@@ -69,13 +111,6 @@ void *child(void *args){
 
 
 
-    }
-
-
-
-
-
-    fprintf(passedInfo->output, "Process %d complete\n", personalThreadNum);
-    pthread_exit(NULL);
+        fprintf(passedInfo->output, "Process %d complete\n", personalThreadNum);
+        pthread_exit(NULL);
 }
-

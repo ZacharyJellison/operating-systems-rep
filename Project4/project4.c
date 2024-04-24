@@ -4,7 +4,7 @@
 
 //      ./project4 infile.txt outfile.txt randomNumSeed
 
-pthread_mutex_t mutex;
+pthread_mutex_t mutex, currentIndexMut;
 
 int main(int argc, char **argv){
 /*
@@ -57,13 +57,14 @@ Input:
     initInfo(&passedInfo, memorySize, pageSize, totalProcesses);
 
     for (int i = 0; i < 16; i++){
-        passedInfo.clockPage[i].index[i] = i;
+        passedInfo.clockPage[i].index = i;
+        passedInfo.clockPage[i].reference = 0;
     }
 
     passedInfo.currentIndex = 0;
     passedInfo.randomSeed = randSeed;
+    passedInfo.currentIndex = 0;            //Start clock at 0, use mutex to edit
 
-//Everything above correctly reads and puts value   ----------------------------------------------------------------------------
 
 //Open file to be written in
 
@@ -72,6 +73,7 @@ Input:
     passedInfo.threadIndexer = 0;
 
     pthread_mutex_init(&mutex, NULL);
+    pthread_mutex_init(&currentIndexMut, NULL);
 
 //3 Threads max
     pthread_t thread[3];
@@ -84,6 +86,7 @@ Input:
         pthread_join(thread[t], NULL);
     }
 
+    pthread_mutex_destroy(&currentIndexMut);
     pthread_mutex_destroy(&mutex);
 
     fprintf(output, "Main: program completed");
