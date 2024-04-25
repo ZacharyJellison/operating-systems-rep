@@ -67,7 +67,7 @@ void *child(void *args){
             sleep((rand() % 10) / 1000);
         
 
-            if((inArray(registerNum[i], passedInfo->clockArr) == 0) || (inArray(registerNum[i], passedInfo->clockArr) == 1 && (passedInfo->clockPage[passedInfo->currentIndex].processIn != personalThreadNum))){
+            if((inArray(registerNum[i], passedInfo->clockArr) == 0) || (inArray(registerNum[i], passedInfo->clockArr) == 1 && (passedInfo->clockPage[passedInfo->currentIndex].reference == 0))){
                 fprintf(passedInfo->output, "P%d: page %d not resident in memory\n", personalThreadNum, passedInfo->clockPage[i].pageNum);
 
                 if (passedInfo->clockPage[passedInfo->currentIndex].reference == 0){
@@ -83,10 +83,12 @@ void *child(void *args){
                     fprintf(passedInfo->output, "P%d: new translation from page %d to frame %d\n", personalThreadNum, passedInfo->clockPage[passedInfo->currentIndex].pageNum, passedInfo->clockPage[passedInfo->currentIndex].index);
                     fprintf(passedInfo->output, "P%d: translated VA 0x%08X to PA 0x%08X\n", personalThreadNum, addressNum[i], addressNum[i]);              //Needs Fixing?
                     fprintf(passedInfo->output, "P%d: r%d = 0x%08X (mem at virtual addr 0x%08X)\n", personalThreadNum, registerNum[i], rand(), addressNum[i]);       //Needs Fixing
+                    fprintf(passedInfo->output, "P%d: valid translation from page %d to frame %d\n", personalThreadNum, passedInfo->clockPage[passedInfo->currentIndex].pageNum, passedInfo->clockPage[passedInfo->currentIndex].index);
 
                     flag = 0;
                 }
                 else if (passedInfo->clockPage[passedInfo->currentIndex].reference == 1){
+                    passedInfo->clockPage[passedInfo->currentIndex].reference = 0;
                     pthread_mutex_lock(&currentIndexMut);
                     passedInfo->currentIndex +=1;
 
@@ -103,12 +105,10 @@ void *child(void *args){
                 fprintf(passedInfo->output, "P%d: evicting process %d, page %d from frame %d\n", personalThreadNum, passedInfo->clockPage[passedInfo->currentIndex].processIn, passedInfo->clockPage[passedInfo->currentIndex].pageNum, passedInfo->clockPage[passedInfo->currentIndex].index);
                 passedInfo->clockPage[passedInfo->currentIndex].processIn = personalThreadNum;
                 passedInfo->clockPage[passedInfo->currentIndex].pageNum = registerNum[i];
-                flag = 0;
             }
             else if(inArray(registerNum[i], passedInfo->clockArr) == 1 && (passedInfo->clockPage[passedInfo->currentIndex].processIn == personalThreadNum) && (passedInfo->clockPage[passedInfo->currentIndex].index == passedInfo->currentIndex)){
                 passedInfo->clockPage[passedInfo->currentIndex].reference = 0;
                 printf("Im in ELIF %d\n", passedInfo->clockPage[passedInfo->currentIndex].reference);
-
             }
         }
     }
