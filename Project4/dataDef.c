@@ -19,6 +19,22 @@ int inArray(int numToFind, int arr[16]){
     return 0;
 }
 
+int clockFull(CLOCK_INFO *input){
+    int sum = 0;
+    for(int i = 0; i < 16; i++){
+        if(input[i].processIn != -1){
+            sum += 1;
+        }
+    }
+
+    if(sum >= 16){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
 
 void *child(void *args){
     PASSED_INFO *passedInfo = (PASSED_INFO *)args;
@@ -56,8 +72,6 @@ void *child(void *args){
     fclose(fp);
 
 
-
-
 //THIS IS IMPORTANT FOR LOOP IT RUN THROUGH ALL 10 PAGES NEED MUTEX FOR WHEN ACCESSING CLOCK MEMORY
     for (int i = 0; i < 10; i++){
         int flag = 1;
@@ -66,19 +80,22 @@ void *child(void *args){
             fprintf(passedInfo->output, "P%d OPERATION: %s r%d 0x%08X\n", personalThreadNum, ReadWrite[i], registerNum[i], addressNum[i]);
             sleep((rand() % 10) / 1000);
         
-
             if((inArray(registerNum[i], passedInfo->clockArr) == 0) || (inArray(registerNum[i], passedInfo->clockArr) == 1 && (passedInfo->clockPage[passedInfo->currentIndex].reference == 0))){
                 fprintf(passedInfo->output, "P%d: page %d not resident in memory\n", personalThreadNum, passedInfo->clockPage[i].pageNum);
 
                 if (passedInfo->clockPage[passedInfo->currentIndex].reference == 0){
                     pthread_mutex_lock(&printing);
+
+                    if(clockFull(passedInfo->clockPage) == 1){
+                        fprintf(passedInfo->output, "P%d: evicting process %d, page %d from frame %d\n", personalThreadNum, passedInfo->clockPage[passedInfo->currentIndex].processIn, passedInfo->clockPage[passedInfo->currentIndex].pageNum, passedInfo->clockPage[passedInfo->currentIndex].index);
+                    }
+
                     fprintf(passedInfo->output, "P%d: using free frame %d\n", personalThreadNum, passedInfo->clockPage[passedInfo->currentIndex].index);
                     passedInfo->clockPage[passedInfo->currentIndex].pageNum = registerNum[i];
                     passedInfo->clockArr[passedInfo->currentIndex] = passedInfo->clockPage[passedInfo->currentIndex].pageNum;
 
                     passedInfo->clockPage[passedInfo->currentIndex].reference = 1;
                     passedInfo->clockPage[passedInfo->currentIndex].processIn = personalThreadNum;
-                    printf("Process in frame: %d\n", passedInfo->clockPage[passedInfo->currentIndex].processIn);
 
                     fprintf(passedInfo->output, "P%d: new translation from page %d to frame %d\n", personalThreadNum, passedInfo->clockPage[passedInfo->currentIndex].pageNum, passedInfo->clockPage[passedInfo->currentIndex].index);
                     fprintf(passedInfo->output, "P%d: translated VA 0x%08X to PA 0x%08X\n", personalThreadNum, addressNum[i], addressNum[i]);              //Needs Fixing?
@@ -101,30 +118,30 @@ void *child(void *args){
                 pthread_mutex_unlock(&printing);
         
             }
-            else if ((inArray(registerNum[i], passedInfo->clockArr) == 0) && (passedInfo->clockPage[passedInfo->currentIndex].reference == 0)){
-                fprintf(passedInfo->output, "P%d: evicting process %d, page %d from frame %d\n", personalThreadNum, passedInfo->clockPage[passedInfo->currentIndex].processIn, passedInfo->clockPage[passedInfo->currentIndex].pageNum, passedInfo->clockPage[passedInfo->currentIndex].index);
-                passedInfo->clockPage[passedInfo->currentIndex].processIn = personalThreadNum;
-                passedInfo->clockPage[passedInfo->currentIndex].pageNum = registerNum[i];
-            }
-            else if(inArray(registerNum[i], passedInfo->clockArr) == 1 && (passedInfo->clockPage[passedInfo->currentIndex].processIn == personalThreadNum) && (passedInfo->clockPage[passedInfo->currentIndex].index == passedInfo->currentIndex)){
+            else if(inArray(registerNum[i], passedInfo->clockArr) == 0 && (passedInfo->clockPage[passedInfo->currentIndex].processIn == personalThreadNum) && (passedInfo->clockPage[passedInfo->currentIndex].index == passedInfo->currentIndex)){
                 passedInfo->clockPage[passedInfo->currentIndex].reference = 0;
-                printf("Im in ELIF %d\n", passedInfo->clockPage[passedInfo->currentIndex].reference);
+                pthread_mutex_lock(&currentIndexMut);
+                    passedInfo->currentIndex +=1;
+
+                    if(passedInfo->currentIndex >= 16){
+                        passedInfo->currentIndex = 0;
+                    }
+
+                pthread_mutex_unlock(&currentIndexMut);
+            }
+            else{                                                   //Had to add because the else if wasnt running correctly so I auto increment to prevent jams still encounter some issues with test 1, test 2 has not gotten errors
+                pthread_mutex_lock(&currentIndexMut);
+                    passedInfo->currentIndex +=1;
+
+                    if(passedInfo->currentIndex >= 16){
+                        passedInfo->currentIndex = 0;
+                    }
+
+                pthread_mutex_unlock(&currentIndexMut);
+
             }
         }
     }
-
-//All Output messages
-/*
-    int i = 0;
-    done fprintf(passedInfo->output, "P%d OPERATION: %s r%d 0x%08X\n", personalThreadNum, ReadWrite[i], registerNum[i], addressNum[i]);
-    done fprintf(passedInfo->output, "P%d: page %d not resident in memory\n", personalThreadNum, passedInfo->clockPage[i].pageNum[i]);
-    done fprintf(passedInfo->output, "P%d: using free frame %d\n", personalThreadNum, passedInfo->clockPage[i].index[i]);
-    done fprintf(passedInfo->output, "P%d: new translation from page %d to frame %d\n", personalThreadNum, passedInfo->clockPage[i].pageNum[i], passedInfo->clockPage[i].index[i]);
-    done fprintf(passedInfo->output, "P%d: translated VA 0x%08X to PA 0x%08X\n", personalThreadNum, registerNum[i], addressNum[i]);      //Needs Fixing
-    done fprintf(passedInfo->output, "P%d: r%d = 0x%08X (mem at virtual addr 0x%08X)\n", personalThreadNum, addressNum[i], addressNum[i]);       //Needs Fixing
-    fprintf(passedInfo->output, "P%d: valid translation from page %d to frame %d\n", personalThreadNum, passedInfo->clockPage[i].pageNum[i], passedInfo->clockPage[i].index[i]);
-    done fprintf(passedInfo->output, "P%d: evicting process %d, page %d from frame %d\n", personalThreadNum, passedInfo->clockPage[i].processIn[i], passedInfo->clockPage[i].pageNum[i], passedInfo->clockPage[i].index[i]);
-*/
 
         fprintf(passedInfo->output, "Process %d complete\n", personalThreadNum);
         pthread_exit(NULL);
