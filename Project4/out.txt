@@ -2,6 +2,7 @@ Process 0 started
 P0 OPERATION: R r0 0x00000000
 Process 1 started
 P1 OPERATION: R r0 0x00000000
+<<<<<<< HEAD
 P0 OPERATION: R r1 0x00000001
 P1 OPERATION: R r1 0x00000020
 Process 2 started
@@ -52,5 +53,296 @@ P2: page 5 not resident in memory
 P2 OPERATION: R r19 0x00000130
 Process 1 complete
 P2: page 14 not resident in memory
+=======
+P0: page 0 not resident in memory
+P0: using free frame 0
+P0: new translation from page 0 to frame 0
+P0: translated VA 0x00000000 to PA 0x00000000
+P0: r0 = 0x327B23C6 (mem at virtual addr 0x00000000)
+P0: valid translation from page 0 to frame 0
+P0 OPERATION: R r1 0x00000001
+Process 2 started
+P1 OPERATION: R r0 0x00000000
+P2 OPERATION: R r10 0x00000010
+P0: page 0 not resident in memory
+P0: using free frame 1
+P0: new translation from page 1 to frame 1
+P0: translated VA 0x00000001 to PA 0x00000001
+P0: r1 = 0x643C9869 (mem at virtual addr 0x00000001)
+P0: valid translation from page 1 to frame 1
+P0 OPERATION: R r2 0x00000002
+P1 OPERATION: R r0 0x00000000
+P2: page 0 not resident in memory
+P2: using free frame 2
+P2: new translation from page 10 to frame 2
+P2: translated VA 0x00000010 to PA 0x00000010
+P2: r10 = 0x19495CFF (mem at virtual addr 0x00000010)
+P2: valid translation from page 10 to frame 2
+P2 OPERATION: R r11 0x00000030
+P0: page 10 not resident in memory
+P0 OPERATION: R r2 0x00000002
+P1: page 0 not resident in memory
+P1: using free frame 3
+P1: new translation from page 0 to frame 3
+P1: translated VA 0x00000000 to PA 0x00000000
+P1: r0 = 0x238E1F29 (mem at virtual addr 0x00000000)
+P1: valid translation from page 0 to frame 3
+P1 OPERATION: R r1 0x00000020
+P2: page 1 not resident in memory
+P2 OPERATION: R r11 0x00000030
+P0: page 10 not resident in memory
+P0: using free frame 4
+P0: new translation from page 2 to frame 4
+P0: translated VA 0x00000002 to PA 0x00000002
+P0: r2 = 0x507ED7AB (mem at virtual addr 0x00000002)
+P0: valid translation from page 2 to frame 4
+P0 OPERATION: R r3 0x00000003
+P1 OPERATION: R r1 0x00000020
+P2: page 1 not resident in memory
+P2: using free frame 5
+P2: new translation from page 11 to frame 5
+P2: translated VA 0x00000030 to PA 0x00000030
+P2: r11 = 0x79E2A9E3 (mem at virtual addr 0x00000030)
+P2: valid translation from page 11 to frame 5
+P2 OPERATION: R r12 0x00000050
+P0: page 0 not resident in memory
+P0 OPERATION: R r3 0x00000003
+P1: page 1 not resident in memory
+P1: using free frame 6
+P1: new translation from page 1 to frame 6
+P1: translated VA 0x00000020 to PA 0x00000020
+P1: r1 = 0x5BD062C2 (mem at virtual addr 0x00000020)
+P1: valid translation from page 1 to frame 6
+P1 OPERATION: R r2 0x00000040
+P2: page 10 not resident in memory
+P2 OPERATION: R r12 0x00000050
+P0: page 0 not resident in memory
+P0: using free frame 7
+P0: new translation from page 3 to frame 7
+P0: translated VA 0x00000003 to PA 0x00000003
+P0: r3 = 0x0216231B (mem at virtual addr 0x00000003)
+P0: valid translation from page 3 to frame 7
+P1 OPERATION: R r2 0x00000040
+P0 OPERATION: R r4 0x00000004
+P2: page 10 not resident in memory
+P2: using free frame 8
+P2: new translation from page 12 to frame 8
+P2: translated VA 0x00000050 to PA 0x00000050
+P2: r12 = 0x66EF438D (mem at virtual addr 0x00000050)
+P2: valid translation from page 12 to frame 8
+P2 OPERATION: R r13 0x00000070
+P1 OPERATION: R r2 0x00000040
+P0: page 2 not resident in memory
+P0: using free frame 9
+P0: new translation from page 4 to frame 9
+P0: translated VA 0x00000004 to PA 0x00000004
+P0: r4 = 0x109CF92E (mem at virtual addr 0x00000004)
+P0: valid translation from page 4 to frame 9
+P0 OPERATION: R r5 0x000003FC
+P2: page 0 not resident in memory
+P2 OPERATION: R r13 0x00000070
+P1: page 10 not resident in memory
+P1: using free frame 10
+P1: new translation from page 2 to frame 10
+P1: translated VA 0x00000040 to PA 0x00000040
+P1: r2 = 0x1BEFD79F (mem at virtual addr 0x00000040)
+P1: valid translation from page 2 to frame 10
+P1 OPERATION: R r3 0x00000060
+P0: page 11 not resident in memory
+P0 OPERATION: R r5 0x000003FC
+P2: page 0 not resident in memory
+P2: using free frame 11
+P2: new translation from page 13 to frame 11
+P2: translated VA 0x00000070 to PA 0x00000070
+P2: r13 = 0x4E6AFB66 (mem at virtual addr 0x00000070)
+P2: valid translation from page 13 to frame 11
+P2 OPERATION: R r14 0x00000090
+P1 OPERATION: R r3 0x00000060
+P2: page 2 not resident in memory
+P1: page 0 not resident in memory
+P2: using free frame 12
+P2: new translation from page 14 to frame 12
+P2: translated VA 0x00000090 to PA 0x00000090
+P0: page 11 not resident in memory
+P2: r14 = 0x431BD7B7 (mem at virtual addr 0x00000090)
+P2: valid translation from page 0 to frame 13
+P2 OPERATION: R r15 0x000000B0
+P0 OPERATION: R r5 0x000003FC
+P1: using free frame 13
+P1: new translation from page 3 to frame 13
+P1: translated VA 0x00000060 to PA 0x00000060
+P1: r3 = 0x257130A3 (mem at virtual addr 0x00000060)
+P1: valid translation from page 3 to frame 13
+P1 OPERATION: R r4 0x00000080
+P2: page 11 not resident in memory
+P2 OPERATION: R r15 0x000000B0
+P0: page 11 not resident in memory
+P0: using free frame 14
+P0: new translation from page 5 to frame 14
+P0: translated VA 0x000003FC to PA 0x000003FC
+P1 OPERATION: R r4 0x00000080
+P0: r5 = 0x628C895D (mem at virtual addr 0x000003FC)
+P0: valid translation from page 32638 to frame 15
+P0 OPERATION: R r6 0x000003FB
+P2: page 11 not resident in memory
+P2: using free frame 15
+P2: new translation from page 15 to frame 15
+P2: translated VA 0x000000B0 to PA 0x000000B0
+P2: r15 = 0x2443A858 (mem at virtual addr 0x000000B0)
+P2: valid translation from page 15 to frame 15
+P2 OPERATION: R r16 0x000000D0
+P1 OPERATION: R r4 0x00000080
+P0: page 1 not resident in memory
+P0 OPERATION: R r6 0x000003FB
+P2: page 1 not resident in memory
+P2 OPERATION: R r16 0x000000D0
+P1: page 2 not resident in memory
+P1: evicting process 2, page 10 from frame 2
+P1: using free frame 2
+P1: new translation from page 4 to frame 2
+P1: translated VA 0x00000080 to PA 0x00000080
+P1: r4 = 0x79838CB2 (mem at virtual addr 0x00000080)
+P1: valid translation from page 4 to frame 2
+P0: page 1 not resident in memory
+P0 OPERATION: R r6 0x000003FB
+P1 OPERATION: R r5 0x000000A0
+P2: page 1 not resident in memory
+P2: evicting process 1, page 0 from frame 3
+P2: using free frame 3
+P2: new translation from page 16 to frame 3
+P2: translated VA 0x000000D0 to PA 0x000000D0
+P2: r16 = 0x189A769B (mem at virtual addr 0x000000D0)
+P2: valid translation from page 16 to frame 3
+P2 OPERATION: R r17 0x000000F0
+P0: page 1 not resident in memory
+P0 OPERATION: R r6 0x000003FB
+P1 OPERATION: R r5 0x000000A0
+P2: page 3 not resident in memory
+P2: evicting process 2, page 11 from frame 5
+P2: using free frame 5
+P2: new translation from page 17 to frame 5
+P2: translated VA 0x000000F0 to PA 0x000000F0
+P2: r17 = 0x0836C40E (mem at virtual addr 0x000000F0)
+P2: valid translation from page 17 to frame 5
+P2 OPERATION: R r18 0x00000110
+P0: page 1 not resident in memory
+P0 OPERATION: R r6 0x000003FB
+P1: page 17 not resident in memory
+P1: evicting process 1, page 1 from frame 6
+P1: using free frame 6
+P1: new translation from page 5 to frame 6
+P1: translated VA 0x000000A0 to PA 0x000000A0
+P1: r5 = 0x08138641 (mem at virtual addr 0x000000A0)
+P1: valid translation from page 5 to frame 6
+P1 OPERATION: R r6 0x000000C0
+P2: page 12 not resident in memory
+P2 OPERATION: R r18 0x00000110
+P0: page 5 not resident in memory
+P0 OPERATION: R r6 0x000003FB
+P1: page 5 not resident in memory
+P1 OPERATION: R r6 0x000000C0
+P2: page 12 not resident in memory
+P2: evicting process 0, page 4 from frame 9
+P2: using free frame 9
+P2: new translation from page 18 to frame 9
+P2: translated VA 0x00000110 to PA 0x00000110
+P2: r18 = 0x22221A70 (mem at virtual addr 0x00000110)
+P2: valid translation from page 18 to frame 9
+P2 OPERATION: R r19 0x00000130
+P0: page 5 not resident in memory
+P0 OPERATION: R r6 0x000003FB
+P1: page 5 not resident in memory
+P1: evicting process 1, page 2 from frame 10
+P1: using free frame 10
+P1: new translation from page 6 to frame 10
+P1: translated VA 0x000000C0 to PA 0x000000C0
+P1: r6 = 0x614FD4A1 (mem at virtual addr 0x000000C0)
+P1: valid translation from page 6 to frame 10
+P1 OPERATION: R r7 0x000000E0
+P2: page 18 not resident in memory
+P2 OPERATION: R r19 0x00000130
+P0 OPERATION: R r6 0x000003FB
+P1: page 3 not resident in memory
+P1: evicting process 2, page 14 from frame 12
+P1: using free frame 12
+P1: new translation from page 7 to frame 12
+P1: translated VA 0x000000E0 to PA 0x000000E0
+P1: r7 = 0x05072367 (mem at virtual addr 0x000000E0)
+P1: valid translation from page 7 to frame 12
+P1 OPERATION: R r8 0x00000100
+P2: page 18 not resident in memory
+P2 OPERATION: R r19 0x00000130
+P0: page 5 not resident in memory
+P0: evicting process 1, page 3 from frame 13
+P0: using free frame 13
+P0: new translation from page 6 to frame 13
+P0: translated VA 0x000003FB to PA 0x000003FB
+P0: r6 = 0x7724C67E (mem at virtual addr 0x000003FB)
+P0: valid translation from page 6 to frame 13
+P0 OPERATION: R r7 0x000003FA
+P1: page 12 not resident in memory
+P1 OPERATION: R r8 0x00000100
+P2: page 18 not resident in memory
+P2 OPERATION: R r19 0x00000130
+P0 OPERATION: R r7 0x000003FA
+P1: page 12 not resident in memory
+P1: evicting process 0, page 0 from frame 0
+P1: using free frame 0
+P1: new translation from page 8 to frame 0
+P1: translated VA 0x00000100 to PA 0x00000100
+P1: r8 = 0x2D517796 (mem at virtual addr 0x00000100)
+P1: valid translation from page 8 to frame 0
+P1 OPERATION: R r9 0x00000120
+P2: page 18 not resident in memory
+P2 OPERATION: R r19 0x00000130
+P0: page 3 not resident in memory
+P0: evicting process 0, page 1 from frame 1
+P0: using free frame 1
+P0: new translation from page 7 to frame 1
+P0: translated VA 0x000003FA to PA 0x000003FA
+P0: r7 = 0x3855585C (mem at virtual addr 0x000003FA)
+P0: valid translation from page 7 to frame 1
+P0 OPERATION: R r8 0x000003F9
+P1: page 18 not resident in memory
+P1 OPERATION: R r9 0x00000120
+P0: page 12 not resident in memory
+P0: evicting process 1, page 4 from frame 2
+P0: using free frame 2
+P0: new translation from page 8 to frame 2
+P0: translated VA 0x000003F9 to PA 0x000003F9
+P0: r8 = 0x2A487CB0 (mem at virtual addr 0x000003F9)
+P0: valid translation from page 8 to frame 2
+P0 OPERATION: R r9 0x000003F8
+P2: page 18 not resident in memory
+P2 OPERATION: R r19 0x00000130
+P1: page 18 not resident in memory
+P1: evicting process 2, page 16 from frame 3
+P1: using free frame 3
+P1: new translation from page 9 to frame 3
+P1: translated VA 0x00000120 to PA 0x00000120
+P1: r9 = 0x2CD89A32 (mem at virtual addr 0x00000120)
+P1: valid translation from page 9 to frame 3
+Process 1 complete
+P0 OPERATION: R r9 0x000003F8
+P2: page 18 not resident in memory
+P2 OPERATION: R r19 0x00000130
+P0: page 18 not resident in memory
+P0: evicting process 2, page 17 from frame 5
+P0: using free frame 5
+P0: new translation from page 9 to frame 5
+P0: translated VA 0x000003F8 to PA 0x000003F8
+P0: r9 = 0x4B588F54 (mem at virtual addr 0x000003F8)
+P0: valid translation from page 9 to frame 5
+Process 0 complete
+P2: page 18 not resident in memory
+P2 OPERATION: R r19 0x00000130
+P2: page 18 not resident in memory
+P2: evicting process 1, page 5 from frame 6
+P2: using free frame 6
+P2: new translation from page 19 to frame 6
+P2: translated VA 0x00000130 to PA 0x00000130
+P2: r19 = 0x6DE91B18 (mem at virtual addr 0x00000130)
+P2: valid translation from page 19 to frame 6
+>>>>>>> 8e5d688e94e0db4b7360c3112ede28aea8247ae3
 Process 2 complete
 Main: program completed

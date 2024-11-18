@@ -39,6 +39,8 @@ void initInfo(PASSED_INFO *passedInfo, int mem, int page, int processes);
 
 int inArray(int numToFind, int arr[16]);
 
+int clockFull(CLOCK_INFO *input);
+
 //Child process that simulates different processes
 void *childOne(void *args);
 void *childTwo(void *args);
