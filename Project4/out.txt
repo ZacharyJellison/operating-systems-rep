@@ -1,56 +1,56 @@
 Process 0 started
 P0 OPERATION: R r0 0x00000000
-P0 OPERATION: R r1 0x00000001
-P0: page 0 not resident in memory
-P0 OPERATION: R r2 0x00000002
-P0: page 0 not resident in memory
-P0 OPERATION: R r3 0x00000003
-P0: page 0 not resident in memory
-P0 OPERATION: R r4 0x00000004
-P0: page 0 not resident in memory
-P0 OPERATION: R r5 0x000003FC
-P0: page 0 not resident in memory
-P0 OPERATION: R r6 0x000003FB
-P0: page 0 not resident in memory
-P0 OPERATION: R r7 0x000003FA
-P0: page 0 not resident in memory
-P0 OPERATION: R r8 0x000003F9
-P0: page 0 not resident in memory
-P0 OPERATION: R r9 0x000003F8
-P0: page 0 not resident in memory
-Process 0 complete
 Process 1 started
 P1 OPERATION: R r0 0x00000000
+P0 OPERATION: R r1 0x00000001
 P1 OPERATION: R r1 0x00000020
-P1 OPERATION: R r2 0x00000040
-P1 OPERATION: R r3 0x00000060
-P1 OPERATION: R r4 0x00000080
 Process 2 started
-P1 OPERATION: R r5 0x000000A0
 P2 OPERATION: R r10 0x00000010
-P1 OPERATION: R r6 0x000000C0
+P0: page 0 not resident in memory
+P0 OPERATION: R r2 0x00000002
+P1 OPERATION: R r2 0x00000040
 P2: page 1 not resident in memory
 P2 OPERATION: R r11 0x00000030
-P1 OPERATION: R r7 0x000000E0
-P2: page 2 not resident in memory
-P2 OPERATION: R r12 0x00000050
-P1 OPERATION: R r8 0x00000100
-P2: page 3 not resident in memory
-P2 OPERATION: R r13 0x00000070
-P1 OPERATION: R r9 0x00000120
-P2: page 4 not resident in memory
-P2 OPERATION: R r14 0x00000090
-Process 1 complete
-P2: page 5 not resident in memory
-P2 OPERATION: R r15 0x000000B0
-P2: page 6 not resident in memory
-P2 OPERATION: R r16 0x000000D0
-P2: page 7 not resident in memory
-P2 OPERATION: R r17 0x000000F0
-P2: page 8 not resident in memory
-P2 OPERATION: R r18 0x00000110
-P2: page 9 not resident in memory
-P2 OPERATION: R r19 0x00000130
+P0: page 0 not resident in memory
+P0 OPERATION: R r3 0x00000003
 P2: page 10 not resident in memory
+P2 OPERATION: R r12 0x00000050
+P1 OPERATION: R r3 0x00000060
+P2: page 2 not resident in memory
+P2 OPERATION: R r13 0x00000070
+P0: page 11 not resident in memory
+P0 OPERATION: R r4 0x00000004
+P1 OPERATION: R r4 0x00000080
+P2: page 11 not resident in memory
+P2 OPERATION: R r14 0x00000090
+P0: page 12 not resident in memory
+P0 OPERATION: R r5 0x000003FC
+P0: page 3 not resident in memory
+P0 OPERATION: R r6 0x000003FB
+P2: page 12 not resident in memory
+P2 OPERATION: R r15 0x000000B0
+P1 OPERATION: R r5 0x000000A0
+P2: page 3 not resident in memory
+P2 OPERATION: R r16 0x000000D0
+P0: page 13 not resident in memory
+P0 OPERATION: R r7 0x000003FA
+P1 OPERATION: R r6 0x000000C0
+P2: page 13 not resident in memory
+P2 OPERATION: R r17 0x000000F0
+P0: page 4 not resident in memory
+P0 OPERATION: R r8 0x000003F9
+P1 OPERATION: R r7 0x000000E0
+P0: page 5 not resident in memory
+P2: page 4 not resident in memory
+P0 OPERATION: R r9 0x000003F8
+P2 OPERATION: R r18 0x00000110
+P1 OPERATION: R r8 0x00000100
+P0: page 14 not resident in memory
+Process 0 complete
+P1 OPERATION: R r9 0x00000120
+P2: page 5 not resident in memory
+P2 OPERATION: R r19 0x00000130
+Process 1 complete
+P2: page 14 not resident in memory
 Process 2 complete
 Main: program completed
